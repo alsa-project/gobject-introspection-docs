@@ -1,0 +1,327 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hitaki.MotuCommandDsp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hitaki.MotuCommandDsp"/>
+  <meta property="og:description" content="Reference for Hitaki.MotuCommandDsp"/>
+  <meta name="twitter:title" content="Hitaki.MotuCommandDsp"/>
+  <meta name="twitter:description" content="Reference for Hitaki.MotuCommandDsp"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Hitaki" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hitaki</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.1.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.MotuCommandDsp.html#description">MotuCommandDsp</a>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.MotuCommandDsp.read_float_meter.html">read_float_meter</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.MotuCommandDsp.read_float_meter.html">read_float_meter</a>
+  
+  </div>
+</div>
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">Hitaki</a><span class="sep"></span>MotuCommandDsp</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/libhitaki/blob/master/src/motu_command_dsp.c#L4">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface Hitaki.MotuCommandDsp : GObject.Object</code></pre>
+
+        <div class="docblock">
+          <p>An interface for protocol of command <span class="caps">DSP</span> model in <span class="caps">MOTU</span> FireWire series.
+The command <span class="caps">DSP</span> models in Mark of the Unicorn (<span class="caps">MOTU</span>) FireWire series transfer isochronous
+packets to deliver <span class="caps">PCM</span> frames and <span class="caps">MIDI</span> messages as well as metering information. The
+<a href="iface.MotuCommandDsp.html"><code>HitakiMotuCommandDsp</code></a> is an object interface for the metering information in the command <span class="caps">DSP</span>&nbsp;protocol.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement MotuCommandDsp, your type must inherit from
+        <a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
+      </div>
+    </div>
+
+    
+    <div class="implementations toggle-wrapper default-hide">
+      <h4 id="implementations">Implementations<a href="#implementations" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li><a href="class.SndMotu.html">HitakiSndMotu</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="methods toggle-wrapper">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="method.MotuCommandDsp.read_float_meter.html">hitaki_motu_command_dsp_read_float_meter</a></h6>
+
+        <div class="docblock">
+          <p>Read cached data of meter information for command <span class="caps">DSP</span>&nbsp;models.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct HitakiMotuCommandDspInterface {
+  GTypeInterface iface;
+  gboolean (* read_float_meter) (
+    HitakiMotuCommandDsp* self,
+    gfloat* const* meter,
+    GError** error
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>iface</code></td>
+          <td style="vertical-align:top"><pre><code>GTypeInterface</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>read_float_meter</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* read_float_meter) (
+    HitakiMotuCommandDsp* self,
+    gfloat* const* meter,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-read_float_meter"><a href="vfunc.MotuCommandDsp.read_float_meter.html">Hitaki.MotuCommandDsp.read_float_meter</a></h6>
+
+        <div class="docblock">
+          <p>Read cached data of meter information for command <span class="caps">DSP</span>&nbsp;models.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
