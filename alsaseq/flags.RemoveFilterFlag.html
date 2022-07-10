@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -113,7 +113,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/alsaseq-enum-types.h#L350">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/alsaseq-enum-types.h#L337">[src]</a>
         
       </h4>
 
@@ -147,12 +147,54 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
         <tr>
           <td><a id="input" href="#input"><code title="Value: 1">ALSASEQ_REMOVE_FILTER_FLAG_INPUT</code></a></td>
-          <td><p>Flush of input&nbsp;queues.</p></td>
+          <td><p>Flush events in input&nbsp;queues.</p></td>
         </tr>
       
         <tr>
           <td><a id="output" href="#output"><code title="Value: 2">ALSASEQ_REMOVE_FILTER_FLAG_OUTPUT</code></a></td>
-          <td><p>Flush of output&nbsp;queues.</p></td>
+          <td><p>Flush events in output&nbsp;queues.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="dest" href="#dest"><code title="Value: 4">ALSASEQ_REMOVE_FILTER_FLAG_DEST</code></a></td>
+          <td><p>Flush events towards the given&nbsp;destination.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="dest_channel" href="#dest_channel"><code title="Value: 8">ALSASEQ_REMOVE_FILTER_FLAG_DEST_CHANNEL</code></a></td>
+          <td><p>Flush events with the given channel, available for
+                                             <span class="caps">NOTE</span>, <span class="caps">NOTEON</span>, <span class="caps">NOTEOFF</span>, <span class="caps">KEYPRESS</span>, <span class="caps">CONTROLLER</span>, <span class="caps">PGMCHANGE</span>, <span class="caps">CHANPRESS</span>,
+                                             <span class="caps">PITCHBEND</span>, <span class="caps">CONTROL14</span>, <span class="caps">NONREGPARAM</span>, <span class="caps">REGPARAM</span>.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="time_before" href="#time_before"><code title="Value: 16">ALSASEQ_REMOVE_FILTER_FLAG_TIME_BEFORE</code></a></td>
+          <td><p>Flush events scheduled before the given&nbsp;time.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="time_after" href="#time_after"><code title="Value: 32">ALSASEQ_REMOVE_FILTER_FLAG_TIME_AFTER</code></a></td>
+          <td><p>Flush events scheduled after the given&nbsp;time.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="time_tick" href="#time_tick"><code title="Value: 64">ALSASEQ_REMOVE_FILTER_FLAG_TIME_TICK</code></a></td>
+          <td><p>The given time is for tick&nbsp;time.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="event_type" href="#event_type"><code title="Value: 128">ALSASEQ_REMOVE_FILTER_FLAG_EVENT_TYPE</code></a></td>
+          <td><p>Flush events with the&nbsp;type.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="ignore_off" href="#ignore_off"><code title="Value: 256">ALSASEQ_REMOVE_FILTER_FLAG_IGNORE_OFF</code></a></td>
+          <td><p>Flush events except for <span class="caps">NOTEOFF</span>.</p></td>
+        </tr>
+      
+        <tr>
+          <td><a id="tag_match" href="#tag_match"><code title="Value: 512">ALSASEQ_REMOVE_FILTER_FLAG_TAG_MATCH</code></a></td>
+          <td><p>Flush events with the given&nbsp;tag.</p></td>
         </tr>
       
       </table>

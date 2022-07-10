@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -86,11 +86,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="property"href="property.SubscribeData.dest.html">dest</a>
   
-    <a class="property"href="property.SubscribeData.flag.html">flag</a>
+    <a class="property"href="property.SubscribeData.has-tstamp.html">has-tstamp</a>
+  
+    <a class="property"href="property.SubscribeData.is-exclusive.html">is-exclusive</a>
   
     <a class="property current"href="property.SubscribeData.queue-id.html">queue-id</a>
   
     <a class="property"href="property.SubscribeData.sender.html">sender</a>
+  
+    <a class="property"href="property.SubscribeData.tstamp-mode.html">tstamp-mode</a>
   
   </div>
 </div>
@@ -123,10 +127,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/subscribe-data.c#L189">[src]</a>
+        
       </h4>
 
       <div class="docblock">
-        No description available.
+        <p>The numeric <span class="caps">ID</span> of queue to deliver. One of ALSASeqSpecificQueueId is available as well as
+any numeric&nbsp;value.</p>
       </div>
 
       <div class="docblock">
@@ -135,6 +142,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             <td><code>guint8</code></td>
           </tr>
           
+          
+          <tr><td>Available since:</td><td>0.3.</td></tr>
           
           
         </table>

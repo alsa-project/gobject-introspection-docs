@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -147,8 +147,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent information of queue.
-A <a href="class.QueueInfo.html"><code>ALSASeqQueueInfo</code></a> is a GObject-derived object to represent information of queue. The call of
+          <p>A GObject-derived object to express information of queue.
+A <a href="class.QueueInfo.html"><code>ALSASeqQueueInfo</code></a> is a GObject-derived object to express information of queue. The call of
 <a href="func.get_queue_info_by_id.html"><code>alsaseq_get_queue_info_by_id()</code></a> and <a href="func.get_queue_info_by_name.html"><code>alsaseq_get_queue_info_by_name()</code></a> returns the instance of object.
 The call of <a href="method.UserClient.create_queue.html"><code>alsaseq_user_client_create_queue()</code></a> and <a href="method.UserClient.update_queue.html"><code>alsaseq_user_client_update_queue()</code></a> requires the
 instance of&nbsp;object.</p>
@@ -260,7 +260,7 @@ instance of&nbsp;object.</p>
           <h6><a href="property.QueueInfo.client-id.html">ALSASeq.QueueInfo:client-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of client which owns the queue, including one of&nbsp;ALSASeqSpecificClientId.</p>
           </div>
 
           
@@ -270,7 +270,7 @@ instance of&nbsp;object.</p>
           <h6><a href="property.QueueInfo.locked.html">ALSASeq.QueueInfo:locked</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>Whether to be locked by the other queues or&nbsp;not.</p>
           </div>
 
           
@@ -280,7 +280,7 @@ instance of&nbsp;object.</p>
           <h6><a href="property.QueueInfo.name.html">ALSASeq.QueueInfo:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of&nbsp;queue.</p>
           </div>
 
           
@@ -290,7 +290,7 @@ instance of&nbsp;object.</p>
           <h6><a href="property.QueueInfo.queue-id.html">ALSASeq.QueueInfo:queue-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of queue. An entry of ALSASeqSpecificQueueId is available as&nbsp;well.</p>
           </div>
 
           

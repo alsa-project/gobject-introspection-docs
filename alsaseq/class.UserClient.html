@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -130,6 +130,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a class="method" href="method.UserClient.remove_events.html">remove_events</a>
   
     <a class="method" href="method.UserClient.schedule_event.html">schedule_event</a>
+  
+    <a class="method" href="method.UserClient.schedule_events.html">schedule_events</a>
   
     <a class="method" href="method.UserClient.set_info.html">set_info</a>
   
@@ -212,8 +214,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent user client.
-A <a href="class.UserClient.html"><code>ALSASeqUserClient</code></a> is a GObject-derived object to represent user client. Any port can be added
+          <p>A GObject-derived object to express user client.
+A <a href="class.UserClient.html"><code>ALSASeqUserClient</code></a> is a GObject-derived object to express user client. Any port can be added
 to the client as destination or source for any&nbsp;event.</p>
 <p>When the call of <a href="method.UserClient.open.html"><code>alsaseq_user_client_open()</code></a> the object maintain file descriptor till object
 destruction. The call of <a href="method.UserClient.create_source.html"><code>alsaseq_user_client_create_source()</code></a> returns the instance of
@@ -364,7 +366,7 @@ sequencer event for <code>ALSASeqUserClient::handle-event</code> signal, accordi
         <div class="">
           <h6><a href="method.UserClient.get_protocol_version.html">alsaseq_user_client_get_protocol_version</a></h6>
           <div class="docblock">
-            <p>Get the version of sequencer protocol currently used. The version is represented as the array
+            <p>Get the version of sequencer protocol currently used. The version is expressed as the array
 with three elements; major, minor, and micro version in the order. The length of major version
 is 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
           </div>
@@ -423,6 +425,14 @@ is 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
           <h6><a href="method.UserClient.schedule_event.html">alsaseq_user_client_schedule_event</a></h6>
           <div class="docblock">
             <p>Deliver the event immediately, or schedule it into memory pool of the&nbsp;client.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.UserClient.schedule_events.html">alsaseq_user_client_schedule_events</a></h6>
+          <div class="docblock">
+            <p>Deliver the events immediately, or schedule it into memory pool of the&nbsp;client.</p>
           </div>
           
         </div>
@@ -517,7 +527,7 @@ is 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
           <h6><a href="property.UserClient.client-id.html">ALSASeq.UserClient:client-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of the&nbsp;client.</p>
           </div>
 
           
@@ -548,9 +558,8 @@ is 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
         <div class="">
           <h6><a href="signal.UserClient.handle-event.html">ALSASeq.UserClient::handle-event</a></h6>
           <div class="docblock">
-            <p>When event occurs, this signal is emit with the instance of object which points to a batch
-of events. The instance should not be passed directly to <code>alsaseq_user_client_schedule_event()</code>
-again because its memory alignment is different for events with blob&nbsp;data.</p>
+            <p>When event occurs, this signal is emit with the instance of object which includes batch of
+of&nbsp;events.</p>
           </div>
           
         </div>
@@ -643,10 +652,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         <h6 id="vfunc-handle_event"><a href="vfunc.UserClient.handle_event.html">ALSASeq.UserClientClass.handle_event</a></h6>
 
         <div class="docblock">
-          <p>When event occurs, this signal is emit with the instance of object which
-points to a batch of events. The instance should not be passed directly
-to <code>alsaseq_user_client_schedule_event()</code> again because its memory
-alignment is different for events with blob&nbsp;data.</p>
+          <p>When event occurs, this signal is emit with the instance of object which includes batch of&nbsp;events.</p>
         </div>
 
           

@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -119,9 +119,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="property" href="property.PortInfo.synth-voices.html">synth-voices</a>
   
-    <a class="property" href="property.PortInfo.timestamp-mode.html">timestamp-mode</a>
+    <a class="property" href="property.PortInfo.tstamp-mode.html">tstamp-mode</a>
   
-    <a class="property" href="property.PortInfo.timestamp-overwrite.html">timestamp-overwrite</a>
+    <a class="property" href="property.PortInfo.tstamp-overwrite.html">tstamp-overwrite</a>
   
     <a class="property" href="property.PortInfo.write-users.html">write-users</a>
   
@@ -163,8 +163,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent information of port.
-A <a href="class.PortInfo.html"><code>ALSASeqPortInfo</code></a> is a GObject-derived object to represent information of port. The call of
+          <p>A GObject-derived object to express information of port.
+A <a href="class.PortInfo.html"><code>ALSASeqPortInfo</code></a> is a GObject-derived object to express information of port. The call of
 <a href="func.get_port_info.html"><code>alsaseq_get_port_info()</code></a> returns the instance of object. The call of <a href="method.UserClient.create_port.html"><code>alsaseq_user_client_create_port()</code></a>
 and <a href="method.UserClient.update_port.html"><code>alsaseq_user_client_update_port()</code></a> requires the instance of&nbsp;object.</p>
 <p>The object wraps <code>struct snd_port_info</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
@@ -275,120 +275,121 @@ and <a href="method.UserClient.update_port.html"><code>alsaseq_user_client_updat
           <h6><a href="property.PortInfo.addr.html">ALSASeq.PortInfo:addr</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The address of&nbsp;port.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.attrs.html">ALSASeq.PortInfo:attrs</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The attributes of port, a set of <code>ALSASeqPortAttrFlag</code>.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.caps.html">ALSASeq.PortInfo:caps</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The capabilities of port, a set of <code>ALSASeqPortCapFlag</code>.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.midi-channels.html">ALSASeq.PortInfo:midi-channels</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The number of channels per <span class="caps">MIDI</span>&nbsp;port.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.midi-voices.html">ALSASeq.PortInfo:midi-voices</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The number of voices per <span class="caps">MIDI</span>&nbsp;port.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.name.html">ALSASeq.PortInfo:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of&nbsp;port.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.queue-id.html">ALSASeq.PortInfo:queue-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of queue to update time stamp when <code>ALSASeqPortInfo:tstamp-overwrite</code> is
+set to True. One of <code>ALSASeqSpecificQueueId</code> is available as&nbsp;well.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.read-users.html">ALSASeq.PortInfo:read-users</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The current number of subscribers to&nbsp;read.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.synth-voices.html">ALSASeq.PortInfo:synth-voices</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The number of voices per synth&nbsp;port.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
-          <h6><a href="property.PortInfo.timestamp-mode.html">ALSASeq.PortInfo:timestamp-mode</a></h6>
+          <h6><a href="property.PortInfo.tstamp-mode.html">ALSASeq.PortInfo:tstamp-mode</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The mode of time stamp. This is effective when the <code>ALSASeqPortInfo:tstamp-overwrite</code> is&nbsp;enabled.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
-          <h6><a href="property.PortInfo.timestamp-overwrite.html">ALSASeq.PortInfo:timestamp-overwrite</a></h6>
+          <h6><a href="property.PortInfo.tstamp-overwrite.html">ALSASeq.PortInfo:tstamp-overwrite</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The mode whether to overwrite time stamp for event when the event is delivered from the&nbsp;port.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
         <div class="">
           <h6><a href="property.PortInfo.write-users.html">ALSASeq.PortInfo:write-users</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The current number of subscribers to&nbsp;write.</p>
           </div>
 
-          
+          <div class="docblock"><p>Available since: 0.3.</p></div>
         </div>
       
       </div>

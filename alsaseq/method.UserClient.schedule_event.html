@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -116,6 +116,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method current" href="method.UserClient.schedule_event.html">schedule_event</a>
   
+    <a class="method" href="method.UserClient.schedule_events.html">schedule_events</a>
+  
     <a class="method" href="method.UserClient.set_info.html">set_info</a>
   
     <a class="method" href="method.UserClient.set_pool.html">set_pool</a>
@@ -150,16 +152,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.h#L73">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.h#L61">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
 <span class="n">alsaseq_user_client_schedule_event</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">ALSASeqUserClient</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSASeqEventCntr</span><span class="o">*</span><span class="w"> </span><span class="n">ev_cntr</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSASeqEvent</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -172,13 +173,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.c#L499">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.c#L545">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Deliver the event immediately, or schedule it into memory pool of the&nbsp;client.</p>
-<p>The call of function executes <code>write(2)</code> system call for <span class="caps">ALSA</span> sequencer character&nbsp;device.</p>
+<p>The call of function executes <code>write(2)</code> system call for <span class="caps">ALSA</span> sequencer character device. When
+<a href="property.ClientPool.output-free.html"><code>ALSASeqClientPool:output-free</code></a> is less than <a href="method.Event.calculate_pool_consumption.html"><code>alsaseq_event_calculate_pool_consumption()</code></a> and
+<a href="method.UserClient.open.html"><code>alsaseq_user_client_open()</code></a> is called without non-blocking flag, the user process can be blocked
+untill enough number of cells becomes&nbsp;available.</p>
       </div>
 
       <div class="docblock">
@@ -206,12 +210,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>ev_cntr</code></td>
-            <td><a href="class.EventCntr.html"><code>ALSASeqEventCntr</code></a></td>
+            <td><code>event</code></td>
+            <td><a href="struct.Event.html"><code>ALSASeqEvent</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>An instance of <a href="class.EventCntr.html"><code>ALSASeqEventCntr</code></a> pointing to&nbsp;events.</p></td>
+            <td><p>An instance of <a href="struct.Event.html"><code>ALSASeqEvent</code></a>.</p></td>
           </tr>
           
           
@@ -221,24 +225,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          
-          
-          <tr class="arg-name">
-            <td><code>count</code></td>
-            <td><code>gsize</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The number of events in the ev_cntr to&nbsp;write.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-          
-          
           
           
           
@@ -256,6 +242,32 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> when the overall operation finishes successfully, else <code>FALSE</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
 
   </section>

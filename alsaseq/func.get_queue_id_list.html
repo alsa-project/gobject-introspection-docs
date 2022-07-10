@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -100,12 +100,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/query.h#L34">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/query.h#L31">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
 <span class="n">alsaseq_get_queue_id_list</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint8</span><span class="o">**</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">gsize</span><span class="o">*</span><span class="w"> </span><span class="n">entry_count</span><span class="p">,</span><span class="w"></span>
@@ -121,7 +121,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/query.c#L460">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/query.c#L516">[src]</a>
         
       </h4>
 
@@ -207,6 +207,32 @@ sequencer character&nbsp;device.</p>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> when the overall operation finishes successfully, else <code>FALSE</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
   </section>
 </section>

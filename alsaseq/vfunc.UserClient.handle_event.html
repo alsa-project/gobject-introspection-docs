@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -106,7 +106,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.h#L31">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.h#L28">[src]</a>
         
       </h4>
 
@@ -131,10 +131,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <p>When event occurs, this signal is emit with the instance of object which
-points to a batch of events. The instance should not be passed directly
-to <code>alsaseq_user_client_schedule_event()</code> again because its memory
-alignment is different for events with blob&nbsp;data.</p>
+        <p>When event occurs, this signal is emit with the instance of object which includes batch of&nbsp;events.</p>
       </div>
 
       <div class="docblock">
@@ -160,12 +157,11 @@ alignment is different for events with blob&nbsp;data.</p>
           
           <tr class="arg-name">
             <td><code>ev_cntr</code></td>
-            <td><a href="class.EventCntr.html"><code>ALSASeqEventCntr</code></a></td>
+            <td><a href="struct.EventCntr.html"><code>ALSASeqEventCntr</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The instance of <a href="class.EventCntr.html"><code>ALSASeqEventCntr</code></a> which
-            points to the batch of&nbsp;events.</p></td>
+            <td><p>The instance of <a href="struct.EventCntr.html"><code>ALSASeqEventCntr</code></a> which includes batch of&nbsp;events.</p></td>
           </tr>
           
           

@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -116,6 +116,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.UserClient.schedule_event.html">schedule_event</a>
   
+    <a class="method" href="method.UserClient.schedule_events.html">schedule_events</a>
+  
     <a class="method" href="method.UserClient.set_info.html">set_info</a>
   
     <a class="method" href="method.UserClient.set_pool.html">set_pool</a>
@@ -150,12 +152,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.h#L90">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.h#L75">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
 <span class="n">alsaseq_user_client_update_queue</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">ALSASeqUserClient</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">ALSASeqQueueInfo</span><span class="o">*</span><span class="w"> </span><span class="n">queue_info</span><span class="p">,</span><span class="w"></span>
@@ -171,7 +173,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.c#L752">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/user-client.c#L920">[src]</a>
         
       </h4>
 
@@ -238,6 +240,32 @@ command for <span class="caps">ALSA</span> sequencer character&nbsp;device.</p>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> when the overall operation finishes successfully, else <code>FALSE</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
 
   </section>

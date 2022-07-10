@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -83,11 +83,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <a href="#classes">Classes</a>
   
   
+    <a href="#interfaces">Interfaces</a>
+  
   
     <a href="#structs">Structs</a>
   
-  
-    <a href="#unions">Unions</a>
   
   
   
@@ -116,7 +116,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a href="https://docs.gtk.org/gobject/" class="external">GObject</a>
   
-    <a href="https://alsa-project.github.io/alsa-gobject-docs/alsatimer/" class="external">ALSATimer</a>
+    <a href="https://alsa-project.github.io/gobject-introspection-docs/alsatimer/" class="external">ALSATimer</a>
   
   </div>
 </div>
@@ -138,7 +138,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>0.2.2</td></tr>
+        <tr><td><em>Version</em></td><td>0.3.0</td></tr>
         <tr><td><em>Authors</em></td><td>Takashi Sakamoto</td></tr>
         <tr><td><em>License</em></td><td>LGPL-3.0-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://alsa-project.github.io/gobject-introspection-docs/alsaseq/" class="external">https://alsa-project.github.io/gobject-introspection-docs/alsaseq/</a></td></tr>
@@ -198,7 +198,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           <tr>
             <td></td>
-            <td><a href="https://alsa-project.github.io/alsa-gobject-docs/alsatimer/" class="external">Browse documentation</a></td>
+            <td><a href="https://alsa-project.github.io/gobject-introspection-docs/alsatimer/" class="external">Browse documentation</a></td>
           </tr>
           
         
@@ -256,11 +256,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="EventCntr" class="symbol" href="class.EventCntr.html">EventCntr</a></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="PortInfo" class="symbol" href="class.PortInfo.html">PortInfo</a></td>
             
           </tr>
@@ -281,7 +276,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="QueueTimer" class="symbol" href="class.QueueTimer.html">QueueTimer</a></td>
+            <td><a title="QueueTimerAlsa" class="symbol" href="class.QueueTimerAlsa.html">QueueTimerAlsa</a></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="RemoveFilter" class="symbol" href="class.RemoveFilter.html">RemoveFilter</a></td>
             
           </tr>
           
@@ -307,6 +307,28 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   </section>
   
   
+  <section>
+    <div class="toggle-wrapper default-hide">
+      <h4 id="interfaces" class="section-header" style="display:flex;">
+        Interfaces
+        <a href="#interfaces" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table style="display:block;">
+          <tbody>
+          
+          <tr class="section-item">
+            <td><a title="QueueTimerCommon" class="symbol" href="iface.QueueTimerCommon.html">QueueTimerCommon</a></td>
+            
+          </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
   
   <section>
     <div class="toggle-wrapper default-hide">
@@ -321,6 +343,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           <tr class="section-item">
             <td><a title="Addr" class="symbol" href="struct.Addr.html">Addr</a></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="Event" class="symbol" href="struct.Event.html">Event</a></td>
+            
+          </tr>
+          
+          <tr class="section-item">
+            <td><a title="EventCntr" class="symbol" href="struct.EventCntr.html">EventCntr</a></td>
             
           </tr>
           
@@ -349,44 +381,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
             
           </tr>
           
-          <tr class="section-item">
-            <td><a title="QueueTimerDataAlsa" class="symbol" href="struct.QueueTimerDataAlsa.html">QueueTimerDataAlsa</a></td>
-            
-          </tr>
-          
-          <tr class="section-item">
-            <td><a title="RemoveFilter" class="symbol" href="struct.RemoveFilter.html">RemoveFilter</a></td>
-            
-          </tr>
-          
           </tbody>
         </table>
       </div>
     </div>
   </section>
   
-  
-  <section>
-    <div class="toggle-wrapper default-hide">
-      <h4 id="unions" class="section-header" style="display:flex;">
-        Unions
-        <a href="#unions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-        <table style="display:block;">
-          <tbody>
-          
-          <tr class="section-item">
-            <td><a title="Tstamp" class="symbol" href="union.Tstamp.html">Tstamp</a></td>
-            
-          </tr>
-          
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
   
   
   
@@ -422,7 +422,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="EventTimestampMode" class="symbol" href="enum.EventTimestampMode.html">EventTimestampMode</a></td>
+            <td><a title="EventTstampMode" class="symbol" href="enum.EventTstampMode.html">EventTstampMode</a></td>
             
           </tr>
           
@@ -495,11 +495,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="PortSubscribeFlag" class="symbol" href="flags.PortSubscribeFlag.html">PortSubscribeFlag</a></td>
-            
-          </tr>
-          
-          <tr class="section-item">
             <td><a title="RemoveFilterFlag" class="symbol" href="flags.RemoveFilterFlag.html">RemoveFilterFlag</a></td>
             
           </tr>
@@ -521,6 +516,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <table style="display:block;">
           <tbody>
+          
+          <tr class="section-item">
+            <td><a title="EventError" class="symbol" href="error.EventError.html">EventError</a></td>
+            
+          </tr>
           
           <tr class="section-item">
             <td><a title="UserClientError" class="symbol" href="error.UserClientError.html">UserClientError</a></td>

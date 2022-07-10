@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSASeq</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -118,7 +118,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code>property output-pool: int [ read, write ]</code></pre>
+        <pre><code>property output-pool: guint [ read, write ]</code></pre>
       </div>
     </div>
 
@@ -127,16 +127,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/seq/client-pool.c#L113">[src]</a>
+        
       </h4>
 
       <div class="docblock">
-        No description available.
+        <p>The total number of cells in memory pool for output direction. The client enqueue any event
+into the pool at scheduling, then the event is copied to input memory pool of destination&nbsp;client.</p>
       </div>
 
       <div class="docblock">
         <table>
           <tr><td>Type:</td>
-            <td><code>gint</code></td>
+            <td><code>guint</code></td>
           </tr>
           
           
