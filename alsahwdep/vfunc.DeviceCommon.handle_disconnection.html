@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSAHwdep.DeviceInfo:iface</title>
+  <title>ALSAHwdep.DeviceCommon.handle_disconnection</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSAHwdep.DeviceInfo:iface"/>
-  <meta property="og:description" content="Reference for property ALSAHwdep.DeviceInfo:iface"/>
-  <meta name="twitter:title" content="ALSAHwdep.DeviceInfo:iface"/>
-  <meta name="twitter:description" content="Reference for property ALSAHwdep.DeviceInfo:iface"/>
+  <meta property="og:title" content="ALSAHwdep.DeviceCommon.handle_disconnection"/>
+  <meta property="og:description" content="Reference for ALSAHwdep.DeviceCommon.handle_disconnection"/>
+  <meta name="twitter:title" content="ALSAHwdep.DeviceCommon.handle_disconnection"/>
+  <meta name="twitter:description" content="Reference for ALSAHwdep.DeviceCommon.handle_disconnection"/>
 
 
   
@@ -77,22 +77,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.DeviceInfo.html">DeviceInfo</a>
+    <a href="iface.DeviceCommon.html">DeviceCommon</a>
   </div>
 </div>
 <div class="section">
-  <h5>Properties</h5>
+  <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="property"href="property.DeviceInfo.card-id.html">card-id</a>
+    <a class="method" href="vfunc.DeviceCommon.create_source.html">create_source</a>
   
-    <a class="property"href="property.DeviceInfo.device-id.html">device-id</a>
+    <a class="method" href="vfunc.DeviceCommon.get_device_info.html">get_device_info</a>
   
-    <a class="property"href="property.DeviceInfo.id.html">id</a>
+    <a class="method" href="vfunc.DeviceCommon.get_protocol_version.html">get_protocol_version</a>
   
-    <a class="property current"href="property.DeviceInfo.iface.html">iface</a>
+    <a class="method current" href="vfunc.DeviceCommon.handle_disconnection.html">handle_disconnection</a>
   
-    <a class="property"href="property.DeviceInfo.name.html">name</a>
+    <a class="method" href="vfunc.DeviceCommon.open.html">open</a>
   
   </div>
 </div>
@@ -104,8 +104,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Property</h3>
-    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span><a href="class.DeviceInfo.html">DeviceInfo</a>:iface</h1>
+    <h3>Virtual Method</h3>
+    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span><a href="iface.DeviceCommon.html">DeviceCommon</a><span class="sep"></span>handle_disconnection</h1>
   </header>
 
   <section>
@@ -113,10 +113,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <h4 id="declaration">
         Declaration
         <a href="#declaration" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.h#L87">[src]</a>
+        
       </h4>
 
-      <div class="docblock">
-        <pre><code>property iface: ALSAHwdep.IfaceType [ read, write, construct-only ]</code></pre>
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="n">handle_disconnection</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSAHwdepDeviceCommon</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</pre></div>
+</code></pre>
       </div>
     </div>
 
@@ -125,19 +133,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-info.c#L137">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.h#L81">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>The type of interface for the hwdep device, one of&nbsp;ALSAHwdepIfaceType.</p>
+        <p>Closure for the <a href="signal.DeviceCommon.handle-disconnection.html"><code>ALSAHwdepDeviceCommon::handle-disconnection</code></a>&nbsp;signal.</p>
       </div>
 
       <div class="docblock">
         <table>
-          <tr><td>Type:</td>
-            <td><a href="enum.IfaceType.html"><code>ALSAHwdepIfaceType</code></a></td>
-          </tr>
           
           
           
@@ -147,21 +152,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       
     </div>
 
-    <div class="flags toggle-wrapper">
-      <h4 id="flags">
-        Flags
-        <a href="#flags" class="anchor"></a>
-      </h4>
+    
 
-      <div class="docblock">
-      <table>
-        <tr><td>Readable</td><td><b>yes</b></td></tr>
-        <tr><td>Writable</td><td><b>yes</b></td></tr>
-        <tr><td>Construct</td><td><b>no</b></td></tr>
-        <tr><td>Construct only</td><td><b>yes</b></td></tr>
-      </table>
-      </div>
-    </div>
+    
 
   </section>
 </section>

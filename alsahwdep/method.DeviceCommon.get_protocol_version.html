@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSAHwdep.get_hwdep_sysname</title>
+  <title>ALSAHwdep.DeviceCommon.get_protocol_version</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSAHwdep.get_hwdep_sysname"/>
-  <meta property="og:description" content="Reference for ALSAHwdep.get_hwdep_sysname"/>
-  <meta name="twitter:title" content="ALSAHwdep.get_hwdep_sysname"/>
-  <meta name="twitter:description" content="Reference for ALSAHwdep.get_hwdep_sysname"/>
+  <meta priority="og:title" content="ALSAHwdep.DeviceCommon.get_protocol_version"/>
+  <meta priority="og:description" content="Reference for ALSAHwdep.DeviceCommon.get_protocol_version"/>
+  <meta name="twitter:title" content="ALSAHwdep.DeviceCommon.get_protocol_version"/>
+  <meta name="twitter:description" content="Reference for ALSAHwdep.DeviceCommon.get_protocol_version"/>
 
 
   
@@ -74,14 +74,26 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         
       </div>
       
-
 <div class="section">
-  <h5>Functions</h5>
+  <h5>Type</h5>
   <div class="links">
+    <a href="iface.DeviceCommon.html">DeviceCommon</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.DeviceCommon.create_source.html">create_source</a>
+  
+    <a class="method" href="method.DeviceCommon.get_device_info.html">get_device_info</a>
+  
+    <a class="method current" href="method.DeviceCommon.get_protocol_version.html">get_protocol_version</a>
+  
+    <a class="method" href="method.DeviceCommon.open.html">open</a>
   
   </div>
 </div>
-
 
     </nav>
     
@@ -90,26 +102,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Function </h3>
-    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span>get_hwdep_sysname</h1>
+    <h3>Method</h3>
+    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span><a href="iface.DeviceCommon.html">DeviceCommon</a><span class="sep"></span>get_protocol_version</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration" style="display:flex;">
+      <h4 style="display:flex;" id="declaration">
         Declaration
-        <a href="#declaration" class="anchor"></a>
+        <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/query.h#L12">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.h#L93">[src]</a>
         
       </h4>
 
-      <div class="docblock">
+      <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
-<span class="n">alsahwdep_get_hwdep_sysname</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">card_id</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">device_id</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"></span>
+<span class="n">alsahwdep_device_common_get_protocol_version</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSAHwdepDeviceCommon</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint16</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">proto_ver_triplet</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -118,17 +129,18 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description" style="display:flex;">
+      <h4 style="display:flex;" id="description">
         Description
-        <a href="#description" class="anchor"></a>
+        <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/query.c#L39">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.c#L119">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Allocate sysname for hwdep device and return it when it&nbsp;exists.</p>
-<p>Nodes under sound subsystem in sysfs are used to gather the&nbsp;information.</p>
+        <p>Get the version of hwdep protocol used currently. The version is expressed as the array with
+three elements; major, minor, and micro version in the order. The length of major version is
+16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
       </div>
 
       <div class="docblock">
@@ -156,58 +168,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>card_id</code></td>
-            <td><code>guint</code></td>
+            <td><code>proto_ver_triplet</code></td>
+            <td>An array of&nbsp;<code>guint16*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The numeridcal <span class="caps">ID</span> of sound&nbsp;card.</p></td>
+            <td><p>The version of protocol used&nbsp;currently.</p></td>
           </tr>
+          <tr><td>&nbsp;</td><td title="direction: inout">The argument will be modified by the function.</td></tr>
           
           
           
           
+          <tr><td>&nbsp;</td><td>The array must have 3 elements.</td></tr>
           
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
-          
-          
-          
-          
-          <tr class="arg-name">
-            <td><code>device_id</code></td>
-            <td><code>guint</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The numeric <span class="caps">ID</span> of hwdep device for the sound&nbsp;card.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <tr class="arg-name">
-            <td><code>sysname</code></td>
-            <td><code>char**</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The string for sysname of hwdep&nbsp;device.</p></td>
-          </tr>
-          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
-          
-          
-          
-          
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: full">The called function takes ownership of the data, and is responsible for freeing it.</td></tr>
-          <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
           
           
           <tr class="arg-name">
@@ -251,6 +227,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </div>
     </div>
     
+
   </section>
 </section>
 

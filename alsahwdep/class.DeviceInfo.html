@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSAHwdep</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -140,8 +140,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent information of <span class="caps">ALSA</span> hwdep device.
-A <a href="class.DeviceInfo.html"><code>ALSAHwdepDeviceInfo</code></a> is a GObject-derived object to represent information of <span class="caps">ALSA</span> hwdep device.
+          <p>A GObject-derived object to express information of <span class="caps">ALSA</span> hwdep device.
+A <a href="class.DeviceInfo.html"><code>ALSAHwdepDeviceInfo</code></a> is a GObject-derived object to express information of <span class="caps">ALSA</span> hwdep device.
 The call of <a href="func.get_device_info.html"><code>alsahwdep_get_device_info()</code></a> returns an instance of the&nbsp;object.</p>
 <p>The object wraps <code>struct snd_hwdep_info</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
         </div>
@@ -230,7 +230,7 @@ The call of <a href="func.get_device_info.html"><code>alsahwdep_get_device_info(
           <h6><a href="property.DeviceInfo.card-id.html">ALSAHwdep.DeviceInfo:card-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of sound&nbsp;card.</p>
           </div>
 
           
@@ -240,7 +240,7 @@ The call of <a href="func.get_device_info.html"><code>alsahwdep_get_device_info(
           <h6><a href="property.DeviceInfo.device-id.html">ALSAHwdep.DeviceInfo:device-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of&nbsp;device.</p>
           </div>
 
           
@@ -250,7 +250,7 @@ The call of <a href="func.get_device_info.html"><code>alsahwdep_get_device_info(
           <h6><a href="property.DeviceInfo.id.html">ALSAHwdep.DeviceInfo:id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The string <span class="caps">ID</span> of the hwdep&nbsp;device.</p>
           </div>
 
           
@@ -260,7 +260,7 @@ The call of <a href="func.get_device_info.html"><code>alsahwdep_get_device_info(
           <h6><a href="property.DeviceInfo.iface.html">ALSAHwdep.DeviceInfo:iface</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The type of interface for the hwdep device, one of&nbsp;ALSAHwdepIfaceType.</p>
           </div>
 
           
@@ -270,7 +270,7 @@ The call of <a href="func.get_device_info.html"><code>alsahwdep_get_device_info(
           <h6><a href="property.DeviceInfo.name.html">ALSAHwdep.DeviceInfo:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of the hwdep&nbsp;device.</p>
           </div>
 
           

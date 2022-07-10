@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSAHwdep.get_hwdep_sysname</title>
+  <title>ALSAHwdep.DeviceCommon.open</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSAHwdep.get_hwdep_sysname"/>
-  <meta property="og:description" content="Reference for ALSAHwdep.get_hwdep_sysname"/>
-  <meta name="twitter:title" content="ALSAHwdep.get_hwdep_sysname"/>
-  <meta name="twitter:description" content="Reference for ALSAHwdep.get_hwdep_sysname"/>
+  <meta property="og:title" content="ALSAHwdep.DeviceCommon.open"/>
+  <meta property="og:description" content="Reference for ALSAHwdep.DeviceCommon.open"/>
+  <meta name="twitter:title" content="ALSAHwdep.DeviceCommon.open"/>
+  <meta name="twitter:description" content="Reference for ALSAHwdep.DeviceCommon.open"/>
 
 
   
@@ -74,14 +74,28 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         
       </div>
       
-
 <div class="section">
-  <h5>Functions</h5>
+  <h5>Type</h5>
   <div class="links">
+    <a href="iface.DeviceCommon.html">DeviceCommon</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.DeviceCommon.create_source.html">create_source</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.get_device_info.html">get_device_info</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.get_protocol_version.html">get_protocol_version</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.handle_disconnection.html">handle_disconnection</a>
+  
+    <a class="method current" href="vfunc.DeviceCommon.open.html">open</a>
   
   </div>
 </div>
-
 
     </nav>
     
@@ -90,26 +104,26 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Function </h3>
-    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span>get_hwdep_sysname</h1>
+    <h3>Virtual Method</h3>
+    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span><a href="iface.DeviceCommon.html">DeviceCommon</a><span class="sep"></span>open</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration" style="display:flex;">
+      <h4 id="declaration">
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/query.h#L12">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.h#L34">[src]</a>
         
       </h4>
 
-      <div class="docblock">
+      <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
-<span class="n">alsahwdep_get_hwdep_sysname</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">card_id</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">device_id</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">sysname</span><span class="p">,</span><span class="w"></span>
+<span class="n">open</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSAHwdepDeviceCommon</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gint</span><span class="w"> </span><span class="n">open_flag</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -118,24 +132,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description" style="display:flex;">
+      <h4 id="description">
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/query.c#L39">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.h#L20">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Allocate sysname for hwdep device and return it when it&nbsp;exists.</p>
-<p>Nodes under sound subsystem in sysfs are used to gather the&nbsp;information.</p>
+        <p>Open one of <span class="caps">ALSA</span> hwdep character devices for the sound&nbsp;card.</p>
+<p>The call of function is expected to execute <code>open(2)</code> system call for <span class="caps">ALSA</span> hwdep character&nbsp;device.</p>
       </div>
 
       <div class="docblock">
         <table>
-          
-          
-          
           
           
           
@@ -156,12 +167,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>card_id</code></td>
-            <td><code>guint</code></td>
+            <td><code>path</code></td>
+            <td><code>const gchar*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The numeridcal <span class="caps">ID</span> of sound&nbsp;card.</p></td>
+            <td><p>The path to special file for <span class="caps">ALSA</span> HwDep character&nbsp;device.</p></td>
           </tr>
           
           
@@ -170,44 +181,26 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          
-          
-          
-          <tr class="arg-name">
-            <td><code>device_id</code></td>
-            <td><code>guint</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The numeric <span class="caps">ID</span> of hwdep device for the sound&nbsp;card.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <tr class="arg-name">
-            <td><code>sysname</code></td>
-            <td><code>char**</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The string for sysname of hwdep&nbsp;device.</p></td>
-          </tr>
-          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
-          
-          
-          
-          
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: full">The called function takes ownership of the data, and is responsible for freeing it.</td></tr>
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
+          
+          <tr class="arg-name">
+            <td><code>open_flag</code></td>
+            <td><code>gint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The flag of <code>open(2)</code> system&nbsp;call.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           <tr class="arg-name">
@@ -251,6 +244,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </div>
     </div>
     
+
   </section>
 </section>
 

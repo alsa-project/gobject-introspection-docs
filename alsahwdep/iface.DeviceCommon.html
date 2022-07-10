@@ -1,0 +1,514 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ALSAHwdep.DeviceCommon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="ALSAHwdep.DeviceCommon"/>
+  <meta property="og:description" content="Reference for ALSAHwdep.DeviceCommon"/>
+  <meta name="twitter:title" content="ALSAHwdep.DeviceCommon"/>
+  <meta name="twitter:description" content="Reference for ALSAHwdep.DeviceCommon"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="ALSAHwdep" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">ALSAHwdep</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.3.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.DeviceCommon.html#description">DeviceCommon</a>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.DeviceCommon.create_source.html">create_source</a>
+  
+    <a class="method" href="method.DeviceCommon.get_device_info.html">get_device_info</a>
+  
+    <a class="method" href="method.DeviceCommon.get_protocol_version.html">get_protocol_version</a>
+  
+    <a class="method" href="method.DeviceCommon.open.html">open</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.DeviceCommon.handle-disconnection.html">handle-disconnection</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.DeviceCommon.create_source.html">create_source</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.get_device_info.html">get_device_info</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.get_protocol_version.html">get_protocol_version</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.handle_disconnection.html">handle_disconnection</a>
+  
+    <a class="method" href="vfunc.DeviceCommon.open.html">open</a>
+  
+  </div>
+</div>
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">ALSAHwdep</a><span class="sep"></span>DeviceCommon</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/hwdep/device-common.c#L4">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface ALSAHwdep.DeviceCommon : GObject.Object</code></pre>
+
+        <div class="docblock">
+          <p>An interface to express common features of <span class="caps">ALSA</span> HwDep device.
+A <a href="iface.DeviceCommon.html"><code>ALSAHwdepDeviceCommon</code></a> should be implemented by any type of <span class="caps">ALSA</span> HwDep&nbsp;device.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            <tr><td>Available since:</td><td>0.3.</td></tr>
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement DeviceCommon, your type must inherit from
+        <a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
+      </div>
+    </div>
+
+    
+
+    
+
+    
+    <div class="methods toggle-wrapper">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="method.DeviceCommon.create_source.html">alsahwdep_device_common_create_source</a></h6>
+
+        <div class="docblock">
+          <p>Allocate <code>GSource</code> structure to handle events from <span class="caps">ALSA</span> hwdep character device. In
+each iteration of <code>GMainContext</code>, the <code>read(2)</code> system call is executed to dispatch
+hwdep event, according to the result of <code>poll(2)</code> system&nbsp;call.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="method.DeviceCommon.get_device_info.html">alsahwdep_device_common_get_device_info</a></h6>
+
+        <div class="docblock">
+          <p>Get the information according to given numeric IDs for card and device. The call of function is
+expected to executes <code>ioctl(2)</code> system call with <code>SNDRV_CTL_IOCTL_HWDEP_INFO</code> command to the
+character&nbsp;device.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="method.DeviceCommon.get_protocol_version.html">alsahwdep_device_common_get_protocol_version</a></h6>
+
+        <div class="docblock">
+          <p>Get the version of hwdep protocol used currently. The version is expressed as the array with
+three elements; major, minor, and micro version in the order. The length of major version is
+16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6><a href="method.DeviceCommon.open.html">alsahwdep_device_common_open</a></h6>
+
+        <div class="docblock">
+          <p>Open one of <span class="caps">ALSA</span> hwdep character devices for the sound&nbsp;card.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="signal.DeviceCommon.handle-disconnection.html">ALSAHwdep.DeviceCommon::handle-disconnection</a></h6>
+
+        <div class="docblock">
+          <p>Emitted when the sound card is not available anymore due to unbinding driver or hot
+unplugging. The owner of the object should prepare to call <code>g_object_unref()</code>
+so that <span class="caps">ALSA</span> HwDep character device is going to be closed and sound card is&nbsp;released.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ALSAHwdepDeviceCommonInterface {
+  GTypeInterface parent_iface;
+  gboolean (* open) (
+    ALSAHwdepDeviceCommon* self,
+    const gchar* path,
+    gint open_flag,
+    GError** error
+  );
+  gboolean (* get_protocol_version) (
+    ALSAHwdepDeviceCommon* self,
+    guint16* const* proto_ver_triplet,
+    GError** error
+  );
+  gboolean (* get_device_info) (
+    ALSAHwdepDeviceCommon* self,
+    ALSAHwdepDeviceInfo** device_info,
+    GError** error
+  );
+  gboolean (* create_source) (
+    ALSAHwdepDeviceCommon* self,
+    GSource** source,
+    GError** error
+  );
+  void (* handle_disconnection) (
+    ALSAHwdepDeviceCommon* self
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_iface</code></td>
+          <td style="vertical-align:top"><pre><code>GTypeInterface</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>open</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* open) (
+    ALSAHwdepDeviceCommon* self,
+    const gchar* path,
+    gint open_flag,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_protocol_version</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* get_protocol_version) (
+    ALSAHwdepDeviceCommon* self,
+    guint16* const* proto_ver_triplet,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_device_info</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* get_device_info) (
+    ALSAHwdepDeviceCommon* self,
+    ALSAHwdepDeviceInfo** device_info,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>create_source</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* create_source) (
+    ALSAHwdepDeviceCommon* self,
+    GSource** source,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>handle_disconnection</code></td>
+          <td style="vertical-align:top"><pre><code>void (* handle_disconnection) (
+    ALSAHwdepDeviceCommon* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-create_source"><a href="vfunc.DeviceCommon.create_source.html">ALSAHwdep.DeviceCommon.create_source</a></h6>
+
+        <div class="docblock">
+          <p>Allocate <code>GSource</code> structure to handle events from <span class="caps">ALSA</span> hwdep character device. In
+each iteration of <code>GMainContext</code>, the <code>read(2)</code> system call is executed to dispatch
+hwdep event, according to the result of <code>poll(2)</code> system&nbsp;call.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_device_info"><a href="vfunc.DeviceCommon.get_device_info.html">ALSAHwdep.DeviceCommon.get_device_info</a></h6>
+
+        <div class="docblock">
+          <p>Get the information according to given numeric IDs for card and device. The call of function is
+expected to executes <code>ioctl(2)</code> system call with <code>SNDRV_CTL_IOCTL_HWDEP_INFO</code> command to the
+character&nbsp;device.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_protocol_version"><a href="vfunc.DeviceCommon.get_protocol_version.html">ALSAHwdep.DeviceCommon.get_protocol_version</a></h6>
+
+        <div class="docblock">
+          <p>Get the version of hwdep protocol used currently. The version is expressed as the array with
+three elements; major, minor, and micro version in the order. The length of major version is
+16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-handle_disconnection"><a href="vfunc.DeviceCommon.handle_disconnection.html">ALSAHwdep.DeviceCommon.handle_disconnection</a></h6>
+
+        <div class="docblock">
+          <p>Closure for the <code>ALSAHwdepDeviceCommon::handle-disconnection</code> signal.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-open"><a href="vfunc.DeviceCommon.open.html">ALSAHwdep.DeviceCommon.open</a></h6>
+
+        <div class="docblock">
+          <p>Open one of <span class="caps">ALSA</span> hwdep character devices for the sound&nbsp;card.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
