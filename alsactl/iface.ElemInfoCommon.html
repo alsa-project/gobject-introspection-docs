@@ -1,0 +1,322 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ALSACtl.ElemInfoCommon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="ALSACtl.ElemInfoCommon"/>
+  <meta property="og:description" content="Reference for ALSACtl.ElemInfoCommon"/>
+  <meta name="twitter:title" content="ALSACtl.ElemInfoCommon"/>
+  <meta name="twitter:description" content="Reference for ALSACtl.ElemInfoCommon"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">ALSACtl</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.3.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.ElemInfoCommon.html#description">ElemInfoCommon</a>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.ElemInfoCommon.access.html">access</a>
+  
+    <a class="property" href="property.ElemInfoCommon.elem-id.html">elem-id</a>
+  
+    <a class="property" href="property.ElemInfoCommon.elem-type.html">elem-type</a>
+  
+    <a class="property" href="property.ElemInfoCommon.owner.html">owner</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">ALSACtl</a><span class="sep"></span>ElemInfoCommon</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info-common.c#L4">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface ALSACtl.ElemInfoCommon : GObject.Object</code></pre>
+
+        <div class="docblock">
+          <p>An interface to express common features of element information.
+A <a href="iface.ElemInfoCommon.html"><code>ALSACtlElemInfoCommon</code></a> should be implemented by any type of element&nbsp;information.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            <tr><td>Available since:</td><td>0.3.</td></tr>
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement ElemInfoCommon, your type must inherit from
+        <a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
+      </div>
+    </div>
+
+    
+    <div class="implementations toggle-wrapper default-hide">
+      <h4 id="implementations">Implementations<a href="#implementations" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li><a href="class.ElemInfoBoolean.html">ALSACtlElemInfoBoolean</a></li>
+        
+          <li><a href="class.ElemInfoBytes.html">ALSACtlElemInfoBytes</a></li>
+        
+          <li><a href="class.ElemInfoEnumerated.html">ALSACtlElemInfoEnumerated</a></li>
+        
+          <li><a href="class.ElemInfoIec60958.html">ALSACtlElemInfoIec60958</a></li>
+        
+          <li><a href="class.ElemInfoInteger.html">ALSACtlElemInfoInteger</a></li>
+        
+          <li><a href="class.ElemInfoInteger64.html">ALSACtlElemInfoInteger64</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="properties toggle-wrapper">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="property.ElemInfoCommon.access.html">ALSACtl.ElemInfoCommon:access</a></h6>
+
+        <div class="docblock">
+          <p>The access permission for the element with <code>ALSACtlElemAccessFlag</code>.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.3.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="property.ElemInfoCommon.elem-id.html">ALSACtl.ElemInfoCommon:elem-id</a></h6>
+
+        <div class="docblock">
+          <p>The identifier of&nbsp;element.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.3.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="property.ElemInfoCommon.elem-type.html">ALSACtl.ElemInfoCommon:elem-type</a></h6>
+
+        <div class="docblock">
+          <p>The type of element, one of <code>ALSACtlElemType</code>.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.3.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="property.ElemInfoCommon.owner.html">ALSACtl.ElemInfoCommon:owner</a></h6>
+
+        <div class="docblock">
+          <p>The value of <span class="caps">PID</span> for process to own the&nbsp;element.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.3.</p></div>
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ALSACtlElemInfoCommonInterface {
+  GTypeInterface parent_iface;
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_iface</code></td>
+          <td style="vertical-align:top"><pre><code>GTypeInterface</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

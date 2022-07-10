@@ -68,7 +68,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSACtl</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -176,12 +176,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A boxed object to represent the container of array of values for any type of element.
-A <a href="class.ElemValue.html"><code>ALSACtlElemValue</code></a> is boxed object to represent the container of values for any type of
-element. The arrays of values for each type of element shares the same storage, thus it&#8217;s
-important for applications to distinguish the type of element in advance of accessing the
-array. The object is used for the call of <a href="method.Card.write_elem_value.html"><code>alsactl_card_write_elem_value()</code></a> and
-<a href="method.Card.read_elem_value.html"><code>alsactl_card_read_elem_value()</code></a>.</p>
+          <p>A GObject-derived object to express the container of array for values specific to element type.
+A <a href="class.ElemValue.html"><code>ALSACtlElemValue</code></a> includes several types of array for values specific to element type. The
+arrays shares the same internal storage, thus the user application should decide the type of
+array according to the type of element when accessing to the array. The object is used for the
+call of <a href="method.Card.write_elem_value.html"><code>alsactl_card_write_elem_value()</code></a> and <a href="method.Card.read_elem_value.html"><code>alsactl_card_read_elem_value()</code></a>.</p>
 <p>The object wraps <code>struct snd_ctl_elem_value</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
         </div>
 
@@ -267,7 +266,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_bool.html">alsactl_elem_value_get_bool</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of boolean type from internal&nbsp;data.</p>
+            <p>Refer to the array specific to <code>ALSACtlElemType</code>.<span class="caps">BOOLEAN</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -275,7 +274,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_bytes.html">alsactl_elem_value_get_bytes</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of bytes type into internal&nbsp;storage.</p>
+            <p>Refer to the array specific to <code>ALSACtlElemType</code>.<span class="caps">BYTES</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -283,7 +282,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_enum.html">alsactl_elem_value_get_enum</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of enumeration index from internal&nbsp;storage.</p>
+            <p>Refer to the array specific to <code>ALSACtlElemType</code>.<span class="caps">ENUMERATED</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -291,7 +290,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_iec60958_channel_status.html">alsactl_elem_value_get_iec60958_channel_status</a></h6>
           <div class="docblock">
-            <p>Copy channel status of <span class="caps">IEC</span> 60958 from internal&nbsp;storage.</p>
+            <p>Refer to the array specific to <code>ALSACtlElemType</code>.<span class="caps">IEC60958</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -299,7 +298,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_iec60958_user_data.html">alsactl_elem_value_get_iec60958_user_data</a></h6>
           <div class="docblock">
-            <p>Copy user data of <span class="caps">IEC</span> 60958 from internal&nbsp;storage.</p>
+            <p>Refer to the array specific to <code>ALSACtlElemType</code>.<span class="caps">IEC60958</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -307,7 +306,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_int.html">alsactl_elem_value_get_int</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of integer type from internal&nbsp;storage.</p>
+            <p>Refer to the array for <code>ALSACtlElemType</code>.<span class="caps">INTEGER</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -315,7 +314,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.get_int64.html">alsactl_elem_value_get_int64</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of integer64 type from internal&nbsp;storage.</p>
+            <p>Refer to the array for <code>ALSACtlElemType</code>.<span class="caps">INTEGER64</span> element in internal&nbsp;storage.</p>
           </div>
           
         </div>
@@ -323,7 +322,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_bool.html">alsactl_elem_value_set_bool</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of boolean type into internal&nbsp;data.</p>
+            <p>Copy the array into internal data for <code>ALSACtlElemType</code>.<span class="caps">BOOLEAN</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -331,7 +330,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_bytes.html">alsactl_elem_value_set_bytes</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of bytes type into internal&nbsp;storage.</p>
+            <p>Copy the array into internal storage for <code>ALSACtlElemType</code>.<span class="caps">BYTES</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -339,7 +338,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_enum.html">alsactl_elem_value_set_enum</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of enumeration index into internal&nbsp;storage.</p>
+            <p>Copy the array into internal storage for <code>ALSACtlElemType</code>.<span class="caps">ENUMERATED</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -347,7 +346,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_iec60958_channel_status.html">alsactl_elem_value_set_iec60958_channel_status</a></h6>
           <div class="docblock">
-            <p>Copy the given channel status of <span class="caps">IEC</span> 60958 into internal&nbsp;storage.</p>
+            <p>Copy the channel status bits into internal storage for <code>ALSACtlElemType</code>.<span class="caps">IEC60958</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -355,7 +354,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_iec60958_user_data.html">alsactl_elem_value_set_iec60958_user_data</a></h6>
           <div class="docblock">
-            <p>Copy the given user data of <span class="caps">IEC</span> 60958 into internal&nbsp;storage.</p>
+            <p>Copy the user data bits into internal storage for <code>ALSACtlElemType</code>.<span class="caps">IEC60958</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -363,7 +362,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_int.html">alsactl_elem_value_set_int</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of integer type into internal&nbsp;storage.</p>
+            <p>Copy the array into internal storage for <code>ALSACtlElemType</code>.<span class="caps">INTEGER</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -371,7 +370,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
         <div class="">
           <h6><a href="method.ElemValue.set_int64.html">alsactl_elem_value_set_int64</a></h6>
           <div class="docblock">
-            <p>Copy the array for values of integer64 type into internal&nbsp;storage.</p>
+            <p>Copy the array into internal storage for <code>ALSACtlElemType</code>.<span class="caps">INTEGER64</span>&nbsp;element.</p>
           </div>
           
         </div>
@@ -410,7 +409,7 @@ array. The object is used for the call of <a href="method.Card.write_elem_value.
           <h6><a href="property.ElemValue.elem-id.html">ALSACtl.ElemValue:elem-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The identifier of&nbsp;element.</p>
           </div>
 
           

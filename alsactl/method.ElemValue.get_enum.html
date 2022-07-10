@@ -68,7 +68,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSACtl</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -132,7 +132,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-value.h#L31">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-value.h#L29">[src]</a>
         
       </h4>
 
@@ -140,8 +140,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
 <span class="n">alsactl_elem_value_get_enum</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">ALSACtlElemValue</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint32</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">gsize</span><span class="o">*</span><span class="w"> </span><span class="n">value_count</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint32</span><span class="o">**</span><span class="w"> </span><span class="n">values</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -153,12 +152,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-value.c#L215">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-value.c#L221">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Copy the array for values of enumeration index from internal&nbsp;storage.</p>
+        <p>Refer to the array specific to <a href="enum.ElemType.html"><code>ALSACtlElemType</code></a>.<span class="caps">ENUMERATED</span> element in internal&nbsp;storage.</p>
       </div>
 
       <div class="docblock">
@@ -191,34 +190,16 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The array for values of enumeration&nbsp;index.</p></td>
+            <td><p>The array for enumeration index&nbsp;values.</p></td>
           </tr>
-          <tr><td>&nbsp;</td><td title="direction: inout">The argument will be modified by the function.</td></tr>
+          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
           
           
           
+          <tr><td>&nbsp;</td><td>The array must have 128 elements.</td></tr>
           
-          <tr><td>&nbsp;</td><td>The length of the array is specified in the <code>value_count</code> argument.</td></tr>
-          <tr><td>&nbsp;</td><td title="transfer: full">The instance takes ownership of the data, and is responsible for freeing it.</td></tr>
-          
-          
-          <tr class="arg-name">
-            <td><code>value_count</code></td>
-            <td><code>gsize*</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The number of values up to&nbsp;128.</p></td>
-          </tr>
-          <tr><td>&nbsp;</td><td title="direction: inout">The argument will be modified by the function.</td></tr>
-          
-          
-          
-          
-          
-          
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           

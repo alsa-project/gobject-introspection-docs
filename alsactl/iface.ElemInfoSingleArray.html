@@ -1,0 +1,285 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ALSACtl.ElemInfoSingleArray</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="ALSACtl.ElemInfoSingleArray"/>
+  <meta property="og:description" content="Reference for ALSACtl.ElemInfoSingleArray"/>
+  <meta name="twitter:title" content="ALSACtl.ElemInfoSingleArray"/>
+  <meta name="twitter:description" content="Reference for ALSACtl.ElemInfoSingleArray"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">ALSACtl</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.3.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.ElemInfoSingleArray.html#description">ElemInfoSingleArray</a>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.ElemInfoSingleArray.value-count.html">value-count</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">ALSACtl</a><span class="sep"></span>ElemInfoSingleArray</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info-single-array.c#L4">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface ALSACtl.ElemInfoSingleArray : ALSACtl.ElemInfoCommon</code></pre>
+
+        <div class="docblock">
+          <p>An interface to express information of element which has single value array.
+A <a href="iface.ElemInfoSingleArray.html"><code>ALSACtlElemInfoSingleArray</code></a> should be implemented by the type of information for element
+whieh has single value&nbsp;array.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            <tr><td>Available since:</td><td>0.3.</td></tr>
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement ElemInfoSingleArray, your type must inherit from
+        <a href="class.ElemInfoCommon.html"><code>ALSACtlElemInfoCommon</code></a>.</p>
+      </div>
+    </div>
+
+    
+    <div class="implementations toggle-wrapper default-hide">
+      <h4 id="implementations">Implementations<a href="#implementations" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li><a href="class.ElemInfoBoolean.html">ALSACtlElemInfoBoolean</a></li>
+        
+          <li><a href="class.ElemInfoBytes.html">ALSACtlElemInfoBytes</a></li>
+        
+          <li><a href="class.ElemInfoEnumerated.html">ALSACtlElemInfoEnumerated</a></li>
+        
+          <li><a href="class.ElemInfoInteger.html">ALSACtlElemInfoInteger</a></li>
+        
+          <li><a href="class.ElemInfoInteger64.html">ALSACtlElemInfoInteger64</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="properties toggle-wrapper">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="property.ElemInfoSingleArray.value-count.html">ALSACtl.ElemInfoSingleArray:value-count</a></h6>
+
+        <div class="docblock">
+          <p>The count of elements in value array of the&nbsp;element.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.3.</p></div>
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ALSACtlElemInfoSingleArrayInterface {
+  GTypeInterface parent_iface;
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_iface</code></td>
+          <td style="vertical-align:top"><pre><code>GTypeInterface</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

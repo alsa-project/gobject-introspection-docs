@@ -68,7 +68,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSACtl</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -200,8 +200,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>An GObject-derived object to represent sound card.
-A <a href="class.Card.html"><code>ALSACtlCard</code></a> is a GObject-derived object to represent sound card. Applications use the
+          <p>An GObject-derived object to express sound card.
+A <a href="class.Card.html"><code>ALSACtlCard</code></a> is a GObject-derived object to express sound card. Applications use the
 instance of object to manipulate functionalities on sound card. After the call of
 <a href="method.Card.open.html"><code>alsactl_card_open()</code></a> for the numeric <span class="caps">ID</span> of sound card, the object maintains file descriptor till
 object&nbsp;destruction.</p>
@@ -332,7 +332,7 @@ system&nbsp;call.</p>
         <div class="">
           <h6><a href="method.Card.get_protocol_version.html">alsactl_card_get_protocol_version</a></h6>
           <div class="docblock">
-            <p>Get the version of control protocol currently used. The version is represented as the array with
+            <p>Get the version of control protocol currently used. The version is expressed as the array with
 three elements; major, minor, and micro version in the order. The length of major version is
 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
           </div>
@@ -438,7 +438,7 @@ bytes with the&nbsp;data.</p>
           <h6><a href="property.Card.devnode.html">ALSACtl.Card:devnode</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The full path to special file of control character&nbsp;device.</p>
           </div>
 
           
@@ -448,7 +448,7 @@ bytes with the&nbsp;data.</p>
           <h6><a href="property.Card.subscribed.html">ALSACtl.Card:subscribed</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>Whether to be subscribed for&nbsp;event.</p>
           </div>
 
           

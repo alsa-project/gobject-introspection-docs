@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSACtl.ElemInfo.new</title>
+  <title>ALSACtl.ElemInfoBytes.new</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSACtl.ElemInfo.new"/>
-  <meta property="og:description" content="Reference for ALSACtl.ElemInfo.new"/>
-  <meta name="twitter:title" content="ALSACtl.ElemInfo.new"/>
-  <meta name="twitter:description" content="Reference for ALSACtl.ElemInfo.new"/>
+  <meta property="og:title" content="ALSACtl.ElemInfoBytes.new"/>
+  <meta property="og:description" content="Reference for ALSACtl.ElemInfoBytes.new"/>
+  <meta name="twitter:title" content="ALSACtl.ElemInfoBytes.new"/>
+  <meta name="twitter:description" content="Reference for ALSACtl.ElemInfoBytes.new"/>
 
 
   
@@ -68,21 +68,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSACtl</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.ElemInfo.html">ElemInfo</a>
+    <a href="class.ElemInfoBytes.html">ElemInfoBytes</a>
   </div>
 </div>
 <div class="section">
   <h5>Constructors</h5>
   <div class="links">
   
-    <a class="method current" href="ctor.ElemInfo.new.html">new</a>
+    <a class="method current" href="ctor.ElemInfoBytes.new.html">new</a>
   
   </div>
 </div>
@@ -95,7 +95,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Constructor</h3>
-    <h1><a href="index.html">ALSACtl</a><span class="sep"></span><a href="class.ElemInfo.html">ElemInfo</a><span class="sep"></span>new</h1>
+    <h1><a href="index.html">ALSACtl</a><span class="sep"></span><a href="class.ElemInfoBytes.html">ElemInfoBytes</a><span class="sep"></span>new</h1>
   </header>
 
   <section>
@@ -104,15 +104,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info.h#L17">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info-bytes.h#L17">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="n">ALSACtlElemInfo</span><span class="o">*</span><span class="w"></span>
-<span class="n">alsactl_elem_info_new</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSACtlElemType</span><span class="w"> </span><span class="n">elem_type</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">ALSACtlElemInfoBytes</span><span class="o">*</span><span class="w"></span>
+<span class="n">alsactl_elem_info_bytes_new</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -124,12 +123,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info.c#L154">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info-bytes.c#L71">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Allocate and return the instance of <a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a>.</p>
+        <p>Allocate and return an instance of <a href="class.ElemInfoBytes.html"><code>ALSACtlElemInfoBytes</code></a>.</p>
       </div>
 
       <div class="docblock">
@@ -145,47 +144,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     
-    <div class="parameters toggle-wrapper">
-      <h4 id="parameters">
-        Parameters
-        <a href="#parameters" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-        <table class="arguments">
-          
-          <tr class="arg-name">
-            <td><code>elem_type</code></td>
-            <td><a href="enum.ElemType.html"><code>ALSACtlElemType</code></a></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>The type of element, one of <a href="enum.ElemType.html"><code>ALSACtlElemType</code></a>.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <tr class="arg-name">
-            <td><code>error</code></td>
-            <td><code>GError **</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td>The return location for a <code>GError*</code>, or <code>NULL</code>.</td>
-          </tr>
-          
-        </table>
-      </div>
-    </div>
-    
 
     
     <div class="return-value toggle-wrapper">
@@ -198,11 +156,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="returns">
           <tr class="arg-name">
             <td>Returns:</td>
-            <td><a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a></td>
+            <td><a href="class.ElemInfoBytes.html"><code>ALSACtlElemInfoBytes</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>An instance of <a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a>.</p></td>
+            <td><p>An instance of <a href="class.ElemInfoBytes.html"><code>ALSACtlElemInfoBytes</code></a>.</p></td>
           </tr>
           
           

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSACtl.ElemInfo</title>
+  <title>ALSACtl.ElemInfoBytes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSACtl.ElemInfo"/>
-  <meta property="og:description" content="Reference for ALSACtl.ElemInfo"/>
-  <meta name="twitter:title" content="ALSACtl.ElemInfo"/>
-  <meta name="twitter:description" content="Reference for ALSACtl.ElemInfo"/>
+  <meta property="og:title" content="ALSACtl.ElemInfoBytes"/>
+  <meta property="og:description" content="Reference for ALSACtl.ElemInfoBytes"/>
+  <meta name="twitter:title" content="ALSACtl.ElemInfoBytes"/>
+  <meta name="twitter:description" content="Reference for ALSACtl.ElemInfoBytes"/>
 
 
   
@@ -68,14 +68,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSACtl</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a class="current" href="class.ElemInfo.html#description">ElemInfo</a>
+    <a class="current" href="class.ElemInfoBytes.html#description">ElemInfoBytes</a>
   </div>
 </div>
 
@@ -84,7 +84,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Constructors</h5>
   <div class="links">
   
-    <a class="ctor" href="ctor.ElemInfo.new.html">new</a>
+    <a class="ctor" href="ctor.ElemInfoBytes.new.html">new</a>
   
   </div>
 </div>
@@ -93,43 +93,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
 
 
-<div class="section">
-  <h5>Instance methods</h5>
-  <div class="links">
-  
-    <a class="method" href="method.ElemInfo.get_enum_data.html">get_enum_data</a>
-  
-    <a class="method" href="method.ElemInfo.get_int64_data.html">get_int64_data</a>
-  
-    <a class="method" href="method.ElemInfo.get_int_data.html">get_int_data</a>
-  
-    <a class="method" href="method.ElemInfo.set_enum_data.html">set_enum_data</a>
-  
-    <a class="method" href="method.ElemInfo.set_int64_data.html">set_int64_data</a>
-  
-    <a class="method" href="method.ElemInfo.set_int_data.html">set_int_data</a>
-  
-  </div>
-</div>
 
-
-
-<div class="section">
-  <h5>Properties</h5>
-  <div class="links">
-  
-    <a class="property" href="property.ElemInfo.access.html">access</a>
-  
-    <a class="property" href="property.ElemInfo.elem-id.html">elem-id</a>
-  
-    <a class="property" href="property.ElemInfo.owner.html">owner</a>
-  
-    <a class="property" href="property.ElemInfo.type.html">type</a>
-  
-    <a class="property" href="property.ElemInfo.value-count.html">value-count</a>
-  
-  </div>
-</div>
 
 
 
@@ -147,7 +111,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Class</h3>
-    <h1 aria-label="Name"><a href="index.html">ALSACtl</a><span class="sep" role="presentation"></span>ElemInfo</h1>
+    <h1 aria-label="Name"><a href="index.html">ALSACtl</a><span class="sep" role="presentation"></span>ElemInfoBytes</h1>
   </header>
 
   <section>
@@ -157,17 +121,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info.c#L6">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/ctl/elem-info-bytes.c#L4">[src]</a>
           
         </h4>
 
-        <pre><code>class ALSACtl.ElemInfo : GObject.Object {
+        <pre><code>class ALSACtl.ElemInfoBytes : GObject.Object {
   parent_instance: GObject
 }</pre></code>
 
         <div class="docblock">
-          <p>An GObject-derived object to represent the information of any type of element.
-A <a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a> is an GObject-derived object to represent the information of any type of&nbsp;element.</p>
+          <p>An object to express information for bytes type of element.
+A <a href="javascript:void(0)" data-namespace="GObject" data-link="class.Object.html" class="external"><code>GObject</code></a> derived object class for bytes type of&nbsp;element.</p>
 <p>The object wraps <code>struct snd_ctl_elem_info</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
         </div>
 
@@ -207,6 +171,27 @@ A <a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a> is an GObject-d
     
 
     
+    <div class="toggle-wrapper implements">
+      <h4 id="implements">
+        Implements
+        <a href="#implements" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="interface"><a href="iface.ElemInfoCommon.html" title="ElemInfoCommon">ALSACtlElemInfoCommon</a></li>
+          
+        
+          
+          <li class="interface"><a href="iface.ElemInfoSingleArray.html" title="ElemInfoSingleArray">ALSACtlElemInfoSingleArray</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
 
     
     <div class="toggle-wrapper constructors">
@@ -218,10 +203,10 @@ A <a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a> is an GObject-d
       <div class="docblock">
       
         <div class="">
-          <h6><a href="ctor.ElemInfo.new.html">alsactl_elem_info_new</a></h6>
+          <h6><a href="ctor.ElemInfoBytes.new.html">alsactl_elem_info_bytes_new</a></h6>
 
           <div class="docblock">
-            <p>Allocate and return the instance of <code>ALSACtlElemInfo</code>.</p>
+            <p>Allocate and return an instance of <code>ALSACtlElemInfoBytes</code>.</p>
           </div>
 
           
@@ -242,64 +227,6 @@ A <a href="class.ElemInfo.html"><code>ALSACtlElemInfo</code></a> is an GObject-d
 
       <div class="docblock">
       
-        <div class="">
-          <h6><a href="method.ElemInfo.get_enum_data.html">alsactl_elem_info_get_enum_data</a></h6>
-          <div class="docblock">
-            <p>Refer to the array with elements for the label entries of enumerated element in internal storage.
-The call of function is successful as long as the information is for enumerated&nbsp;type.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ElemInfo.get_int64_data.html">alsactl_elem_info_get_int64_data</a></h6>
-          <div class="docblock">
-            <p>Refer to the array with elements for the data of integer64 element; minimum value, maximum
-value, and value step in the order. The call of function is successful as long as the
-information is for integer64&nbsp;type.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ElemInfo.get_int_data.html">alsactl_elem_info_get_int_data</a></h6>
-          <div class="docblock">
-            <p>Refer to the array with elements for the data of integer element; minimum value, maximum value,
-and value step in the order. The call of function is successful as long as the information is
-for integer&nbsp;type.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ElemInfo.set_enum_data.html">alsactl_elem_info_set_enum_data</a></h6>
-          <div class="docblock">
-            <p>Copy the array with elements for the label entries of enumerated element into internal storage.
-The call of function is successful as long as the information is for enumerated&nbsp;type.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ElemInfo.set_int64_data.html">alsactl_elem_info_set_int64_data</a></h6>
-          <div class="docblock">
-            <p>Get the array with elements for the data of integer64 element; minimum value, maximum value, and
-value step in the order. The call of function is successful as long as the information is for
-integer64&nbsp;type.</p>
-          </div>
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="method.ElemInfo.set_int_data.html">alsactl_elem_info_set_int_data</a></h6>
-          <div class="docblock">
-            <p>Get the array with elements for the data of integer element; minimum value, maximum value, and
-value step in the order. The call of function is successful as long as the information is for
-integer&nbsp;type.</p>
-          </div>
-          
-        </div>
-      
       </div>
 
       
@@ -317,6 +244,10 @@ integer&nbsp;type.</p>
       
 
       
+        
+      
+        
+      
     </div>
     
 
@@ -328,65 +259,52 @@ integer&nbsp;type.</p>
       </h4>
 
       
-      <div class="docblock">
-      
-        <div class="">
-          <h6><a href="property.ElemInfo.access.html">ALSACtl.ElemInfo:access</a></h6>
-
-          <div class="docblock">
-            No description available.
-          </div>
-
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="property.ElemInfo.elem-id.html">ALSACtl.ElemInfo:elem-id</a></h6>
-
-          <div class="docblock">
-            No description available.
-          </div>
-
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="property.ElemInfo.owner.html">ALSACtl.ElemInfo:owner</a></h6>
-
-          <div class="docblock">
-            No description available.
-          </div>
-
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="property.ElemInfo.type.html">ALSACtl.ElemInfo:type</a></h6>
-
-          <div class="docblock">
-            No description available.
-          </div>
-
-          
-        </div>
-      
-        <div class="">
-          <h6><a href="property.ElemInfo.value-count.html">ALSACtl.ElemInfo:value-count</a></h6>
-
-          <div class="docblock">
-            No description available.
-          </div>
-
-          
-        </div>
-      
-      </div>
-      
 
       
         
       
 
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="iface.ElemInfoCommon.html">ALSACtlElemInfoCommon</a> (4)</h5><div class="docblock">
+          
+            <h6><a href="property.ElemInfoCommon.access.html">ALSACtl.ElemInfoCommon:access</a></h6><div class="docblock">
+              <p>The access permission for the element with <code>ALSACtlElemAccessFlag</code>.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.3.</p></div>
+          
+            <h6><a href="property.ElemInfoCommon.elem-id.html">ALSACtl.ElemInfoCommon:elem-id</a></h6><div class="docblock">
+              <p>The identifier of&nbsp;element.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.3.</p></div>
+          
+            <h6><a href="property.ElemInfoCommon.elem-type.html">ALSACtl.ElemInfoCommon:elem-type</a></h6><div class="docblock">
+              <p>The type of element, one of <code>ALSACtlElemType</code>.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.3.</p></div>
+          
+            <h6><a href="property.ElemInfoCommon.owner.html">ALSACtl.ElemInfoCommon:owner</a></h6><div class="docblock">
+              <p>The value of <span class="caps">PID</span> for process to own the&nbsp;element.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.3.</p></div>
+          
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="iface.ElemInfoSingleArray.html">ALSACtlElemInfoSingleArray</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="property.ElemInfoSingleArray.value-count.html">ALSACtl.ElemInfoSingleArray:value-count</a></h6><div class="docblock">
+              <p>The count of elements in value array of the&nbsp;element.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.3.</p></div>
+          
+          </div>
+        </div>
+        
       
 
     </div>
@@ -418,6 +336,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       
 
       
+        
+      
+        
+      
 
     </div>
     
@@ -430,7 +352,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </h4>
 
       <div class="docblock">
-        <pre><code>struct ALSACtlElemInfoClass {
+        <pre><code>struct ALSACtlElemInfoBytesClass {
   GObjectClass parent_class;
   
 }</code></pre>
@@ -477,6 +399,8 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
       
       
+      <li class="toc-list-item"><a href="#implements"><span class="link-text">Implements</span></a></li>
+      
       
 <li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
 
@@ -484,12 +408,8 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       
 
       
-<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
-
 
       
-<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
-
 
       
 
