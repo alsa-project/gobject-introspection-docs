@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -86,8 +86,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a href="#structs">Structs</a>
   
-  
-    <a href="#unions">Unions</a>
   
   
   
@@ -136,7 +134,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <div class="meta info">
       <table>
-        <tr><td><em>Version</em></td><td>0.2.2</td></tr>
+        <tr><td><em>Version</em></td><td>0.3.0</td></tr>
         <tr><td><em>Authors</em></td><td>Takashi Sakamoto</td></tr>
         <tr><td><em>License</em></td><td>LGPL-3.0-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://alsa-project.github.io/gobject-introspection-docs/alsatimer/" class="external">https://alsa-project.github.io/gobject-introspection-docs/alsatimer/</a></td></tr>
@@ -292,12 +290,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="EventDataTick" class="symbol" href="struct.EventDataTick.html">EventDataTick</a></td>
+            <td><a title="RealTimeEvent" class="symbol" href="struct.RealTimeEvent.html">RealTimeEvent</a></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="EventDataTstamp" class="symbol" href="struct.EventDataTstamp.html">EventDataTstamp</a></td>
+            <td><a title="TickTimeEvent" class="symbol" href="struct.TickTimeEvent.html">TickTimeEvent</a></td>
             
           </tr>
           
@@ -307,28 +305,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
   </section>
   
-  
-  <section>
-    <div class="toggle-wrapper default-hide">
-      <h4 id="unions" class="section-header" style="display:flex;">
-        Unions
-        <a href="#unions" class="anchor"></a>
-      </h4>
-
-      <div class="docblock">
-        <table style="display:block;">
-          <tbody>
-          
-          <tr class="section-item">
-            <td><a title="Event" class="symbol" href="union.Event.html">Event</a></td>
-            
-          </tr>
-          
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
   
   
   
@@ -349,12 +325,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="EventDataType" class="symbol" href="enum.EventDataType.html">EventDataType</a></td>
+            <td><a title="EventType" class="symbol" href="enum.EventType.html">EventType</a></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="EventType" class="symbol" href="enum.EventType.html">EventType</a></td>
+            <td><a title="RealTimeEventType" class="symbol" href="enum.RealTimeEventType.html">RealTimeEventType</a></td>
             
           </tr>
           
@@ -459,12 +435,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           </tr>
           
           <tr class="section-item">
-            <td><a title="get_sysname" class="symbol" href="func.get_sysname.html">get_sysname</a></td>
+            <td><a title="get_real_time_clock_id" class="symbol" href="func.get_real_time_clock_id.html">get_real_time_clock_id</a></td>
             
           </tr>
           
           <tr class="section-item">
-            <td><a title="get_tstamp_source" class="symbol" href="func.get_tstamp_source.html">get_tstamp_source</a></td>
+            <td><a title="get_sysname" class="symbol" href="func.get_sysname.html">get_sysname</a></td>
             
           </tr>
           

@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -113,12 +113,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/alsatimer-enum-types.h#L73">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/alsatimer-enum-types.h#L114">[src]</a>
         
       </h4>
 
       <div class="docblock">
-      <p>A set of enumerations for timer&nbsp;event.</p>
+      <p>A set of enumerations for the type of&nbsp;event.</p>
       </div>
 
       <div class="docblock">
@@ -146,78 +146,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         </tr>
       
         <tr>
-          <td><a id="resolution" href="#resolution"><code title="Value: 0">ALSATIMER_EVENT_TYPE_RESOLUTION</code></a></td>
-          <td><p>The event for timer&nbsp;resolution.</p></td>
+          <td><a id="tick_time" href="#tick_time"><code title="Value: 0">ALSATIMER_EVENT_TYPE_TICK_TIME</code></a></td>
+          <td><p>Event for tick&nbsp;time.</p></td>
         </tr>
       
         <tr>
-          <td><a id="tick" href="#tick"><code title="Value: 1">ALSATIMER_EVENT_TYPE_TICK</code></a></td>
-          <td><p>The event for timer&nbsp;tick.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="start" href="#start"><code title="Value: 2">ALSATIMER_EVENT_TYPE_START</code></a></td>
-          <td><p>The event for timer&nbsp;start.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="stop" href="#stop"><code title="Value: 3">ALSATIMER_EVENT_TYPE_STOP</code></a></td>
-          <td><p>The event for timer&nbsp;stop.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="continue" href="#continue"><code title="Value: 4">ALSATIMER_EVENT_TYPE_CONTINUE</code></a></td>
-          <td><p>The event for timer&nbsp;continue.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="pause" href="#pause"><code title="Value: 5">ALSATIMER_EVENT_TYPE_PAUSE</code></a></td>
-          <td><p>The event for timer&nbsp;pause.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="early" href="#early"><code title="Value: 6">ALSATIMER_EVENT_TYPE_EARLY</code></a></td>
-          <td><p>The event before timer&nbsp;start.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="suspend" href="#suspend"><code title="Value: 7">ALSATIMER_EVENT_TYPE_SUSPEND</code></a></td>
-          <td><p>The event for timer&nbsp;suspend.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="resume" href="#resume"><code title="Value: 8">ALSATIMER_EVENT_TYPE_RESUME</code></a></td>
-          <td><p>The event for timer&nbsp;resume.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="mstart" href="#mstart"><code title="Value: 12">ALSATIMER_EVENT_TYPE_MSTART</code></a></td>
-          <td><p>The event for master timer&nbsp;start.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="mstop" href="#mstop"><code title="Value: 13">ALSATIMER_EVENT_TYPE_MSTOP</code></a></td>
-          <td><p>The event for master timer&nbsp;stop.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="mcontinue" href="#mcontinue"><code title="Value: 14">ALSATIMER_EVENT_TYPE_MCONTINUE</code></a></td>
-          <td><p>The event for master timer&nbsp;continue.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="mpause" href="#mpause"><code title="Value: 15">ALSATIMER_EVENT_TYPE_MPAUSE</code></a></td>
-          <td><p>The event for master timer&nbsp;pause.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="msuspend" href="#msuspend"><code title="Value: 17">ALSATIMER_EVENT_TYPE_MSUSPEND</code></a></td>
-          <td><p>The event for master timer&nbsp;suspend.</p></td>
-        </tr>
-      
-        <tr>
-          <td><a id="mresume" href="#mresume"><code title="Value: 18">ALSATIMER_EVENT_TYPE_MRESUME</code></a></td>
-          <td><p>The event for master timer&nbsp;resume.</p></td>
+          <td><a id="real_time" href="#real_time"><code title="Value: 1">ALSATIMER_EVENT_TYPE_REAL_TIME</code></a></td>
+          <td><p>Event for real&nbsp;time.</p></td>
         </tr>
       
       </table>

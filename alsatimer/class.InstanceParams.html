@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -156,8 +156,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent parameters of user instance.
-A <a href="class.InstanceParams.html"><code>ALSATimerInstanceParams</code></a> is a GObject-derived object to represent parameters of user instance
+          <p>A GObject-derived object to express parameters of user instance.
+A <a href="class.InstanceParams.html"><code>ALSATimerInstanceParams</code></a> is a GObject-derived object to express parameters of user instance
 attached to any timer device or the other instance as slave. The call of
 <a href="method.UserInstance.set_params.html"><code>alsatimer_user_instance_set_params()</code></a> requires the instance of&nbsp;object.</p>
 <p>The object wraps <code>struct snd_timer_params</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
@@ -237,8 +237,8 @@ attached to any timer device or the other instance as slave. The call of
         <div class="">
           <h6><a href="method.InstanceParams.get_event_filter.html">alsatimer_instance_params_get_event_filter</a></h6>
           <div class="docblock">
-            <p>Get the list of ALSATimerEventType to filter events. This parameter is effective only for target
-instance with <code>ALSATimerEventDataType</code>.</p>
+            <p>Get the list of <code>ALSATimerRealTimeEventType</code> to filter events. This parameter is effective only for
+target instance with <code>ALSATimerEventType</code>.REAL_TIME.</p>
           </div>
           
         </div>
@@ -246,8 +246,8 @@ instance with <code>ALSATimerEventDataType</code>.</p>
         <div class="">
           <h6><a href="method.InstanceParams.set_event_filter.html">alsatimer_instance_params_set_event_filter</a></h6>
           <div class="docblock">
-            <p>Set the list of <code>ALSATimerEventType</code> to filter events. This parameter is effective only for target
-instance with <code>ALSATimerEventDataType</code>.</p>
+            <p>Set the list of <code>ALSATimerRealTimeEventType</code> to filter events. This parameter is effective only for
+target instance with <code>ALSATimerEventType</code>.<span class="caps">TIMESTAMP</span>.</p>
           </div>
           
         </div>
@@ -286,7 +286,7 @@ instance with <code>ALSATimerEventDataType</code>.</p>
           <h6><a href="property.InstanceParams.flags.html">ALSATimer.InstanceParams:flags</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The flags for user instance, as a set of <code>ALSATimerInstanceParamFlag</code>.</p>
           </div>
 
           
@@ -296,7 +296,7 @@ instance with <code>ALSATimerEventDataType</code>.</p>
           <h6><a href="property.InstanceParams.interval.html">ALSATimer.InstanceParams:interval</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The interval to generate event in tick&nbsp;count.</p>
           </div>
 
           
@@ -306,7 +306,7 @@ instance with <code>ALSATimerEventDataType</code>.</p>
           <h6><a href="property.InstanceParams.queue-size.html">ALSATimer.InstanceParams:queue-size</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The size of&nbsp;queue.</p>
           </div>
 
           

@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -145,8 +145,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent status of timer device.
-A <a href="class.DeviceStatus.html"><code>ALSATimerDeviceStatus</code></a> is a GObject-derived object to represent status of timer device. The
+          <p>A GObject-derived object to express status of timer device.
+A <a href="class.DeviceStatus.html"><code>ALSATimerDeviceStatus</code></a> is a GObject-derived object to express status of timer device. The
 call of <a href="func.get_device_status.html"><code>alsatimer_get_device_status()</code></a> returns the instance of&nbsp;object.</p>
 <p>The object wraps &#8216;struct snd_timer_gstatus&#8217; in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
         </div>
@@ -256,7 +256,7 @@ call of <a href="func.get_device_status.html"><code>alsatimer_get_device_status(
           <h6><a href="property.DeviceStatus.resolution.html">ALSATimer.DeviceStatus:resolution</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The current resolution in nano&nbsp;seconds.</p>
           </div>
 
           
@@ -266,7 +266,7 @@ call of <a href="func.get_device_status.html"><code>alsatimer_get_device_status(
           <h6><a href="property.DeviceStatus.resolution-denominator.html">ALSATimer.DeviceStatus:resolution-denominator</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The denominator of current resolution in&nbsp;seconds.</p>
           </div>
 
           
@@ -276,7 +276,7 @@ call of <a href="func.get_device_status.html"><code>alsatimer_get_device_status(
           <h6><a href="property.DeviceStatus.resolution-numerator.html">ALSATimer.DeviceStatus:resolution-numerator</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numerator of current resolution in&nbsp;seconds.</p>
           </div>
 
           

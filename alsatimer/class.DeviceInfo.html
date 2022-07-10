@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -146,8 +146,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent information of timer device.
-A <a href="class.DeviceInfo.html"><code>ALSATimerDeviceInfo</code></a> is a GObject-derived object to represent information of timer device.
+          <p>A GObject-derived object to express information of timer device.
+A <a href="class.DeviceInfo.html"><code>ALSATimerDeviceInfo</code></a> is a GObject-derived object to express information of timer device.
 The call of <code>alsatimer_get_device_info()</code> returns an instance of the object according to the
 identifier of timer&nbsp;device.</p>
 <p>The object wraps <code>struct snd_timer_ginfo</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
@@ -237,7 +237,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.card-id.html">ALSATimer.DeviceInfo:card-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of sound&nbsp;card.</p>
           </div>
 
           
@@ -247,7 +247,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.flags.html">ALSATimer.DeviceInfo:flags</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The flags of timer, one of <code>ALSATimerDeviceInfoFlag</code>.</p>
           </div>
 
           
@@ -257,7 +257,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.id.html">ALSATimer.DeviceInfo:id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The string <span class="caps">ID</span> of&nbsp;timer.</p>
           </div>
 
           
@@ -267,7 +267,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.instance-count.html">ALSATimer.DeviceInfo:instance-count</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The number of instances for the&nbsp;timer.</p>
           </div>
 
           
@@ -277,7 +277,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.name.html">ALSATimer.DeviceInfo:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of&nbsp;timer.</p>
           </div>
 
           
@@ -287,7 +287,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.resolution.html">ALSATimer.DeviceInfo:resolution</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The resolution in nano&nbsp;seconds.</p>
           </div>
 
           
@@ -297,7 +297,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.resolution-max.html">ALSATimer.DeviceInfo:resolution-max</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The maximum resolution in nano&nbsp;seconds.</p>
           </div>
 
           
@@ -307,7 +307,7 @@ identifier of timer&nbsp;device.</p>
           <h6><a href="property.DeviceInfo.resolution-min.html">ALSATimer.DeviceInfo:resolution-min</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The minimum resolution in nano&nbsp;seconds.</p>
           </div>
 
           

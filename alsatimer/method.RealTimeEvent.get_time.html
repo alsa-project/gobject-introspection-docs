@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.Event.get_tick_data</title>
+  <title>ALSATimer.RealTimeEvent.get_time</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="ALSATimer.Event.get_tick_data"/>
-  <meta priority="og:description" content="Reference for ALSATimer.Event.get_tick_data"/>
-  <meta name="twitter:title" content="ALSATimer.Event.get_tick_data"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.Event.get_tick_data"/>
+  <meta priority="og:title" content="ALSATimer.RealTimeEvent.get_time"/>
+  <meta priority="og:description" content="Reference for ALSATimer.RealTimeEvent.get_time"/>
+  <meta name="twitter:title" content="ALSATimer.RealTimeEvent.get_time"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.RealTimeEvent.get_time"/>
 
 
   
@@ -70,23 +70,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="union.Event.html">Event</a>
+    <a href="struct.RealTimeEvent.html">RealTimeEvent</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method current" href="method.Event.get_tick_data.html">get_tick_data</a>
+    <a class="method" href="method.RealTimeEvent.get_event.html">get_event</a>
   
-    <a class="method" href="method.Event.get_tstamp_data.html">get_tstamp_data</a>
+    <a class="method current" href="method.RealTimeEvent.get_time.html">get_time</a>
+  
+    <a class="method" href="method.RealTimeEvent.get_val.html">get_val</a>
   
   </div>
 </div>
@@ -99,7 +101,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="union.Event.html">Event</a><span class="sep"></span>get_tick_data</h1>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="struct.RealTimeEvent.html">RealTimeEvent</a><span class="sep"></span>get_time</h1>
   </header>
 
   <section>
@@ -108,15 +110,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event.h#L20">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/real-time-event.h#L18">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">alsatimer_event_get_tick_data</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSATimerEvent</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerEventDataTick</span><span class="o">**</span><span class="w"> </span><span class="n">tick</span><span class="w"></span>
+<span class="n">alsatimer_real_time_event_get_time</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerRealTimeEvent</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gint64</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">real_time</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -128,12 +130,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event.c#L40">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/real-time-event.c#L40">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Refer to the instance of <a href="struct.EventDataTick.html"><code>ALSATimerEventDataTick</code></a>.</p>
+        <p>Get the seconds and nanoseconds part for the real time&nbsp;event.</p>
       </div>
 
       <div class="docblock">
@@ -161,21 +163,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>tick</code></td>
-            <td><a href="struct.EventDataTick.html"><code>ALSATimerEventDataTick</code></a></td>
+            <td><code>real_time</code></td>
+            <td>An array of&nbsp;<code>gint64*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The instance of <a href="struct.EventDataTick.html"><code>ALSATimerEventDataTick</code></a>.</p></td>
+            <td><p>The array with two elements for the seconds and
+            nanoseconds part of timestamp when the real time event&nbsp;occurs.</p></td>
           </tr>
-          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
+          <tr><td>&nbsp;</td><td title="direction: inout">The argument will be modified by the function.</td></tr>
           
           
           
           
+          <tr><td>&nbsp;</td><td>The array must have 2 elements.</td></tr>
           
-          
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+          <tr><td>&nbsp;</td><td title="transfer: full">The instance takes ownership of the data, and is responsible for freeing it.</td></tr>
           
           
           

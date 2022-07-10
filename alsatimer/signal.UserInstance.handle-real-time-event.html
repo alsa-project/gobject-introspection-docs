@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.Event.get_tstamp_data</title>
+  <title>ALSATimer.UserInstance::handle-real-time-event</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="ALSATimer.Event.get_tstamp_data"/>
-  <meta priority="og:description" content="Reference for ALSATimer.Event.get_tstamp_data"/>
-  <meta name="twitter:title" content="ALSATimer.Event.get_tstamp_data"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.Event.get_tstamp_data"/>
+  <meta property="og:title" content="ALSATimer.UserInstance::handle-real-time-event"/>
+  <meta property="og:description" content="Reference for signal ALSATimer.UserInstance::handle-real-time-event"/>
+  <meta name="twitter:title" content="ALSATimer.UserInstance::handle-real-time-event"/>
+  <meta name="twitter:description" content="Reference for signal ALSATimer.UserInstance::handle-real-time-event"/>
 
 
   
@@ -70,23 +70,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="union.Event.html">Event</a>
+    <a href="class.UserInstance.html">UserInstance</a>
   </div>
 </div>
 <div class="section">
-  <h5>Methods</h5>
+  <h5>Signals</h5>
   <div class="links">
   
-    <a class="method" href="method.Event.get_tick_data.html">get_tick_data</a>
+    <a class="signal" href="signal.UserInstance.handle-disconnection.html">handle-disconnection</a>
   
-    <a class="method current" href="method.Event.get_tstamp_data.html">get_tstamp_data</a>
+    <a class="signal current" href="signal.UserInstance.handle-real-time-event.html">handle-real-time-event</a>
+  
+    <a class="signal" href="signal.UserInstance.handle-tick-time-event.html">handle-tick-time-event</a>
   
   </div>
 </div>
@@ -98,25 +100,23 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Method</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="union.Event.html">Event</a><span class="sep"></span>get_tstamp_data</h1>
+    <h3>Signal</h3>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="class.UserInstance.html">UserInstance</a>::handle-real-time-event</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 style="display:flex;" id="declaration">
+      <h4 id="declaration">
         Declaration
-        <a class="anchor" href="#declaration"></a>
-        
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event.h#L23">[src]</a>
-        
+        <a href="#declaration" class="anchor"></a>
       </h4>
 
-      <div class="docblock c-decl">
+      <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">alsatimer_event_get_tstamp_data</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSATimerEvent</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerEventDataTstamp</span><span class="o">**</span><span class="w"> </span><span class="n">tstamp</span><span class="w"></span>
+<span class="n">handle_real_time_event</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSATimerUserInstance</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerRealTimeEvent</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -124,20 +124,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 style="display:flex;" id="description">
+      <h4 id="description" style="display:flex;">
         Description
-        <a class="anchor" href="#description"></a>
+        <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event.c#L53">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.c#L103">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Refer to the instance of <a href="struct.EventDataTstamp.html"><code>ALSATimerEventDataTstamp</code></a>.</p>
+        <p>Emitted when event occurs to notify real&nbsp;time.</p>
       </div>
 
       <div class="docblock">
         <table>
+          <tr><td>Default handler:</td><td> <p>The default handler is called after the handlers added via <code>g_signal_connect()</code>.</p></td></tr>
+          
           
           
           
@@ -161,14 +163,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>tstamp</code></td>
-            <td><a href="struct.EventDataTstamp.html"><code>ALSATimerEventDataTstamp</code></a></td>
+            <td><code>event</code></td>
+            <td><a href="struct.RealTimeEvent.html"><code>ALSATimerRealTimeEvent</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The instance of <a href="struct.EventDataTstamp.html"><code>ALSATimerEventDataTstamp</code></a>.</p></td>
+            <td><p>The instance of <a href="struct.RealTimeEvent.html"><code>ALSATimerRealTimeEvent</code></a>.</p></td>
           </tr>
-          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
+          
           
           
           

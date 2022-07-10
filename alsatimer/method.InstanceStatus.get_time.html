@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.EventDataTick.get_ticks</title>
+  <title>ALSATimer.InstanceStatus.get_time</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="ALSATimer.EventDataTick.get_ticks"/>
-  <meta priority="og:description" content="Reference for ALSATimer.EventDataTick.get_ticks"/>
-  <meta name="twitter:title" content="ALSATimer.EventDataTick.get_ticks"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.EventDataTick.get_ticks"/>
+  <meta priority="og:title" content="ALSATimer.InstanceStatus.get_time"/>
+  <meta priority="og:description" content="Reference for ALSATimer.InstanceStatus.get_time"/>
+  <meta name="twitter:title" content="ALSATimer.InstanceStatus.get_time"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.InstanceStatus.get_time"/>
 
 
   
@@ -70,23 +70,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="struct.EventDataTick.html">EventDataTick</a>
+    <a href="class.InstanceStatus.html">InstanceStatus</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.EventDataTick.get_resolution.html">get_resolution</a>
-  
-    <a class="method current" href="method.EventDataTick.get_ticks.html">get_ticks</a>
+    <a class="method current" href="method.InstanceStatus.get_time.html">get_time</a>
   
   </div>
 </div>
@@ -99,7 +97,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="struct.EventDataTick.html">EventDataTick</a><span class="sep"></span>get_ticks</h1>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="class.InstanceStatus.html">InstanceStatus</a><span class="sep"></span>get_time</h1>
   </header>
 
   <section>
@@ -108,15 +106,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event-data-tick.h#L18">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/instance-status.h#L20">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">alsatimer_event_data_tick_get_ticks</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerEventDataTick</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="o">*</span><span class="w"> </span><span class="n">ticks</span><span class="w"></span>
+<span class="n">alsatimer_instance_status_get_time</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSATimerInstanceStatus</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gint64</span><span class="o">**</span><span class="w"> </span><span class="n">real_time</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -128,12 +126,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event-data-tick.c#L40">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/instance-status.c#L119">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the tick count since the last&nbsp;event.</p>
+        <p>Get real time at which the timer starts, stops, pauses, and&nbsp;continues.</p>
       </div>
 
       <div class="docblock">
@@ -161,21 +159,22 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>ticks</code></td>
-            <td><code>guint*</code></td>
+            <td><code>real_time</code></td>
+            <td>An array of&nbsp;<code>gint64*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The tick count since the last&nbsp;event.</p></td>
+            <td><p>The array with two elements for the
+            seconds and nanoseconds parts of timestamp when the instance queues the latest&nbsp;event.</p></td>
           </tr>
           <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
           
           
           
+          <tr><td>&nbsp;</td><td>The array must have 2 elements.</td></tr>
           
-          
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.EventDataTstamp.get_event</title>
+  <title>ALSATimer.RealTimeEvent.get_val</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="ALSATimer.EventDataTstamp.get_event"/>
-  <meta priority="og:description" content="Reference for ALSATimer.EventDataTstamp.get_event"/>
-  <meta name="twitter:title" content="ALSATimer.EventDataTstamp.get_event"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.EventDataTstamp.get_event"/>
+  <meta priority="og:title" content="ALSATimer.RealTimeEvent.get_val"/>
+  <meta priority="og:description" content="Reference for ALSATimer.RealTimeEvent.get_val"/>
+  <meta name="twitter:title" content="ALSATimer.RealTimeEvent.get_val"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.RealTimeEvent.get_val"/>
 
 
   
@@ -70,25 +70,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="struct.EventDataTstamp.html">EventDataTstamp</a>
+    <a href="struct.RealTimeEvent.html">RealTimeEvent</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method current" href="method.EventDataTstamp.get_event.html">get_event</a>
+    <a class="method" href="method.RealTimeEvent.get_event.html">get_event</a>
   
-    <a class="method" href="method.EventDataTstamp.get_tstamp.html">get_tstamp</a>
+    <a class="method" href="method.RealTimeEvent.get_time.html">get_time</a>
   
-    <a class="method" href="method.EventDataTstamp.get_val.html">get_val</a>
+    <a class="method current" href="method.RealTimeEvent.get_val.html">get_val</a>
   
   </div>
 </div>
@@ -101,7 +101,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="struct.EventDataTstamp.html">EventDataTstamp</a><span class="sep"></span>get_event</h1>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="struct.RealTimeEvent.html">RealTimeEvent</a><span class="sep"></span>get_val</h1>
   </header>
 
   <section>
@@ -110,15 +110,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event-data-tstamp.h#L15">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/real-time-event.h#L21">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">alsatimer_event_data_tstamp_get_event</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerEventDataTstamp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSATimerEventType</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="w"></span>
+<span class="n">alsatimer_real_time_event_get_val</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerRealTimeEvent</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="o">*</span><span class="w"> </span><span class="n">val</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -130,12 +130,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event-data-tstamp.c#L27">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/real-time-event.c#L55">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the kind of event for the timestamp&nbsp;event.</p>
+        <p>Get the value depending on the type of real time&nbsp;event.</p>
       </div>
 
       <div class="docblock">
@@ -163,12 +163,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>event</code></td>
-            <td><a href="enum.EventType.html"><code>ALSATimerEventType</code></a></td>
+            <td><code>val</code></td>
+            <td><code>guint*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The type of tstamp event, one of <a href="enum.EventType.html"><code>ALSATimerEventType</code></a>.</p></td>
+            <td><p>The value depending on the type of timestamp&nbsp;event.</p></td>
           </tr>
           <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
@@ -177,7 +177,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          <tr><td>&nbsp;</td><td title="transfer: full">The instance takes ownership of the data, and is responsible for freeing it.</td></tr>
+          
           
           
           

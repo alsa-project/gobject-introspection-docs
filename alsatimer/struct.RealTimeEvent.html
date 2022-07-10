@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.EventDataTick</title>
+  <title>ALSATimer.RealTimeEvent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSATimer.EventDataTick"/>
-  <meta property="og:description" content="Reference for ALSATimer.EventDataTick"/>
-  <meta name="twitter:title" content="ALSATimer.EventDataTick"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.EventDataTick"/>
+  <meta property="og:title" content="ALSATimer.RealTimeEvent"/>
+  <meta property="og:description" content="Reference for ALSATimer.RealTimeEvent"/>
+  <meta name="twitter:title" content="ALSATimer.RealTimeEvent"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.RealTimeEvent"/>
 
 
   
@@ -70,14 +70,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a class="current" href="struct.EventDataTick.html#description">EventDataTick</a>
+    <a class="current" href="struct.RealTimeEvent.html#description">RealTimeEvent</a>
   </div>
 </div>
 
@@ -90,9 +90,11 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.EventDataTick.get_resolution.html">get_resolution</a>
+    <a class="method" href="method.RealTimeEvent.get_event.html">get_event</a>
   
-    <a class="method" href="method.EventDataTick.get_ticks.html">get_ticks</a>
+    <a class="method" href="method.RealTimeEvent.get_time.html">get_time</a>
+  
+    <a class="method" href="method.RealTimeEvent.get_val.html">get_val</a>
   
   </div>
 </div>
@@ -107,7 +109,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Struct</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span>EventDataTick</h1>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span>RealTimeEvent</h1>
   </header>
 
   <section>
@@ -117,20 +119,20 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/event-data-tick.c#L4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/real-time-event.c#L4">[src]</a>
           
         </h4>
 
-        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">ALSATimerEventDataTick</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">ALSATimerRealTimeEvent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="cm">/* No available fields */</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </code></pre>
 
         <div class="docblock">
-          <p>A boxed object to represent event of timer with tick count.
-A <a href="struct.EventDataTick.html"><code>ALSATimerEventDataTick</code></a> is a boxed object to represent event of timer with tick&nbsp;count.</p>
-<p>The object wraps <code>struct snd_timer_read</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
+          <p>A boxed object to express event of timer with real time.
+A <a href="struct.RealTimeEvent.html"><code>ALSATimerRealTimeEvent</code></a> includes real time at which the event is&nbsp;queued.</p>
+<p>The object wraps <code>struct snd_timer_tread</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
         </div>
 
         
@@ -161,20 +163,30 @@ A <a href="struct.EventDataTick.html"><code>ALSATimerEventDataTick</code></a> is
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.EventDataTick.get_resolution.html">alsatimer_event_data_tick_get_resolution</a></h6>
+          <h6><a href="method.RealTimeEvent.get_event.html">alsatimer_real_time_event_get_event</a></h6>
 
           <div class="docblock">
-            <p>Get the resolution of tick&nbsp;event.</p>
+            <p>Get the kind of event for the real time&nbsp;event.</p>
           </div>
 
           
         </div>
       
         <div class="">
-          <h6><a href="method.EventDataTick.get_ticks.html">alsatimer_event_data_tick_get_ticks</a></h6>
+          <h6><a href="method.RealTimeEvent.get_time.html">alsatimer_real_time_event_get_time</a></h6>
 
           <div class="docblock">
-            <p>Get the tick count since the last&nbsp;event.</p>
+            <p>Get the seconds and nanoseconds part for the real time&nbsp;event.</p>
+          </div>
+
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="method.RealTimeEvent.get_val.html">alsatimer_real_time_event_get_val</a></h6>
+
+          <div class="docblock">
+            <p>Get the value depending on the type of real time&nbsp;event.</p>
           </div>
 
           

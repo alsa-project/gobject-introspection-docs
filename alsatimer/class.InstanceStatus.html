@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -99,7 +99,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.InstanceStatus.get_tstamp.html">get_tstamp</a>
+    <a class="method" href="method.InstanceStatus.get_time.html">get_time</a>
   
   </div>
 </div>
@@ -156,10 +156,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent status of user instance.
-A <a href="class.InstanceStatus.html"><code>ALSATimerInstanceStatus</code></a> is a GObject-derived object to represent status of user instance
-attached to any timer device or the other instance as slave. The call of
-<a href="method.UserInstance.get_status.html"><code>alsatimer_user_instance_get_status()</code></a> returns the instance of&nbsp;object.</p>
+          <p>A GObject-derived object to express status of user instance.
+A <a href="class.InstanceStatus.html"><code>ALSATimerInstanceStatus</code></a> is a GObject-derived object to express status of user instance attached
+to any timer device or the other instance as slave. The call of <a href="method.UserInstance.get_status.html"><code>alsatimer_user_instance_get_status()</code></a>
+returns the instance of&nbsp;object.</p>
 <p>The object wraps <code>struct snd_timer_status</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
         </div>
 
@@ -235,9 +235,9 @@ attached to any timer device or the other instance as slave. The call of
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.InstanceStatus.get_tstamp.html">alsatimer_instance_status_get_tstamp</a></h6>
+          <h6><a href="method.InstanceStatus.get_time.html">alsatimer_instance_status_get_time</a></h6>
           <div class="docblock">
-            <p>Get timestamp for the latest&nbsp;event.</p>
+            <p>Get real time at which the timer starts, stops, pauses, and&nbsp;continues.</p>
           </div>
           
         </div>
@@ -276,7 +276,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceStatus.interval.html">ALSATimer.InstanceStatus:interval</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The current interval in nano&nbsp;second.</p>
           </div>
 
           
@@ -286,7 +286,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceStatus.lost.html">ALSATimer.InstanceStatus:lost</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The count of losts master&nbsp;ticks.</p>
           </div>
 
           
@@ -296,7 +296,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceStatus.overrun.html">ALSATimer.InstanceStatus:overrun</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The count of overrun in read&nbsp;queue.</p>
           </div>
 
           
@@ -306,7 +306,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceStatus.queue-size.html">ALSATimer.InstanceStatus:queue-size</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The current size of&nbsp;queue.</p>
           </div>
 
           

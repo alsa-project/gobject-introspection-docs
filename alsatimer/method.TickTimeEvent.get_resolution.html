@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.UserInstance.handle_event</title>
+  <title>ALSATimer.TickTimeEvent.get_resolution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSATimer.UserInstance.handle_event"/>
-  <meta property="og:description" content="Reference for ALSATimer.UserInstance.handle_event"/>
-  <meta name="twitter:title" content="ALSATimer.UserInstance.handle_event"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.UserInstance.handle_event"/>
+  <meta priority="og:title" content="ALSATimer.TickTimeEvent.get_resolution"/>
+  <meta priority="og:description" content="Reference for ALSATimer.TickTimeEvent.get_resolution"/>
+  <meta name="twitter:title" content="ALSATimer.TickTimeEvent.get_resolution"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.TickTimeEvent.get_resolution"/>
 
 
   
@@ -70,23 +70,23 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.UserInstance.html">UserInstance</a>
+    <a href="struct.TickTimeEvent.html">TickTimeEvent</a>
   </div>
 </div>
 <div class="section">
-  <h5>Virtual methods</h5>
+  <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.UserInstance.handle_disconnection.html">handle_disconnection</a>
+    <a class="method" href="method.TickTimeEvent.get_count.html">get_count</a>
   
-    <a class="method current" href="vfunc.UserInstance.handle_event.html">handle_event</a>
+    <a class="method current" href="method.TickTimeEvent.get_resolution.html">get_resolution</a>
   
   </div>
 </div>
@@ -98,25 +98,25 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Virtual Method</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="class.UserInstance.html">UserInstance</a><span class="sep"></span>handle_event</h1>
+    <h3>Method</h3>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="struct.TickTimeEvent.html">TickTimeEvent</a><span class="sep"></span>get_resolution</h1>
   </header>
 
   <section>
     <div class="declaration toggle-wrapper">
-      <h4 id="declaration">
+      <h4 style="display:flex;" id="declaration">
         Declaration
-        <a href="#declaration" class="anchor"></a>
+        <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.h#L28">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/tick-time-event.h#L15">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">handle_event</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSATimerUserInstance</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerEvent</span><span class="o">*</span><span class="w"> </span><span class="n">event</span><span class="w"></span>
+<span class="n">alsatimer_tick_time_event_get_resolution</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ALSATimerTickTimeEvent</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="o">*</span><span class="w"> </span><span class="n">resolution</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -124,20 +124,23 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description">
+      <h4 style="display:flex;" id="description">
         Description
-        <a href="#description" class="anchor"></a>
+        <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.h#L21">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/tick-time-event.c#L27">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Class closure for the <a href="signal.UserInstance.handle-event.html"><code>ALSATimerUserInstance::handle-event</code></a>&nbsp;signal.</p>
+        <p>Get the resolution of tick&nbsp;event.</p>
       </div>
 
       <div class="docblock">
         <table>
+          
+          
+          
           
           
           
@@ -158,13 +161,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>event</code></td>
-            <td><a href="union.Event.html"><code>ALSATimerEvent</code></a></td>
+            <td><code>resolution</code></td>
+            <td><code>guint*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>An object derived from <a href="struct.Event.html"><code>ALSATimerEvent</code></a>.</p></td>
+            <td><p>The resolution of tick&nbsp;event.</p></td>
           </tr>
+          <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
           
           
@@ -172,7 +176,6 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           
           
           
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           

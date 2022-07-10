@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -140,8 +140,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent information of user instance.
-A <a href="class.InstanceInfo.html"><code>ALSATimerInstanceInfo</code></a> is a GObject-derived object to represent information of user instance
+          <p>A GObject-derived object to express information of user instance.
+A <a href="class.InstanceInfo.html"><code>ALSATimerInstanceInfo</code></a> is a GObject-derived object to express information of user instance
 attached to any timer device or the other instance as slave. The call of
 <a href="method.UserInstance.get_info.html"><code>alsatimer_user_instance_get_info()</code></a> returns the instance of&nbsp;object.</p>
 <p>The object wraps <code>struct snd_timer_info</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
@@ -231,7 +231,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceInfo.card-id.html">ALSATimer.InstanceInfo:card-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric <span class="caps">ID</span> of sound card for attached&nbsp;timer.</p>
           </div>
 
           
@@ -241,7 +241,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceInfo.flags.html">ALSATimer.InstanceInfo:flags</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The flags for attached&nbsp;timer.</p>
           </div>
 
           
@@ -251,7 +251,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceInfo.id.html">ALSATimer.InstanceInfo:id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The string <span class="caps">ID</span> of attached&nbsp;timer.</p>
           </div>
 
           
@@ -261,7 +261,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceInfo.name.html">ALSATimer.InstanceInfo:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of attached&nbsp;timer.</p>
           </div>
 
           
@@ -271,7 +271,7 @@ attached to any timer device or the other instance as slave. The call of
           <h6><a href="property.InstanceInfo.resolution.html">ALSATimer.InstanceInfo:resolution</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The resolution of attached timer in nano&nbsp;seconds.</p>
           </div>
 
           

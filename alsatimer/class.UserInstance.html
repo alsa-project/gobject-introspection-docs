@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -103,7 +103,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.UserInstance.attach_as_slave.html">attach_as_slave</a>
   
-    <a class="method" href="method.UserInstance.choose_event_data_type.html">choose_event_data_type</a>
+    <a class="method" href="method.UserInstance.choose_event_type.html">choose_event_type</a>
   
     <a class="method" href="method.UserInstance.continue.html">continue</a>
   
@@ -138,7 +138,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="signal" href="signal.UserInstance.handle-disconnection.html">handle-disconnection</a>
   
-    <a class="signal" href="signal.UserInstance.handle-event.html">handle-event</a>
+    <a class="signal" href="signal.UserInstance.handle-real-time-event.html">handle-real-time-event</a>
+  
+    <a class="signal" href="signal.UserInstance.handle-tick-time-event.html">handle-tick-time-event</a>
   
   </div>
 </div>
@@ -153,7 +155,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="vfunc.UserInstance.handle_disconnection.html">handle_disconnection</a>
   
-    <a class="method" href="vfunc.UserInstance.handle_event.html">handle_event</a>
+    <a class="method" href="vfunc.UserInstance.handle_real_time_event.html">handle_real_time_event</a>
+  
+    <a class="method" href="vfunc.UserInstance.handle_tick_time_event.html">handle_tick_time_event</a>
   
   </div>
 </div>
@@ -187,8 +191,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent user instance.
-A <a href="class.UserInstance.html"><code>ALSATimerUserInstance</code></a> is a GObject-derived object to represent information of user instance
+          <p>A GObject-derived object to express user instance.
+A <a href="class.UserInstance.html"><code>ALSATimerUserInstance</code></a> is a GObject-derived object to express information of user instance
 attached to any timer device or the other instance as slave. After calling
 <a href="method.UserInstance.open.html"><code>alsatimer_user_instance_open()</code></a>, the object maintains file descriptor till object destruction. After
 calling <a href="method.UserInstance.attach.html"><code>alsatimer_user_instance_attach()</code></a> or <a href="method.UserInstance.attach_as_slave.html"><code>alsatimer_user_instance_attach_as_slave()</code></a>, the user instance
@@ -287,7 +291,7 @@ application process which owns the instance of timer. If the slave_class is
         </div>
       
         <div class="">
-          <h6><a href="method.UserInstance.choose_event_data_type.html">alsatimer_user_instance_choose_event_data_type</a></h6>
+          <h6><a href="method.UserInstance.choose_event_type.html">alsatimer_user_instance_choose_event_type</a></h6>
           <div class="docblock">
             <p>Choose the type of event data to&nbsp;receive.</p>
           </div>
@@ -307,7 +311,8 @@ application process which owns the instance of timer. If the slave_class is
           <div class="docblock">
             <p>Allocate <code>GSource</code> structure to handle events from <span class="caps">ALSA</span> timer character device. In
 each iteration of <code>GMainContext</code>, the <code>read(2)</code> system call is executed to dispatch
-timer event for <code>ALSATimerUserInstance::handle-event</code> signal, according to the result of <code>poll(2)</code>
+timer event for either <code>ALSATimerUserInstance::handle-tick-time-event</code> or
+<code>ALSATimerUserInstance::handle-real-time-event</code> signals, according to the result of <code>poll(2)</code>
 system&nbsp;call.</p>
           </div>
           
@@ -324,7 +329,7 @@ system&nbsp;call.</p>
         <div class="">
           <h6><a href="method.UserInstance.get_protocol_version.html">alsatimer_user_instance_get_protocol_version</a></h6>
           <div class="docblock">
-            <p>Get the version of timer protocol currently used. The version is represented as the array with
+            <p>Get the version of timer protocol currently used. The version is expressed as the array with
 three elements; major, minor, and micro version in the order. The length of major version is
 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
           </div>
@@ -422,9 +427,17 @@ as possible to release <span class="caps">ALSA</span> timer character&nbsp;devic
         </div>
       
         <div class="">
-          <h6><a href="signal.UserInstance.handle-event.html">ALSATimer.UserInstance::handle-event</a></h6>
+          <h6><a href="signal.UserInstance.handle-real-time-event.html">ALSATimer.UserInstance::handle-real-time-event</a></h6>
           <div class="docblock">
-            <p>Emitted when event&nbsp;occurs.</p>
+            <p>Emitted when event occurs to notify real&nbsp;time.</p>
+          </div>
+          
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.UserInstance.handle-tick-time-event.html">ALSATimer.UserInstance::handle-tick-time-event</a></h6>
+          <div class="docblock">
+            <p>Emitted when event occurs to notify tick&nbsp;time.</p>
           </div>
           
         </div>
@@ -463,9 +476,13 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
         <pre><code>struct ALSATimerUserInstanceClass {
   GObjectClass parent_class;
-  void (* handle_event) (
+  void (* handle_tick_time_event) (
     ALSATimerUserInstance* self,
-    const ALSATimerEvent* event
+    const ALSATimerTickTimeEvent* event
+  );
+  void (* handle_real_time_event) (
+    ALSATimerUserInstance* self,
+    const ALSATimerRealTimeEvent* event
   );
   void (* handle_disconnection) (
     ALSATimerUserInstance* self
@@ -490,10 +507,22 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         </td>
         
         <tr>
-          <td style="vertical-align:top"><code>handle_event</code></td>
-          <td style="vertical-align:top"><pre><code>void (* handle_event) (
+          <td style="vertical-align:top"><code>handle_tick_time_event</code></td>
+          <td style="vertical-align:top"><pre><code>void (* handle_tick_time_event) (
     ALSATimerUserInstance* self,
-    const ALSATimerEvent* event
+    const ALSATimerTickTimeEvent* event
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        <tr>
+          <td style="vertical-align:top"><code>handle_real_time_event</code></td>
+          <td style="vertical-align:top"><pre><code>void (* handle_real_time_event) (
+    ALSATimerUserInstance* self,
+    const ALSATimerRealTimeEvent* event
   )</code></pre></td>
         </tr>
         <tr>
@@ -538,10 +567,20 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </div>
       
       <div class="">
-        <h6 id="vfunc-handle_event"><a href="vfunc.UserInstance.handle_event.html">ALSATimer.UserInstanceClass.handle_event</a></h6>
+        <h6 id="vfunc-handle_real_time_event"><a href="vfunc.UserInstance.handle_real_time_event.html">ALSATimer.UserInstanceClass.handle_real_time_event</a></h6>
 
         <div class="docblock">
-          <p>Class closure for the <code>ALSATimerUserInstance::handle-event</code> signal.</p>
+          <p>Class closure for the <code>ALSATimerUserInstance::handle-real-time-event</code> signal.</p>
+        </div>
+
+          
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-handle_tick_time_event"><a href="vfunc.UserInstance.handle_tick_time_event.html">ALSATimer.UserInstanceClass.handle_tick_time_event</a></h6>
+
+        <div class="docblock">
+          <p>Class closure for the <code>ALSATimerUserInstance::handle-tick-time-event</code> signal.</p>
         </div>
 
           

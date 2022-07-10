@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.UserInstance.choose_event_data_type</title>
+  <title>ALSATimer.UserInstance.choose_event_type</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="ALSATimer.UserInstance.choose_event_data_type"/>
-  <meta priority="og:description" content="Reference for ALSATimer.UserInstance.choose_event_data_type"/>
-  <meta name="twitter:title" content="ALSATimer.UserInstance.choose_event_data_type"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.UserInstance.choose_event_data_type"/>
+  <meta priority="og:title" content="ALSATimer.UserInstance.choose_event_type"/>
+  <meta priority="og:description" content="Reference for ALSATimer.UserInstance.choose_event_type"/>
+  <meta name="twitter:title" content="ALSATimer.UserInstance.choose_event_type"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.UserInstance.choose_event_type"/>
 
 
   
@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -88,7 +88,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
     <a class="method" href="method.UserInstance.attach_as_slave.html">attach_as_slave</a>
   
-    <a class="method current" href="method.UserInstance.choose_event_data_type.html">choose_event_data_type</a>
+    <a class="method current" href="method.UserInstance.choose_event_type.html">choose_event_type</a>
   
     <a class="method" href="method.UserInstance.continue.html">continue</a>
   
@@ -121,7 +121,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="class.UserInstance.html">UserInstance</a><span class="sep"></span>choose_event_data_type</h1>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span><a href="class.UserInstance.html">UserInstance</a><span class="sep"></span>choose_event_type</h1>
   </header>
 
   <section>
@@ -130,15 +130,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.h#L49">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.h#L57">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">alsatimer_user_instance_choose_event_data_type</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
+<span class="n">alsatimer_user_instance_choose_event_type</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">ALSATimerUserInstance</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSATimerEventDataType</span><span class="w"> </span><span class="n">event_data_type</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSATimerEventType</span><span class="w"> </span><span class="n">event_type</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -151,15 +151,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.c#L222">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/user-instance.c#L245">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Choose the type of event data to&nbsp;receive.</p>
-<p>The call of function is successful just before the instance is not attached yet.
-<a href="enum.EventDataType.html"><code>ALSATimerEventDataType</code></a> is used as a default if the function is not called for
-<a href="enum.EventDataType.html"><code>ALSATimerEventDataType</code></a>&nbsp;explicitly.</p>
+<p>The call of function is successful just before call of <a href="method.UserInstance.attach.html"><code>alsatimer_user_instance_attach()</code></a>.
+<a href="enum.EventType.html"><code>ALSATimerEventType</code></a>.TICK_TIME is used as a default if the function is not called for
+<a href="enum.EventType.html"><code>ALSATimerEventType</code></a>.REAL_TIME explicitly. When the former is configured, event for tick time is
+available for <a href="signal.UserInstance.handle-tick-time-event.html"><code>ALSATimerUserInstance::handle-tick-time-event</code></a>. When the latter is configured,
+event for real time is available for <a href="signal.UserInstance.handle-real-time-event.html"><code>ALSATimerUserInstance::handle-real-time-event</code></a>.</p>
 <p>The call of function executes <code>ioctl(2)</code> system call with <code>SNDRV_TIMER_IOCTL_TREAD</code> command
 for <span class="caps">ALSA</span> timer character&nbsp;device.</p>
       </div>
@@ -189,12 +191,12 @@ for <span class="caps">ALSA</span> timer character&nbsp;device.</p>
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>event_data_type</code></td>
-            <td><a href="enum.EventDataType.html"><code>ALSATimerEventDataType</code></a></td>
+            <td><code>event_type</code></td>
+            <td><a href="enum.EventType.html"><code>ALSATimerEventType</code></a></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The type of event data, one of <a href="enum.EventDataType.html"><code>ALSATimerEventDataType</code></a>.</p></td>
+            <td><p>The type of event data, one of <a href="enum.EventType.html"><code>ALSATimerEventType</code></a>.</p></td>
           </tr>
           
           
@@ -221,6 +223,32 @@ for <span class="caps">ALSA</span> timer character&nbsp;device.</p>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> when the overall operation finishes successfully, else <code>FALSE</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
 
   </section>

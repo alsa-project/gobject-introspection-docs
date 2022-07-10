@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ALSATimer.get_tstamp_source</title>
+  <title>ALSATimer.get_real_time_clock_id</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="ALSATimer.get_tstamp_source"/>
-  <meta property="og:description" content="Reference for ALSATimer.get_tstamp_source"/>
-  <meta name="twitter:title" content="ALSATimer.get_tstamp_source"/>
-  <meta name="twitter:description" content="Reference for ALSATimer.get_tstamp_source"/>
+  <meta property="og:title" content="ALSATimer.get_real_time_clock_id"/>
+  <meta property="og:description" content="Reference for ALSATimer.get_real_time_clock_id"/>
+  <meta name="twitter:title" content="ALSATimer.get_real_time_clock_id"/>
+  <meta name="twitter:description" content="Reference for ALSATimer.get_real_time_clock_id"/>
 
 
   
@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -91,7 +91,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Function </h3>
-    <h1><a href="index.html">ALSATimer</a><span class="sep"></span>get_tstamp_source</h1>
+    <h1><a href="index.html">ALSATimer</a><span class="sep"></span>get_real_time_clock_id</h1>
   </header>
 
   <section>
@@ -100,13 +100,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/query.h#L27">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/query.h#L24">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">alsatimer_get_tstamp_source</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
+<span class="n">alsatimer_get_real_time_clock_id</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">clock_id</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
@@ -120,17 +120,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/query.c#L261">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/query.c#L307">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the clock source for timestamp when <a href="class.UserInstance.html"><code>ALSATimerUserInstance</code></a> is configured to receive event
-with timestamp. The source is selected according to parameter of <code>snd-timer</code> kernel module,
-and the call of function is just to refer to&nbsp;it.</p>
-<p><code>0</code> means <code>CLOCK_REALTIME</code> is used. <code>1</code> means <code>CLOCK_MONOTONIC</code> is&nbsp;used.</p>
+        <p>Get <code>clock_id</code> for real time. The <code>clock_id</code> governs real time retrieved by both
+<a href="method.RealTimeEvent.get_time.html"><code>alsatimer_real_time_event_get_time()</code></a> and <a href="method.InstanceStatus.get_time.html"><code>alsatimer_instance_status_get_time()</code></a>.</p>
+<p>The call of function is just to refer to parameter of <code>snd-timer</code> kernel module. <code>0</code> means
+<code>CLOCK_REALTIME</code> is used. <code>1</code> means <code>CLOCK_MONOTONIC</code> is&nbsp;used.</p>
 <p>The call of function executes <code>open(2)</code>, <code>read(2)</code>, <code>close(2)</code> system calls for the sysfs node
-corresponding to <code>snd-timer</code> kernel&nbsp;module.</p>
+corresponding to the&nbsp;parameter.</p>
       </div>
 
       <div class="docblock">
@@ -163,7 +163,7 @@ corresponding to <code>snd-timer</code> kernel&nbsp;module.</p>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The clock source for timestamp. The value of <code>CLOCK_XXX</code> in <span class="caps">UAPI</span> of Linux&nbsp;kernel.</p></td>
+            <td><p>The clock_id for real time. The value of <code>CLOCK_XXX</code> in <span class="caps">UAPI</span> of Linux&nbsp;kernel.</p></td>
           </tr>
           <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
@@ -190,6 +190,32 @@ corresponding to <code>snd-timer</code> kernel&nbsp;module.</p>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> when the overall operation finishes successfully, else <code>FALSE</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
   </section>
 </section>

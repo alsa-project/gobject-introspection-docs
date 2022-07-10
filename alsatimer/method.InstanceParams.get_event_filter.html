@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSATimer</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -113,10 +113,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
 <span class="n">alsatimer_instance_params_get_event_filter</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
 <span class="w">  </span><span class="n">ALSATimerInstanceParams</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">ALSATimerEventType</span><span class="o">**</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">ALSATimerRealTimeEventType</span><span class="o">**</span><span class="w"> </span><span class="n">entries</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">gsize</span><span class="o">*</span><span class="w"> </span><span class="n">entry_count</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
@@ -130,13 +130,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/instance-params.c#L171">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/alsa-gobject/blob/master/src/timer/instance-params.c#L189">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the list of ALSATimerEventType to filter events. This parameter is effective only for target
-instance with <a href="enum.EventDataType.html"><code>ALSATimerEventDataType</code></a>.</p>
+        <p>Get the list of <a href="enum.RealTimeEventType.html"><code>ALSATimerRealTimeEventType</code></a> to filter events. This parameter is effective only for
+target instance with <a href="enum.EventType.html"><code>ALSATimerEventType</code></a>.REAL_TIME.</p>
       </div>
 
       <div class="docblock">
@@ -165,11 +165,12 @@ instance with <a href="enum.EventDataType.html"><code>ALSATimerEventDataType</co
           
           <tr class="arg-name">
             <td><code>entries</code></td>
-            <td>An array of&nbsp;<code>ALSATimerEventType*</code></td>
+            <td>An array of&nbsp;<code>ALSATimerRealTimeEventType*</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The array with elements for entries of <a href="enum.EventType.html"><code>ALSATimerEventType</code></a>.</p></td>
+            <td><p>The array with elements for entries of
+          <a href="enum.RealTimeEventType.html"><code>ALSATimerRealTimeEventType</code></a>.</p></td>
           </tr>
           <tr><td>&nbsp;</td><td title="direction: out">The argument will be set by the function.</td></tr>
           
@@ -214,6 +215,32 @@ instance with <a href="enum.EventDataType.html"><code>ALSATimerEventDataType</co
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="returns">
+          <tr class="arg-name">
+            <td>Returns:</td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p><code>TRUE</code> when the overall operation finishes successfully, else <code>FALSE</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
     
 
   </section>
