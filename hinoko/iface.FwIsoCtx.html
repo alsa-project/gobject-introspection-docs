@@ -1,0 +1,620 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hinoko.FwIsoCtx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hinoko.FwIsoCtx"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoCtx"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoCtx"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoCtx"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hinoko</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.7.2</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.FwIsoCtx.html#description">FwIsoCtx</a>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.FwIsoCtx.create_source.html">create_source</a>
+  
+    <a class="method" href="method.FwIsoCtx.flush_completions.html">flush_completions</a>
+  
+    <a class="method" href="method.FwIsoCtx.get_cycle_timer.html">get_cycle_timer</a>
+  
+    <a class="method" href="method.FwIsoCtx.release.html">release</a>
+  
+    <a class="method" href="method.FwIsoCtx.stop.html">stop</a>
+  
+    <a class="method" href="method.FwIsoCtx.unmap_buffer.html">unmap_buffer</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.FwIsoCtx.bytes-per-chunk.html">bytes-per-chunk</a>
+  
+    <a class="property" href="property.FwIsoCtx.chunks-per-buffer.html">chunks-per-buffer</a>
+  
+  </div>
+</div>
+
+
+
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.FwIsoCtx.stopped.html">stopped</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.FwIsoCtx.create_source.html">create_source</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.flush_completions.html">flush_completions</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.get_cycle_timer.html">get_cycle_timer</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.release.html">release</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.stop.html">stop</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.stopped.html">stopped</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.unmap_buffer.html">unmap_buffer</a>
+  
+  </div>
+</div>
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span>FwIsoCtx</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ctx.c#L6">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface Hinoko.FwIsoCtx : GObject.Object</code></pre>
+
+        <div class="docblock">
+          <p>An basic interface to operate isochronous context on 1394 <span class="caps">OHCI</span> controller.
+A <a href="iface.FwIsoCtx.html"><code>HinokoFwIsoCtx</code></a> is an basic interface to use <span class="caps">UAPI</span> of Linux FireWire subsystem to operate
+1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement FwIsoCtx, your type must inherit from
+        <a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
+      </div>
+    </div>
+
+    
+    <div class="implementations toggle-wrapper default-hide">
+      <h4 id="implementations">Implementations<a href="#implementations" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li><a href="class.FwIsoRxMultiple.html">HinokoFwIsoRxMultiple</a></li>
+        
+          <li><a href="class.FwIsoRxSingle.html">HinokoFwIsoRxSingle</a></li>
+        
+          <li><a href="class.FwIsoTx.html">HinokoFwIsoTx</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="methods toggle-wrapper">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="method.FwIsoCtx.create_source.html">hinoko_fw_iso_ctx_create_source</a></h6>
+
+        <div class="docblock">
+          <p>Create <code>GSource</code> for <code>GMainContext</code> to dispatch events for isochronous&nbsp;context.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="method.FwIsoCtx.flush_completions.html">hinoko_fw_iso_ctx_flush_completions</a></h6>
+
+        <div class="docblock">
+          <p>Flush isochronous context until recent isochronous cycle. The call of function forces the
+context to queue any type of interrupt event for the recent isochronous cycle. Application can
+process the content of isochronous packet without waiting for actual hardware&nbsp;interrupt.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="method.FwIsoCtx.get_cycle_timer.html">hinoko_fw_iso_ctx_get_cycle_timer</a></h6>
+
+        <div class="docblock">
+          <p>Retrieve the value of cycle timer register. This method call is available
+once any isochronous context is&nbsp;created.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="method.FwIsoCtx.release.html">hinoko_fw_iso_ctx_release</a></h6>
+
+        <div class="docblock">
+          <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="method.FwIsoCtx.stop.html">hinoko_fw_iso_ctx_stop</a></h6>
+
+        <div class="docblock">
+          <p>Stop isochronous&nbsp;context.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="method.FwIsoCtx.unmap_buffer.html">hinoko_fw_iso_ctx_unmap_buffer</a></h6>
+
+        <div class="docblock">
+          <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> controller for the&nbsp;context.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+    <div class="properties toggle-wrapper">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="property.FwIsoCtx.bytes-per-chunk.html">Hinoko.FwIsoCtx:bytes-per-chunk</a></h6>
+
+        <div class="docblock">
+          <p>The number of bytes per chunk in&nbsp;buffer.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      <div class="">
+        <h6><a href="property.FwIsoCtx.chunks-per-buffer.html">Hinoko.FwIsoCtx:chunks-per-buffer</a></h6>
+
+        <div class="docblock">
+          <p>The number of chunks per&nbsp;buffer.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="signal.FwIsoCtx.stopped.html">Hinoko.FwIsoCtx::stopped</a></h6>
+
+        <div class="docblock">
+          <p>Emitted when isochronous context is&nbsp;stopped.</p>
+        </div>
+
+        <div class="docblock"><p>Available since: 0.7.</p></div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct HinokoFwIsoCtxInterface {
+  GTypeInterface parent_iface;
+  void (* stop) (
+    HinokoFwIsoCtx* self
+  );
+  void (* unmap_buffer) (
+    HinokoFwIsoCtx* self
+  );
+  void (* release) (
+    HinokoFwIsoCtx* self
+  );
+  gboolean (* get_cycle_timer) (
+    HinokoFwIsoCtx* self,
+    gint clock_id,
+    HinokoCycleTimer* const* cycle_timer,
+    GError** error
+  );
+  gboolean (* flush_completions) (
+    HinokoFwIsoCtx* self,
+    GError** error
+  );
+  gboolean (* create_source) (
+    HinokoFwIsoCtx* self,
+    GSource** source,
+    GError** error
+  );
+  void (* stopped) (
+    HinokoFwIsoCtx* self,
+    const GError* error
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_iface</code></td>
+          <td style="vertical-align:top"><pre><code>GTypeInterface</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>stop</code></td>
+          <td style="vertical-align:top"><pre><code>void (* stop) (
+    HinokoFwIsoCtx* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>unmap_buffer</code></td>
+          <td style="vertical-align:top"><pre><code>void (* unmap_buffer) (
+    HinokoFwIsoCtx* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>release</code></td>
+          <td style="vertical-align:top"><pre><code>void (* release) (
+    HinokoFwIsoCtx* self
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_cycle_timer</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* get_cycle_timer) (
+    HinokoFwIsoCtx* self,
+    gint clock_id,
+    HinokoCycleTimer* const* cycle_timer,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>flush_completions</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* flush_completions) (
+    HinokoFwIsoCtx* self,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>create_source</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* create_source) (
+    HinokoFwIsoCtx* self,
+    GSource** source,
+    GError** error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>stopped</code></td>
+          <td style="vertical-align:top"><pre><code>void (* stopped) (
+    HinokoFwIsoCtx* self,
+    const GError* error
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-create_source"><a href="vfunc.FwIsoCtx.create_source.html">Hinoko.FwIsoCtx.create_source</a></h6>
+
+        <div class="docblock">
+          <p>Create <code>GSource</code> for <code>GMainContext</code> to dispatch events for isochronous&nbsp;context.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-flush_completions"><a href="vfunc.FwIsoCtx.flush_completions.html">Hinoko.FwIsoCtx.flush_completions</a></h6>
+
+        <div class="docblock">
+          <p>Flush isochronous context until recent isochronous cycle. The call of function forces the
+context to queue any type of interrupt event for the recent isochronous cycle. Application can
+process the content of isochronous packet without waiting for actual hardware&nbsp;interrupt.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_cycle_timer"><a href="vfunc.FwIsoCtx.get_cycle_timer.html">Hinoko.FwIsoCtx.get_cycle_timer</a></h6>
+
+        <div class="docblock">
+          <p>Retrieve the value of cycle timer register. This method call is available
+once any isochronous context is&nbsp;created.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-release"><a href="vfunc.FwIsoCtx.release.html">Hinoko.FwIsoCtx.release</a></h6>
+
+        <div class="docblock">
+          <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-stop"><a href="vfunc.FwIsoCtx.stop.html">Hinoko.FwIsoCtx.stop</a></h6>
+
+        <div class="docblock">
+          <p>Stop isochronous&nbsp;context.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-stopped"><a href="vfunc.FwIsoCtx.stopped.html">Hinoko.FwIsoCtx.stopped</a></h6>
+
+        <div class="docblock">
+          <p>Closure for the <code>HinokoFwIsoCtx::stopped</code> signal.</p>
+        </div>
+
+        
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-unmap_buffer"><a href="vfunc.FwIsoCtx.unmap_buffer.html">Hinoko.FwIsoCtx.unmap_buffer</a></h6>
+
+        <div class="docblock">
+          <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> controller for the&nbsp;context.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

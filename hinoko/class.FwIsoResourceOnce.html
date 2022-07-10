@@ -1,0 +1,465 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hinoko.FwIsoResourceOnce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hinoko.FwIsoResourceOnce"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoResourceOnce"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoResourceOnce"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoResourceOnce"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hinoko</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.7.2</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.FwIsoResourceOnce.html#description">FwIsoResourceOnce</a>
+  </div>
+</div>
+
+
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.FwIsoResourceOnce.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.FwIsoResourceOnce.deallocate_async.html">deallocate_async</a>
+  
+    <a class="method" href="method.FwIsoResourceOnce.deallocate_sync.html">deallocate_sync</a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoResourceOnce</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_resource_once.c#L4">[src]</a>
+          
+        </h4>
+
+        <pre><code>class Hinoko.FwIsoResourceOnce : GObject.Object {
+  parent_instance: GObject
+}</pre></code>
+
+        <div class="docblock">
+          <p>An object to initiate requests and listen events of isochronous resource allocation/deallocation
+by one shot.
+The <a href="class.FwIsoResourceOnce.html"><code>HinokoFwIsoResourceOnce</code></a> is an object to initiate requests and listen events of isochronous
+resource allocation/deallocation by file descriptor owned internally. The allocated resource
+is left even if this object is destroyed, thus application is responsible for&nbsp;deallocation.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper implements">
+      <h4 id="implements">
+        Implements
+        <a href="#implements" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="interface"><a href="iface.FwIsoResource.html" title="FwIsoResource">HinokoFwIsoResource</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.FwIsoResourceOnce.new.html">hinoko_fw_iso_resource_once_new</a></h6>
+
+          <div class="docblock">
+            <p>Allocate and return an instance of <code>HinokoFwIsoResourceOnce</code>.</p>
+          </div>
+
+          
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.FwIsoResourceOnce.deallocate_async.html">hinoko_fw_iso_resource_once_deallocate_async</a></h6>
+          <div class="docblock">
+            <p>Initiate deallocation of isochronous resource without any wait. When the
+deallocation finishes, <code>HinokoFwIsoResource::deallocated</code> signal is emit to notify the result,
+channel, and&nbsp;bandwidth.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.</p></div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FwIsoResourceOnce.deallocate_sync.html">hinoko_fw_iso_resource_once_deallocate_sync</a></h6>
+          <div class="docblock">
+            <p>Initiate deallocation of isochronous resource and wait for <code>HinokoFwIsoResource::deallocated</code>
+signal.</p>
+          </div>
+          <div class="docblock"><p>Available since: 0.7.</p></div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="iface.FwIsoResource.html">HinokoFwIsoResource</a> (4)</h5><div class="docblock">
+          
+            <h6><a href="method.FwIsoResource.allocate_async.html">hinoko_fw_iso_resource_allocate_async</a></h6><div class="docblock">
+              <p>Initiate allocation of isochronous resource without any wait. One of the candidates is actually
+allocated for channel. When the allocation finishes, <code>HinokoFwIsoResource::allocated</code> signal is
+emitted to notify the result, channel, and&nbsp;bandwidth.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.7.</p></div>
+          
+            <h6><a href="method.FwIsoResource.allocate_sync.html">hinoko_fw_iso_resource_allocate_sync</a></h6><div class="docblock">
+              <p>Initiate allocation of isochronous resource and wait for <code>HinokoFwIsoResource::allocated</code>
+signal. One of the candidates is actually allocated for&nbsp;channel.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.7.</p></div>
+          
+            <h6><a href="method.FwIsoResource.create_source.html">hinoko_fw_iso_resource_create_source</a></h6><div class="docblock">
+              <p>Create <code>GSource</code> for <code>GMainContext</code> to dispatch events for isochronous&nbsp;resource.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.7.</p></div>
+          
+            <h6><a href="method.FwIsoResource.open.html">hinoko_fw_iso_resource_open</a></h6><div class="docblock">
+              <p>Open Linux FireWire character device to delegate any request for isochronous
+resource management to Linux FireWire&nbsp;subsystem.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.7.</p></div>
+          
+          </div>
+        </div>
+        
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="iface.FwIsoResource.html">HinokoFwIsoResource</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="property.FwIsoResource.generation.html">Hinoko.FwIsoResource:generation</a></h6><div class="docblock">
+              No description available.
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject.Object::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+            
+          
+          </div>
+        </div>
+        
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="iface.FwIsoResource.html">HinokoFwIsoResource</a> (2)</h5><div class="docblock">
+          
+            <h6><a href="signal.FwIsoResource.allocated.html">Hinoko.FwIsoResource::allocated</a></h6><div class="docblock">
+              <p>Emitted when allocation of isochronous resource&nbsp;finishes.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.7.</p></div>
+          
+            <h6><a href="signal.FwIsoResource.deallocated.html">Hinoko.FwIsoResource::deallocated</a></h6><div class="docblock">
+              <p>Emitted when deallocation of isochronous resource&nbsp;finishes.</p>
+            </div>
+            <div class="docblock"><p>Available since: 0.7.</p></div>
+          
+          </div>
+        </div>
+        
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct HinokoFwIsoResourceOnceClass {
+  GObjectClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <table class="members">
+        
+        <tr>
+          <td style="vertical-align:top"><code>parent_class</code></td>
+          <td style="vertical-align:top"><pre><code>GObjectClass</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td style="vertical-align:top">No description available.</td>
+        </td>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#implements"><span class="link-text">Implements</span></a></li>
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

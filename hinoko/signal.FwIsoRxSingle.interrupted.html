@@ -1,0 +1,275 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hinoko.FwIsoRxSingle::interrupted</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hinoko.FwIsoRxSingle::interrupted"/>
+  <meta property="og:description" content="Reference for signal Hinoko.FwIsoRxSingle::interrupted"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoRxSingle::interrupted"/>
+  <meta name="twitter:description" content="Reference for signal Hinoko.FwIsoRxSingle::interrupted"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hinoko</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.7.2</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal current" href="signal.FwIsoRxSingle.interrupted.html">interrupted</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Signal</h3>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a>::interrupted</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 id="declaration">
+        Declaration
+        <a href="#declaration" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="n">interrupted</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoRxSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">sec</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">cycle</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">header</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">header_length</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 id="description" style="display:flex;">
+        Description
+        <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.c#L59">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Emitted when Linux FireWire subsystem generates interrupt event. There are three cases
+for Linux FireWire subsystem to generate the&nbsp;event:</p>
+<ul>
+<li>When <span class="caps">OHCI</span> 1394 controller generates hardware interrupt as a result to process the
+  isochronous packet for the buffer chunk marked to generate hardware&nbsp;interrupt.</li>
+<li>When the size of accumulated context header for packets since the last event reaches
+  the size of memory page (usually 4,096&nbsp;bytes).</li>
+<li>When application calls <a href="method.FwIsoCtx.flush_completions.html"><code>hinoko_fw_iso_ctx_flush_completions()</code></a>&nbsp;explicitly.</li>
+</ul>
+<p>The handler of signal can retrieve context payload of received packet by call of
+<a href="method.FwIsoRxSingle.get_payload.html"><code>hinoko_fw_iso_rx_single_get_payload()</code></a>.</p>
+      </div>
+
+      <div class="docblock">
+        <table>
+          <tr><td>Default handler:</td><td> <p>The default handler is called after the handlers added via <code>g_signal_connect()</code>.</p></td></tr>
+          
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>sec</code></td>
+            <td><code>guint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>Sec part of isochronous cycle when interrupt occurs, up to&nbsp;7.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>cycle</code></td>
+            <td><code>guint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>Cycle part of of isochronous cycle when interrupt occurs, up to&nbsp;7999.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>header</code></td>
+            <td>An array of&nbsp;<code>guint8</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The headers of <span class="caps">IR</span> context
+    for packets handled in the event of interrupt. The content is different
+    depending on header_size parameter of <a href="method.FwIsoRxSingle.allocate.html"><code>hinoko_fw_iso_rx_single_allocate()</code></a>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td>The length of the array is specified in the <code>header_length</code> argument.</td></tr>
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>header_length</code></td>
+            <td><code>guint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The number of bytes for <code>header</code>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>count</code></td>
+            <td><code>guint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The number of packets to&nbsp;handle.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hinoko.FwIsoRxMultiple::interrupted</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hinoko.FwIsoRxMultiple::interrupted"/>
+  <meta property="og:description" content="Reference for signal Hinoko.FwIsoRxMultiple::interrupted"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoRxMultiple::interrupted"/>
+  <meta name="twitter:description" content="Reference for signal Hinoko.FwIsoRxMultiple::interrupted"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hinoko</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.7.2</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.FwIsoRxMultiple.html">FwIsoRxMultiple</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal current" href="signal.FwIsoRxMultiple.interrupted.html">interrupted</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Signal</h3>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoRxMultiple.html">FwIsoRxMultiple</a>::interrupted</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 id="declaration">
+        Declaration
+        <a href="#declaration" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="n">interrupted</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoRxMultiple</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 id="description" style="display:flex;">
+        Description
+        <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_multiple.c#L91">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Emitted when Linux FireWire subsystem generates interrupt event. There are two cases
+for Linux FireWire subsystem to generate the&nbsp;event:</p>
+<ul>
+<li>When <span class="caps">OHCI</span> 1394 controller generates hardware interrupt as a result to process the
+  isochronous packet for the buffer chunk marked to generate hardware&nbsp;interrupt.</li>
+<li>When application calls <a href="method.FwIsoCtx.flush_completions.html"><code>hinoko_fw_iso_ctx_flush_completions()</code></a>&nbsp;explicitly.</li>
+</ul>
+<p>The handler of signal can retrieve the content of packet by call of
+<a href="method.FwIsoRxMultiple.get_payload.html"><code>hinoko_fw_iso_rx_multiple_get_payload()</code></a>.</p>
+      </div>
+
+      <div class="docblock">
+        <table>
+          <tr><td>Default handler:</td><td> <p>The default handler is called after the handlers added via <code>g_signal_connect()</code>.</p></td></tr>
+          
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>count</code></td>
+            <td><code>guint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The number of packets available in this&nbsp;interrupt.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
