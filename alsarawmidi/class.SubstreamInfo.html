@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSARawmidi</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -150,8 +150,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent information of substream.
-A <a href="class.SubstreamInfo.html"><code>ALSARawmidiSubstreamInfo</code></a> is a GObject-derived object to represent information of substream
+          <p>A GObject-derived object to express information of substream.
+A <a href="class.SubstreamInfo.html"><code>ALSARawmidiSubstreamInfo</code></a> is a GObject-derived object to express information of substream
 attached to the pair of streams. The call of <a href="method.StreamPair.get_substream_info.html"><code>alsarawmidi_stream_pair_get_substream_info()</code></a> or
 <a href="func.get_substream_info.html"><code>alsarawmidi_get_substream_info()</code></a> return the instance of&nbsp;object.</p>
 <p>The object wraps <code>struct snd_rawmidi_info</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
@@ -241,7 +241,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.card-id.html">ALSARawmidi.SubstreamInfo:card-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric identifier of sound&nbsp;card.</p>
           </div>
 
           
@@ -251,7 +251,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.device-id.html">ALSARawmidi.SubstreamInfo:device-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric identifier of rawmidi&nbsp;device.</p>
           </div>
 
           
@@ -261,7 +261,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.direction.html">ALSARawmidi.SubstreamInfo:direction</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The direction of stream, one of <code>ALSARawmidiStreamDirection</code>.</p>
           </div>
 
           
@@ -271,7 +271,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.flags.html">ALSARawmidi.SubstreamInfo:flags</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The information flags of rawmidi device with flags of <code>ALSARawmidiStreamPairInfoFlag</code>.</p>
           </div>
 
           
@@ -281,7 +281,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.id.html">ALSARawmidi.SubstreamInfo:id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The string identifier of rawmidi&nbsp;device.</p>
           </div>
 
           
@@ -291,7 +291,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.name.html">ALSARawmidi.SubstreamInfo:name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of rawmidi&nbsp;device.</p>
           </div>
 
           
@@ -301,7 +301,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.subdevice-id.html">ALSARawmidi.SubstreamInfo:subdevice-id</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The numeric identifier of subdevice or rawmidi&nbsp;device.</p>
           </div>
 
           
@@ -311,7 +311,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.subdevice-name.html">ALSARawmidi.SubstreamInfo:subdevice-name</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The name of subdevice for the direction and the <code>ALSARawmidiSubstreamInfo:subdevice-id</code>.</p>
           </div>
 
           
@@ -321,7 +321,7 @@ attached to the pair of streams. The call of <a href="method.StreamPair.get_subs
           <h6><a href="property.SubstreamInfo.subdevices-avail.html">ALSARawmidi.SubstreamInfo:subdevices-avail</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The current number of available subdevices on the rawmidi device for the&nbsp;direction.</p>
           </div>
 
           

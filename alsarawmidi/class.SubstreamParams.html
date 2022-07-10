@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSARawmidi</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -145,8 +145,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A GObject-derived object to represent parameters of substream.
-A <a href="class.SubstreamParams.html"><code>ALSARawmidiSubstreamParams</code></a> is a GObject-derived object to represent parameters of substream
+          <p>A GObject-derived object to express parameters of substream.
+A <a href="class.SubstreamParams.html"><code>ALSARawmidiSubstreamParams</code></a> is a GObject-derived object to express parameters of substream
 attached to the pair of streams. The call of <a href="method.StreamPair.set_substream_params.html"><code>alsarawmidi_stream_pair_set_substream_params()</code></a> requires
 the instance of&nbsp;object.</p>
 <p>The object wraps <code>struct snd_rawmidi_params</code> in <span class="caps">UAPI</span> of Linux sound&nbsp;subsystem.</p>
@@ -257,7 +257,7 @@ the instance of&nbsp;object.</p>
           <h6><a href="property.SubstreamParams.active-sensing.html">ALSARawmidi.SubstreamParams:active-sensing</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>Whether to emit 0xfe one time when closing&nbsp;substream.</p>
           </div>
 
           
@@ -267,7 +267,7 @@ the instance of&nbsp;object.</p>
           <h6><a href="property.SubstreamParams.avail-min.html">ALSARawmidi.SubstreamParams:avail-min</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The threshold to wake up from any blocking operation such as poll(2), read(2) and&nbsp;write(2).</p>
           </div>
 
           
@@ -277,7 +277,7 @@ the instance of&nbsp;object.</p>
           <h6><a href="property.SubstreamParams.buffer-size.html">ALSARawmidi.SubstreamParams:buffer-size</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The size of intermediate buffer for&nbsp;substream.</p>
           </div>
 
           

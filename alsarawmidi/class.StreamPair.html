@@ -70,7 +70,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">ALSARawmidi</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.2.2</p>
+        <p>Library Version: 0.3.0</p>
         
       </div>
       
@@ -190,8 +190,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>GObject-derived object to represent a pair of Rawmidi stream.
-A <a href="class.StreamPair.html"><code>ALSARawmidiStreamPair</code></a> is a GObject-derived object to represent a pair of Rawmidi stream to which
+          <p>GObject-derived object to express a pair of Rawmidi stream.
+A <a href="class.StreamPair.html"><code>ALSARawmidiStreamPair</code></a> is a GObject-derived object to express a pair of Rawmidi stream to which
 substreams are attached. The substream is pointed by the combination of the numeric identifier
 of device, subdevice, and direction. When the call of <a href="method.StreamPair.open.html"><code>alsarawmidi_stream_pair_open()</code></a> with the
 combination, corresponding substreams are attached to the object. Then the object maintains file
@@ -307,7 +307,7 @@ the result of <code>poll(2)</code> system&nbsp;call.</p>
         <div class="">
           <h6><a href="method.StreamPair.get_protocol_version.html">alsarawmidi_stream_pair_get_protocol_version</a></h6>
           <div class="docblock">
-            <p>Get the version of rawmidi protocol currently used. The version is represented as the array with
+            <p>Get the version of rawmidi protocol currently used. The version is expressed as the array with
 three elements; major, minor, and micro version in the order. The length of major version is
 16 bit, the length of minor and micro version is 8 bit&nbsp;each.</p>
           </div>
@@ -401,7 +401,7 @@ buffer is full, call of the <span class="caps">API</span> is blocked till the bu
           <h6><a href="property.StreamPair.devnode.html">ALSARawmidi.StreamPair:devnode</a></h6>
 
           <div class="docblock">
-            No description available.
+            <p>The full path to special file of rawmidi character&nbsp;device.</p>
           </div>
 
           
