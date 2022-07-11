@@ -1,1 +1,3 @@
-theme: jekyll-theme-slate
+title: ALSA GObject Introspection team
+description: libraries and applications maintained by ALSA GObject Introspection team
+theme: minima
