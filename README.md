@@ -1,7 +1,7 @@
-[ALSA GObject Introspection team](https://github.com/orgs/alsa-project/teams/gobject-introspection)
-maintains libraries and applications to interact with Linux kernel for hardware features to process
-audio and music data.  [GObject Introspection](https://gi.readthedocs.io/) is utilized to provide
-language bindings for the libraries.
+ALSA GObject Introspection team maintains libraries and applications to interact with Linux kernel
+for hardware features to process audio and music data.
+[GObject Introspection](https://gi.readthedocs.io/) is utilized to provide language bindings for
+the libraries.
 
 ## Libraries
 
