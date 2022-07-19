@@ -36,3 +36,7 @@ In detail, see [Applications](applications.md).
 * Post messages to [alsa-devel mailing list](https://mailman.alsa-project.org/mailman/listinfo/alsa-devel)
 * The other users will probably have interests in your issue, thus let us to share the issue
   instead of direct contact to indivisual developer.
+
+## Documentation repository
+
+This documentation is hosted in <https://github.com/alsa-project/gobject-introspection-docs/>.
