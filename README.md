@@ -6,8 +6,9 @@ the libraries.
 ## Libraries
 
 The team provides libraries written by C language to execute system calls for Linux sound
-subsystem.  The libraries support [type/object system](https://docs.gtk.org/gobject/concepts.html)
-in [GLib](https://docs.gtk.org/glib/)/[GObject](https://docs.gtk.org/gobject/), as well as
+subsystem as well as Linux FireWire subsystem for reasons. The libraries support
+[type/object system](https://docs.gtk.org/gobject/concepts.html) in
+[GLib](https://docs.gtk.org/glib/)/[GObject](https://docs.gtk.org/gobject/), as well as
 [event loop mechanism](https://docs.gtk.org/glib/main-loop.html) in
 [GLib](https://docs.gtk.org/glib/). The libraries also support
 [GObject Introspection](https://gi.readthedocs.io/) to provide metadata of public API for
