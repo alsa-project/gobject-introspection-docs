@@ -1,5 +1,14 @@
 ## Rust crates
 
+The list of utility crates.
+
+### alsa-ctl-tlv-codec
+
+- Encoder and decoder for Type-Length-Value (TLV) style data in ALSA control interface
+* crates.io: <https://crates.io/crates/alsa-ctl-tlv-codec>
+* documentation: <https://docs.rs/alsa-ctl-tlv-codec>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
 The list of FFI/API crates maintained by ALSA GObject Introspection team.
 
 ### alsactl/alsactl-sys crates
