@@ -9,6 +9,13 @@ The list of utility crates.
 * documentation: <https://docs.rs/alsa-ctl-tlv-codec>
 * repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
 
+### ieee1212-config-rom
+
+- Parser for content of Configuration ROM defined in IEEE 1212.
+* crates.io: <https://crates.io/crates/ieee1212-config-rom>
+* documentation: <https://docs.rs/ieee1212-config-rom/>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
 The list of FFI/API crates maintained by ALSA GObject Introspection team.
 
 ### alsactl/alsactl-sys crates
