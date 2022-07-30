@@ -1,19 +1,48 @@
 ## Rust crates
 
-The list of utility crates.
+The list of library crates.
 
 ### alsa-ctl-tlv-codec
 
-- Encoder and decoder for Type-Length-Value (TLV) style data in ALSA control interface
+* Encoder and decoder for Type-Length-Value (TLV) style data in ALSA control interface
 * crates.io: <https://crates.io/crates/alsa-ctl-tlv-codec>
 * documentation: <https://docs.rs/alsa-ctl-tlv-codec>
 * repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
 
 ### ieee1212-config-rom
 
-- Parser for content of Configuration ROM defined in IEEE 1212.
+* Parser for content of Configuration ROM defined in IEEE 1212.
 * crates.io: <https://crates.io/crates/ieee1212-config-rom>
 * documentation: <https://docs.rs/ieee1212-config-rom/>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### ta1394-avc-general
+
+* A pure-Rust small framework for AV/C protocol and command defined by 1394 Trading Association
+* crates.io: <https://crates.io/crates/ta1394-avc-general>
+* documentation: <https://docs.rs/ta1394-avc-general>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### ta1394-avc-audio
+
+* A pure-Rust implementation of AV/C commands for audio subunit defined by 1394 Trading Association
+* crates.io: <https://crates.io/crates/ta1394-avc-audio>
+* documentation: <https://docs.rs/ta1394-avc-audio>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### ta1394-avc-stream-format
+
+* A pure-Rust implementation of AV/C commands for stream format defined by 1394 Trading Association
+* crates.io: <https://crates.io/crates/ta1394-avc-stream-format>
+* documentation: <https://docs.rs/ta1394-avc-stream-format>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### ta1394-avc-ccm
+
+* A pure-Rust implementation of AV/C commands for connection and compatibility management defined
+  by 1394 Trading Association
+* crates.io: <https://crates.io/crates/ta1394-avc-ccm>
+* documentation: <https://docs.rs/ta1394-avc-ccm>
 * repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
 
 The list of FFI/API crates maintained by ALSA GObject Introspection team.
