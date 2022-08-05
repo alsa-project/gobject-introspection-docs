@@ -45,6 +45,56 @@ The list of library crates.
 * documentation: <https://docs.rs/ta1394-avc-ccm>
 * repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
 
+### firewire-bebob-protocols
+* Implementation of protocols defined by BridgeCo. AG and application vendors for DM1000, DM1100,
+  and DM1500 ASICs with its BridgeCo. Enhanced Break Out Box (BeBoB) solution.
+* crates.io: <https://crates.io/crates/firewire-bebob-protocols>
+* documentation: <https://docs.rs/firewire-bebob-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-fireworks-protocols
+* Implementation of protocols defined by Echo Digital Audio Corporation for Fireworks board module.
+* crates.io: <https://crates.io/crates/firewire-fireworks-protocols>
+* documentation: <https://docs.rs/firewire-fireworks-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-oxfw-protocols
+* Implementation of protocol for Oxford Semiconductor FW970/971 chipset and vendor-specific models.
+* crates.io: <https://crates.io/crates/firewire-oxfw-protocols>
+* documentation: <https://docs.rs/firewire-oxfw-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-dice-protocols
+* Implementation of protocols defined by TC Applied Technologies for ASICs of Digital Interface
+  Communication Engine (DICE) as well as hardware vendors.
+* crates.io: <https://crates.io/crates/firewire-dice-protocols>
+* documentation: <https://docs.rs/firewire-dice-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-digi00x-protocols
+* Implementation of protocol for Digi 00x family
+* crates.io: <https://crates.io/crates/firewire-digi00x-protocols>
+* documentation: <https://docs.rs/firewire-digi00x-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-tascam-protocols
+* Protocol implementation for TASCAM FireWire series
+* crates.io: <https://crates.io/crates/firewire-tascam-protocols>
+* documentation: <https://docs.rs/firewire-tascam-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-motu-protocols
+* Implementation of protocols defined by Mark of the Unicorn for its FireWire series.
+* crates.io: <https://crates.io/crates/firewire-motu-protocols>
+* documentation: <https://docs.rs/firewire-motu-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
+### firewire-fireface-protocols
+* Implementation of protocols defined by RME GmbH for its Fireface series.
+* crates.io: <https://crates.io/crates/firewire-fireface-protocols>
+* documentation: <https://docs.rs/firewire-fireface-protocols>
+* repository: [snd-firewire-ctl-services](https://github.com/alsa-project/snd-firewire-ctl-services/)
+
 The list of FFI/API crates maintained by ALSA GObject Introspection team.
 
 ### alsactl/alsactl-sys crates
