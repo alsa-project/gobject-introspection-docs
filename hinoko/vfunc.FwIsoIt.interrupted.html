@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoTx::interrupted</title>
+  <title>Hinoko.FwIsoIt.interrupted</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Hinoko.FwIsoTx::interrupted"/>
-  <meta property="og:description" content="Reference for signal Hinoko.FwIsoTx::interrupted"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoTx::interrupted"/>
-  <meta name="twitter:description" content="Reference for signal Hinoko.FwIsoTx::interrupted"/>
+  <meta property="og:title" content="Hinoko.FwIsoIt.interrupted"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoIt.interrupted"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIt.interrupted"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIt.interrupted"/>
 
 
   
@@ -57,21 +57,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoTx.html">FwIsoTx</a>
+    <a href="class.FwIsoIt.html">FwIsoIt</a>
   </div>
 </div>
 <div class="section">
-  <h5>Signals</h5>
+  <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="signal current" href="signal.FwIsoTx.interrupted.html">interrupted</a>
+    <a class="method current" href="vfunc.FwIsoIt.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -83,8 +83,8 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     
 <section id="main" class="content">
   <header>
-    <h3>Signal</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoTx.html">FwIsoTx</a>::interrupted</h1>
+    <h3>Virtual Method</h3>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIt.html">FwIsoIt</a><span class="sep"></span>interrupted</h1>
   </header>
 
   <section>
@@ -92,18 +92,20 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <h4 id="declaration">
         Declaration
         <a href="#declaration" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.h#L28">[src]</a>
+        
       </h4>
 
-      <div class="docblock">
+      <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
 <span class="n">interrupted</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">HinokoFwIsoTx</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoIt</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">sec</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">cycle</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">tstamp</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">tstamp</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">tstamp_length</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">count</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
 </code></pre>
@@ -111,33 +113,20 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     </div>
 
     <div class="description toggle-wrapper">
-      <h4 id="description" style="display:flex;">
+      <h4 id="description">
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_tx.c#L53">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.h#L16">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Emitted when Linux FireWire subsystem generates interrupt event. There are three cases
-for Linux FireWire subsystem to generate the&nbsp;event:</p>
-<ul>
-<li>When <span class="caps">OHCI</span> 1394 controller generates hardware interrupt as a result of processing the
-  isochronous packet for the buffer chunk marked to generate hardware&nbsp;interrupt.</li>
-<li>When the number of isochronous packets sent since the last interrupt event reaches
-  one quarter of memory page size (usually 4,096 / 4 = 1,024&nbsp;packets).</li>
-<li>When application calls <a href="method.FwIsoCtx.flush_completions.html"><code>hinoko_fw_iso_ctx_flush_completions()</code></a>&nbsp;explicitly.</li>
-</ul>
+        <p>Class closure for the <a href="signal.FwIsoIt.interrupted.html"><code>HinokoFwIsoIt::interrupted</code></a>&nbsp;signal.</p>
       </div>
 
       <div class="docblock">
         <table>
-          <tr><td>Default handler:</td><td> <p>The default handler is called after the handlers added via <code>g_signal_connect()</code>.</p></td></tr>
-          
-          
-          
-          
           
           
           
@@ -163,7 +152,7 @@ for Linux FireWire subsystem to generate the&nbsp;event:</p>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Sec part of isochronous cycle when interrupt occurs, up to&nbsp;7.</p></td>
+            <td><p>The sec part of isochronous cycle when interrupt occurs, up to&nbsp;7.</p></td>
           </tr>
           
           
@@ -181,7 +170,7 @@ for Linux FireWire subsystem to generate the&nbsp;event:</p>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Cycle part of of isochronous cycle when interrupt occurs, up to&nbsp;7999.</p></td>
+            <td><p>The cycle part of of isochronous cycle when interrupt occurs, up to&nbsp;7999.</p></td>
           </tr>
           
           
@@ -209,7 +198,7 @@ for Linux FireWire subsystem to generate the&nbsp;event:</p>
           
           
           <tr><td>&nbsp;</td><td>The length of the array is specified in the <code>tstamp_length</code> argument.</td></tr>
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           <tr class="arg-name">

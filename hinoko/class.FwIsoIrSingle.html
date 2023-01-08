@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoRxSingle</title>
+  <title>Hinoko.FwIsoIrSingle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Hinoko.FwIsoRxSingle"/>
-  <meta property="og:description" content="Reference for Hinoko.FwIsoRxSingle"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoRxSingle"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoRxSingle"/>
+  <meta property="og:title" content="Hinoko.FwIsoIrSingle"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoIrSingle"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIrSingle"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIrSingle"/>
 
 
   
@@ -57,14 +57,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a class="current" href="class.FwIsoRxSingle.html#description">FwIsoRxSingle</a>
+    <a class="current" href="class.FwIsoIrSingle.html#description">FwIsoIrSingle</a>
   </div>
 </div>
 
@@ -73,7 +73,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Constructors</h5>
   <div class="links">
   
-    <a class="ctor" href="ctor.FwIsoRxSingle.new.html">new</a>
+    <a class="ctor" href="ctor.FwIsoIrSingle.new.html">new</a>
   
   </div>
 </div>
@@ -86,15 +86,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoRxSingle.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIrSingle.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoRxSingle.get_payload.html">get_payload</a>
+    <a class="method" href="method.FwIsoIrSingle.get_payload.html">get_payload</a>
   
-    <a class="method" href="method.FwIsoRxSingle.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIrSingle.map_buffer.html">map_buffer</a>
   
-    <a class="method" href="method.FwIsoRxSingle.register_packet.html">register_packet</a>
+    <a class="method" href="method.FwIsoIrSingle.register_packet.html">register_packet</a>
   
-    <a class="method" href="method.FwIsoRxSingle.start.html">start</a>
+    <a class="method" href="method.FwIsoIrSingle.start.html">start</a>
   
   </div>
 </div>
@@ -107,7 +107,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Signals</h5>
   <div class="links">
   
-    <a class="signal" href="signal.FwIsoRxSingle.interrupted.html">interrupted</a>
+    <a class="signal" href="signal.FwIsoIrSingle.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -120,7 +120,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.FwIsoRxSingle.interrupted.html">interrupted</a>
+    <a class="method" href="vfunc.FwIsoIrSingle.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -135,7 +135,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Class</h3>
-    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoRxSingle</h1>
+    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoIrSingle</h1>
   </header>
 
   <section>
@@ -145,17 +145,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.c#L4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_single.c#L4">[src]</a>
           
         </h4>
 
-        <pre><code>class Hinoko.FwIsoRxSingle : GObject.Object {
+        <pre><code>class Hinoko.FwIsoIrSingle : GObject.Object {
   parent_instance: GObject
 }</pre></code>
 
         <div class="docblock">
           <p>An object to receive isochronous packet for single channel.
-A <a href="class.FwIsoRxSingle.html"><code>HinokoFwIsoRxSingle</code></a> receives isochronous packets for single channel by <span class="caps">IR</span>
+A <a href="class.FwIsoIrSingle.html"><code>HinokoFwIsoIrSingle</code></a> receives isochronous packets for single channel by <span class="caps">IR</span>
 context for packet-per-buffer mode in 1394 <span class="caps">OHCI</span>. The content of packet is
 split to two parts; context header and context payload in a manner of Linux
 FireWire&nbsp;subsystem.</p>
@@ -225,10 +225,10 @@ FireWire&nbsp;subsystem.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="ctor.FwIsoRxSingle.new.html">hinoko_fw_iso_rx_single_new</a></h6>
+          <h6><a href="ctor.FwIsoIrSingle.new.html">hinoko_fw_iso_ir_single_new</a></h6>
 
           <div class="docblock">
-            <p>Instantiate <code>HinokoFwIsoRxSingle</code> object and return the&nbsp;instance.</p>
+            <p>Instantiate <code>HinokoFwIsoIrSingle</code> object and return the&nbsp;instance.</p>
           </div>
 
           
@@ -250,7 +250,7 @@ FireWire&nbsp;subsystem.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.FwIsoRxSingle.allocate.html">hinoko_fw_iso_rx_single_allocate</a></h6>
+          <h6><a href="method.FwIsoIrSingle.allocate.html">hinoko_fw_iso_ir_single_allocate</a></h6>
           <div class="docblock">
             <p>Allocate an <span class="caps">IR</span> context to 1394 <span class="caps">OHCI</span> controller for packet-per-buffer mode. A local node of the
 node corresponding to the given path is used as the controller, thus any path is accepted as
@@ -260,7 +260,7 @@ long as process has enough permission for the&nbsp;path.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxSingle.get_payload.html">hinoko_fw_iso_rx_single_get_payload</a></h6>
+          <h6><a href="method.FwIsoIrSingle.get_payload.html">hinoko_fw_iso_ir_single_get_payload</a></h6>
           <div class="docblock">
             <p>Retrieve payload of <span class="caps">IR</span> context for a handled packet corresponding to index at the event of&nbsp;interrupt.</p>
           </div>
@@ -268,7 +268,7 @@ long as process has enough permission for the&nbsp;path.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxSingle.map_buffer.html">hinoko_fw_iso_rx_single_map_buffer</a></h6>
+          <h6><a href="method.FwIsoIrSingle.map_buffer.html">hinoko_fw_iso_ir_single_map_buffer</a></h6>
           <div class="docblock">
             <p>Map intermediate buffer to share payload of <span class="caps">IR</span> context with 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
           </div>
@@ -276,17 +276,17 @@ long as process has enough permission for the&nbsp;path.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxSingle.register_packet.html">hinoko_fw_iso_rx_single_register_packet</a></h6>
+          <h6><a href="method.FwIsoIrSingle.register_packet.html">hinoko_fw_iso_ir_single_register_packet</a></h6>
           <div class="docblock">
             <p>Register chunk of buffer to process packet for future isochronous cycle. The caller can schedule
 hardware interrupt to generate interrupt event. In detail, please refer to documentation about
-<code>HinokoFwIsoRxSingle::interrupted</code> signal.</p>
+<code>HinokoFwIsoIrSingle::interrupted</code> signal.</p>
           </div>
           <div class="docblock"><p>Available since: 0.7.</p></div>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxSingle.start.html">hinoko_fw_iso_rx_single_start</a></h6>
+          <h6><a href="method.FwIsoIrSingle.start.html">hinoko_fw_iso_ir_single_start</a></h6>
           <div class="docblock">
             <p>Start <span class="caps">IR</span>&nbsp;context.</p>
           </div>
@@ -401,7 +401,7 @@ once any isochronous context is&nbsp;created.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="signal.FwIsoRxSingle.interrupted.html">Hinoko.FwIsoRxSingle::interrupted</a></h6>
+          <h6><a href="signal.FwIsoIrSingle.interrupted.html">Hinoko.FwIsoIrSingle::interrupted</a></h6>
           <div class="docblock">
             <p>Emitted when Linux FireWire subsystem generates interrupt event. There are three cases
 for Linux FireWire subsystem to generate the&nbsp;event:</p>
@@ -454,10 +454,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </h4>
 
       <div class="docblock">
-        <pre><code>struct HinokoFwIsoRxSingleClass {
+        <pre><code>struct HinokoFwIsoIrSingleClass {
   GObjectClass parent_class;
   void (* interrupted) (
-    HinokoFwIsoRxSingle* self,
+    HinokoFwIsoIrSingle* self,
     guint sec,
     guint cycle,
     const guint8* header,
@@ -486,7 +486,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         <tr>
           <td style="vertical-align:top"><code>interrupted</code></td>
           <td style="vertical-align:top"><pre><code>void (* interrupted) (
-    HinokoFwIsoRxSingle* self,
+    HinokoFwIsoIrSingle* self,
     guint sec,
     guint cycle,
     const guint8* header,
@@ -515,10 +515,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
       
       <div class="">
-        <h6 id="vfunc-interrupted"><a href="vfunc.FwIsoRxSingle.interrupted.html">Hinoko.FwIsoRxSingleClass.interrupted</a></h6>
+        <h6 id="vfunc-interrupted"><a href="vfunc.FwIsoIrSingle.interrupted.html">Hinoko.FwIsoIrSingleClass.interrupted</a></h6>
 
         <div class="docblock">
-          <p>Class closure for the <code>HinokoFwIsoRxSingle::interrupted</code> signal.</p>
+          <p>Class closure for the <code>HinokoFwIsoIrSingle::interrupted</code> signal.</p>
         </div>
 
           

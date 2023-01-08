@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoTx.register_packet</title>
+  <title>Hinoko.FwIsoIt.register_packet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoTx.register_packet"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoTx.register_packet"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoTx.register_packet"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoTx.register_packet"/>
+  <meta priority="og:title" content="Hinoko.FwIsoIt.register_packet"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoIt.register_packet"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIt.register_packet"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIt.register_packet"/>
 
 
   
@@ -57,27 +57,27 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoTx.html">FwIsoTx</a>
+    <a href="class.FwIsoIt.html">FwIsoIt</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoTx.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIt.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoTx.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIt.map_buffer.html">map_buffer</a>
   
-    <a class="method current" href="method.FwIsoTx.register_packet.html">register_packet</a>
+    <a class="method current" href="method.FwIsoIt.register_packet.html">register_packet</a>
   
-    <a class="method" href="method.FwIsoTx.start.html">start</a>
+    <a class="method" href="method.FwIsoIt.start.html">start</a>
   
   </div>
 </div>
@@ -90,7 +90,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoTx.html">FwIsoTx</a><span class="sep"></span>register_packet</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIt.html">FwIsoIt</a><span class="sep"></span>register_packet</h1>
   </header>
 
   <section>
@@ -99,14 +99,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_tx.h#L43">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.h#L43">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
-<span class="n">hinoko_fw_iso_tx_register_packet</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">HinokoFwIsoTx</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="n">hinoko_fw_iso_it_register_packet</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoIt</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">HinokoFwIsoCtxMatchFlag</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">sync_code</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">header</span><span class="p">,</span><span class="w"></span>
@@ -126,7 +126,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_tx.c#L310">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.c#L310">[src]</a>
         
       </h4>
 
@@ -134,7 +134,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <p>Register packet data with header and payload for <span class="caps">IT</span> context. The content of given header and
 payload is appended into data field of isochronous packet to be sent. The caller can schedule
 hardware interrupt to generate interrupt event. In detail, please refer to documentation about
-<a href="signal.FwIsoTx.interrupted.html"><code>HinokoFwIsoTx::interrupted</code></a>.</p>
+<a href="signal.FwIsoIt.interrupted.html"><code>HinokoFwIsoIt::interrupted</code></a>.</p>
       </div>
 
       <div class="docblock">

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoRxSingle::interrupted</title>
+  <title>Hinoko.FwIsoIrSingle::interrupted</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Hinoko.FwIsoRxSingle::interrupted"/>
-  <meta property="og:description" content="Reference for signal Hinoko.FwIsoRxSingle::interrupted"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoRxSingle::interrupted"/>
-  <meta name="twitter:description" content="Reference for signal Hinoko.FwIsoRxSingle::interrupted"/>
+  <meta property="og:title" content="Hinoko.FwIsoIrSingle::interrupted"/>
+  <meta property="og:description" content="Reference for signal Hinoko.FwIsoIrSingle::interrupted"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIrSingle::interrupted"/>
+  <meta name="twitter:description" content="Reference for signal Hinoko.FwIsoIrSingle::interrupted"/>
 
 
   
@@ -57,21 +57,21 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a>
+    <a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a>
   </div>
 </div>
 <div class="section">
   <h5>Signals</h5>
   <div class="links">
   
-    <a class="signal current" href="signal.FwIsoRxSingle.interrupted.html">interrupted</a>
+    <a class="signal current" href="signal.FwIsoIrSingle.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -84,7 +84,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Signal</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a>::interrupted</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a>::interrupted</h1>
   </header>
 
   <section>
@@ -97,7 +97,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
       <div class="docblock">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
 <span class="n">interrupted</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">HinokoFwIsoRxSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoIrSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">sec</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">cycle</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">header</span><span class="p">,</span><span class="w"></span>
@@ -115,7 +115,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.c#L59">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_single.c#L59">[src]</a>
         
       </h4>
 
@@ -130,7 +130,7 @@ for Linux FireWire subsystem to generate the&nbsp;event:</p>
 <li>When application calls <a href="method.FwIsoCtx.flush_completions.html"><code>hinoko_fw_iso_ctx_flush_completions()</code></a>&nbsp;explicitly.</li>
 </ul>
 <p>The handler of signal can retrieve context payload of received packet by call of
-<a href="method.FwIsoRxSingle.get_payload.html"><code>hinoko_fw_iso_rx_single_get_payload()</code></a>.</p>
+<a href="method.FwIsoIrSingle.get_payload.html"><code>hinoko_fw_iso_ir_single_get_payload()</code></a>.</p>
       </div>
 
       <div class="docblock">
@@ -203,7 +203,7 @@ for Linux FireWire subsystem to generate the&nbsp;event:</p>
             <td>&nbsp;</td>
             <td><p>The headers of <span class="caps">IR</span> context
     for packets handled in the event of interrupt. The content is different
-    depending on header_size parameter of <a href="method.FwIsoRxSingle.allocate.html"><code>hinoko_fw_iso_rx_single_allocate()</code></a>.</p></td>
+    depending on header_size parameter of <a href="method.FwIsoIrSingle.allocate.html"><code>hinoko_fw_iso_ir_single_allocate()</code></a>.</p></td>
           </tr>
           
           

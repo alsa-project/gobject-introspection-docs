@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoRxSingle.get_payload</title>
+  <title>Hinoko.FwIsoIrSingle.get_payload</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoRxSingle.get_payload"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoRxSingle.get_payload"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoRxSingle.get_payload"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoRxSingle.get_payload"/>
+  <meta priority="og:title" content="Hinoko.FwIsoIrSingle.get_payload"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoIrSingle.get_payload"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIrSingle.get_payload"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIrSingle.get_payload"/>
 
 
   
@@ -57,29 +57,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a>
+    <a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoRxSingle.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIrSingle.allocate.html">allocate</a>
   
-    <a class="method current" href="method.FwIsoRxSingle.get_payload.html">get_payload</a>
+    <a class="method current" href="method.FwIsoIrSingle.get_payload.html">get_payload</a>
   
-    <a class="method" href="method.FwIsoRxSingle.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIrSingle.map_buffer.html">map_buffer</a>
   
-    <a class="method" href="method.FwIsoRxSingle.register_packet.html">register_packet</a>
+    <a class="method" href="method.FwIsoIrSingle.register_packet.html">register_packet</a>
   
-    <a class="method" href="method.FwIsoRxSingle.start.html">start</a>
+    <a class="method" href="method.FwIsoIrSingle.start.html">start</a>
   
   </div>
 </div>
@@ -92,7 +92,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a><span class="sep"></span>get_payload</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a><span class="sep"></span>get_payload</h1>
   </header>
 
   <section>
@@ -101,14 +101,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.h#L51">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_single.h#L51">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
-<span class="n">hinoko_fw_iso_rx_single_get_payload</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">HinokoFwIsoRxSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="n">hinoko_fw_iso_ir_single_get_payload</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoIrSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">**</span><span class="w"> </span><span class="n">payload</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">guint</span><span class="o">*</span><span class="w"> </span><span class="n">length</span><span class="w"></span>
@@ -123,7 +123,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.c#L373">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_single.c#L373">[src]</a>
         
       </h4>
 

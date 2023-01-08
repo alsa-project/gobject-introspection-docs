@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoRxMultiple.allocate</title>
+  <title>Hinoko.FwIsoIrSingle.start</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoRxMultiple.allocate"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoRxMultiple.allocate"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoRxMultiple.allocate"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoRxMultiple.allocate"/>
+  <meta priority="og:title" content="Hinoko.FwIsoIrSingle.start"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoIrSingle.start"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIrSingle.start"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIrSingle.start"/>
 
 
   
@@ -57,27 +57,29 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoRxMultiple.html">FwIsoRxMultiple</a>
+    <a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method current" href="method.FwIsoRxMultiple.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIrSingle.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoRxMultiple.get_payload.html">get_payload</a>
+    <a class="method" href="method.FwIsoIrSingle.get_payload.html">get_payload</a>
   
-    <a class="method" href="method.FwIsoRxMultiple.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIrSingle.map_buffer.html">map_buffer</a>
   
-    <a class="method" href="method.FwIsoRxMultiple.start.html">start</a>
+    <a class="method" href="method.FwIsoIrSingle.register_packet.html">register_packet</a>
+  
+    <a class="method current" href="method.FwIsoIrSingle.start.html">start</a>
   
   </div>
 </div>
@@ -90,7 +92,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoRxMultiple.html">FwIsoRxMultiple</a><span class="sep"></span>allocate</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a><span class="sep"></span>start</h1>
   </header>
 
   <section>
@@ -99,17 +101,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_multiple.h#L29">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_single.h#L47">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
-<span class="n">hinoko_fw_iso_rx_multiple_allocate</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">HinokoFwIsoRxMultiple</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">channels</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">channels_length</span><span class="p">,</span><span class="w"></span>
+<span class="n">hinoko_fw_iso_ir_single_start</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoIrSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint16</span><span class="o">*</span><span class="w"> </span><span class="n">cycle_match</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint32</span><span class="w"> </span><span class="n">sync_code</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoCtxMatchFlag</span><span class="w"> </span><span class="n">tags</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -122,19 +124,19 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_multiple.c#L343">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_single.c#L336">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Allocate an <span class="caps">IR</span> context to 1394 <span class="caps">OHCI</span> controller for buffer-fill mode. A local node of the node
-corresponding to the given path is used as the controller, thus any path is accepted as long as
-process has enough permission for the&nbsp;path.</p>
+        <p>Start <span class="caps">IR</span>&nbsp;context.</p>
       </div>
 
       <div class="docblock">
         <table>
           
+          
+          <tr><td>Available since:</td><td>0.7.</td></tr>
           
           
           
@@ -157,49 +159,51 @@ process has enough permission for the&nbsp;path.</p>
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>path</code></td>
-            <td><code>const char*</code></td>
+            <td><code>cycle_match</code></td>
+            <td>An array of&nbsp;<code>guint16</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>A path to any Linux FireWire character&nbsp;device.</p></td>
+            <td><p>The isochronous cycle
+     to start packet processing. The first element should be the second part of
+     isochronous cycle, up to 3. The second element should be the cycle part of
+     isochronous cycle, up to&nbsp;7999.</p></td>
           </tr>
           
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
           
           
           
+          <tr><td>&nbsp;</td><td>The array must have 2 elements.</td></tr>
           
-          
-          
-          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-          <tr><td>&nbsp;</td><td>The value is a NUL terminated UTF-8 string.</td></tr>
-          
-          <tr class="arg-name">
-            <td><code>channels</code></td>
-            <td>An array of&nbsp;<code>guint8</code></td>
-          </tr>
-          <tr class="arg-description">
-            <td>&nbsp;</td>
-            <td><p>An array for channels to listen
-      to. The value of each element should be up to&nbsp;63.</p></td>
-          </tr>
-          
-          
-          
-          
-          
-          
-          <tr><td>&nbsp;</td><td>The length of the array is specified in the <code>channels_length</code> argument.</td></tr>
           <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           <tr class="arg-name">
-            <td><code>channels_length</code></td>
-            <td><code>guint</code></td>
+            <td><code>sync_code</code></td>
+            <td><code>guint32</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>The length of&nbsp;channels.</p></td>
+            <td><p>The value of sy field in isochronous packet header for packet processing, up to&nbsp;15.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>tags</code></td>
+            <td><a href="flags.FwIsoCtxMatchFlag.html"><code>HinokoFwIsoCtxMatchFlag</code></a></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The value of tag field in isochronous header for packet&nbsp;processing.</p></td>
           </tr>
           
           
@@ -241,7 +245,7 @@ process has enough permission for the&nbsp;path.</p>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td>No description available.</td>
+            <td><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></td>
           </tr>
           
           

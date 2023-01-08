@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoTx</title>
+  <title>Hinoko.FwIsoIt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Hinoko.FwIsoTx"/>
-  <meta property="og:description" content="Reference for Hinoko.FwIsoTx"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoTx"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoTx"/>
+  <meta property="og:title" content="Hinoko.FwIsoIt"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoIt"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIt"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIt"/>
 
 
   
@@ -57,14 +57,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a class="current" href="class.FwIsoTx.html#description">FwIsoTx</a>
+    <a class="current" href="class.FwIsoIt.html#description">FwIsoIt</a>
   </div>
 </div>
 
@@ -73,7 +73,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Constructors</h5>
   <div class="links">
   
-    <a class="ctor" href="ctor.FwIsoTx.new.html">new</a>
+    <a class="ctor" href="ctor.FwIsoIt.new.html">new</a>
   
   </div>
 </div>
@@ -86,13 +86,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoTx.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIt.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoTx.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIt.map_buffer.html">map_buffer</a>
   
-    <a class="method" href="method.FwIsoTx.register_packet.html">register_packet</a>
+    <a class="method" href="method.FwIsoIt.register_packet.html">register_packet</a>
   
-    <a class="method" href="method.FwIsoTx.start.html">start</a>
+    <a class="method" href="method.FwIsoIt.start.html">start</a>
   
   </div>
 </div>
@@ -105,7 +105,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Signals</h5>
   <div class="links">
   
-    <a class="signal" href="signal.FwIsoTx.interrupted.html">interrupted</a>
+    <a class="signal" href="signal.FwIsoIt.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -118,7 +118,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.FwIsoTx.interrupted.html">interrupted</a>
+    <a class="method" href="vfunc.FwIsoIt.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -133,7 +133,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Class</h3>
-    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoTx</h1>
+    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoIt</h1>
   </header>
 
   <section>
@@ -143,17 +143,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_tx.c#L4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.c#L4">[src]</a>
           
         </h4>
 
-        <pre><code>class Hinoko.FwIsoTx : GObject.Object {
+        <pre><code>class Hinoko.FwIsoIt : GObject.Object {
   parent_instance: GObject
 }</pre></code>
 
         <div class="docblock">
           <p>An object to transmit isochronous packet for single channel.
-A <a href="class.FwIsoTx.html"><code>HinokoFwIsoTx</code></a> transmits isochronous packets for single channel by <span class="caps">IT</span> context in 1394 <span class="caps">OHCI</span>.
+A <a href="class.FwIsoIt.html"><code>HinokoFwIsoIt</code></a> transmits isochronous packets for single channel by <span class="caps">IT</span> context in 1394 <span class="caps">OHCI</span>.
 The content of packet is split to two parts; context header and context payload in a manner of
 Linux FireWire&nbsp;subsystem.</p>
         </div>
@@ -222,10 +222,10 @@ Linux FireWire&nbsp;subsystem.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="ctor.FwIsoTx.new.html">hinoko_fw_iso_tx_new</a></h6>
+          <h6><a href="ctor.FwIsoIt.new.html">hinoko_fw_iso_it_new</a></h6>
 
           <div class="docblock">
-            <p>Instantiate <code>HinokoFwIsoTx</code> object and return the&nbsp;instance.</p>
+            <p>Instantiate <code>HinokoFwIsoIt</code> object and return the&nbsp;instance.</p>
           </div>
 
           
@@ -247,7 +247,7 @@ Linux FireWire&nbsp;subsystem.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.FwIsoTx.allocate.html">hinoko_fw_iso_tx_allocate</a></h6>
+          <h6><a href="method.FwIsoIt.allocate.html">hinoko_fw_iso_it_allocate</a></h6>
           <div class="docblock">
             <p>Allocate an <span class="caps">IT</span> context to 1394 <span class="caps">OHCI</span> controller. A local node of the node corresponding to the
 given path is used as the controller, thus any path is accepted as long as process has enough
@@ -257,7 +257,7 @@ permission for the&nbsp;path.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoTx.map_buffer.html">hinoko_fw_iso_tx_map_buffer</a></h6>
+          <h6><a href="method.FwIsoIt.map_buffer.html">hinoko_fw_iso_it_map_buffer</a></h6>
           <div class="docblock">
             <p>Map intermediate buffer to share payload of <span class="caps">IT</span> context with 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
           </div>
@@ -265,18 +265,18 @@ permission for the&nbsp;path.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoTx.register_packet.html">hinoko_fw_iso_tx_register_packet</a></h6>
+          <h6><a href="method.FwIsoIt.register_packet.html">hinoko_fw_iso_it_register_packet</a></h6>
           <div class="docblock">
             <p>Register packet data with header and payload for <span class="caps">IT</span> context. The content of given header and
 payload is appended into data field of isochronous packet to be sent. The caller can schedule
 hardware interrupt to generate interrupt event. In detail, please refer to documentation about
-<code>HinokoFwIsoTx::interrupted</code>.</p>
+<code>HinokoFwIsoIt::interrupted</code>.</p>
           </div>
           <div class="docblock"><p>Available since: 0.7.</p></div>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoTx.start.html">hinoko_fw_iso_tx_start</a></h6>
+          <h6><a href="method.FwIsoIt.start.html">hinoko_fw_iso_it_start</a></h6>
           <div class="docblock">
             <p>Start <span class="caps">IT</span>&nbsp;context.</p>
           </div>
@@ -391,7 +391,7 @@ once any isochronous context is&nbsp;created.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="signal.FwIsoTx.interrupted.html">Hinoko.FwIsoTx::interrupted</a></h6>
+          <h6><a href="signal.FwIsoIt.interrupted.html">Hinoko.FwIsoIt::interrupted</a></h6>
           <div class="docblock">
             <p>Emitted when Linux FireWire subsystem generates interrupt event. There are three cases
 for Linux FireWire subsystem to generate the&nbsp;event:</p>
@@ -444,10 +444,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </h4>
 
       <div class="docblock">
-        <pre><code>struct HinokoFwIsoTxClass {
+        <pre><code>struct HinokoFwIsoItClass {
   GObjectClass parent_class;
   void (* interrupted) (
-    HinokoFwIsoTx* self,
+    HinokoFwIsoIt* self,
     guint sec,
     guint cycle,
     const guint8* tstamp,
@@ -476,7 +476,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         <tr>
           <td style="vertical-align:top"><code>interrupted</code></td>
           <td style="vertical-align:top"><pre><code>void (* interrupted) (
-    HinokoFwIsoTx* self,
+    HinokoFwIsoIt* self,
     guint sec,
     guint cycle,
     const guint8* tstamp,
@@ -505,10 +505,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
       
       <div class="">
-        <h6 id="vfunc-interrupted"><a href="vfunc.FwIsoTx.interrupted.html">Hinoko.FwIsoTxClass.interrupted</a></h6>
+        <h6 id="vfunc-interrupted"><a href="vfunc.FwIsoIt.interrupted.html">Hinoko.FwIsoItClass.interrupted</a></h6>
 
         <div class="docblock">
-          <p>Class closure for the <code>HinokoFwIsoTx::interrupted</code> signal.</p>
+          <p>Class closure for the <code>HinokoFwIsoIt::interrupted</code> signal.</p>
         </div>
 
           

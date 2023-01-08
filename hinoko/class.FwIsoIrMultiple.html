@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoRxMultiple</title>
+  <title>Hinoko.FwIsoIrMultiple</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta property="og:title" content="Hinoko.FwIsoRxMultiple"/>
-  <meta property="og:description" content="Reference for Hinoko.FwIsoRxMultiple"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoRxMultiple"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoRxMultiple"/>
+  <meta property="og:title" content="Hinoko.FwIsoIrMultiple"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoIrMultiple"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIrMultiple"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIrMultiple"/>
 
 
   
@@ -57,14 +57,14 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a class="current" href="class.FwIsoRxMultiple.html#description">FwIsoRxMultiple</a>
+    <a class="current" href="class.FwIsoIrMultiple.html#description">FwIsoIrMultiple</a>
   </div>
 </div>
 
@@ -73,7 +73,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Constructors</h5>
   <div class="links">
   
-    <a class="ctor" href="ctor.FwIsoRxMultiple.new.html">new</a>
+    <a class="ctor" href="ctor.FwIsoIrMultiple.new.html">new</a>
   
   </div>
 </div>
@@ -86,13 +86,13 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoRxMultiple.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIrMultiple.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoRxMultiple.get_payload.html">get_payload</a>
+    <a class="method" href="method.FwIsoIrMultiple.get_payload.html">get_payload</a>
   
-    <a class="method" href="method.FwIsoRxMultiple.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIrMultiple.map_buffer.html">map_buffer</a>
   
-    <a class="method" href="method.FwIsoRxMultiple.start.html">start</a>
+    <a class="method" href="method.FwIsoIrMultiple.start.html">start</a>
   
   </div>
 </div>
@@ -103,7 +103,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Properties</h5>
   <div class="links">
   
-    <a class="property" href="property.FwIsoRxMultiple.channels.html">channels</a>
+    <a class="property" href="property.FwIsoIrMultiple.channels.html">channels</a>
   
   </div>
 </div>
@@ -114,7 +114,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Signals</h5>
   <div class="links">
   
-    <a class="signal" href="signal.FwIsoRxMultiple.interrupted.html">interrupted</a>
+    <a class="signal" href="signal.FwIsoIrMultiple.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -127,7 +127,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.FwIsoRxMultiple.interrupted.html">interrupted</a>
+    <a class="method" href="vfunc.FwIsoIrMultiple.interrupted.html">interrupted</a>
   
   </div>
 </div>
@@ -142,7 +142,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Class</h3>
-    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoRxMultiple</h1>
+    <h1 aria-label="Name"><a href="index.html">Hinoko</a><span class="sep" role="presentation"></span>FwIsoIrMultiple</h1>
   </header>
 
   <section>
@@ -152,17 +152,17 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_multiple.c#L4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_ir_multiple.c#L4">[src]</a>
           
         </h4>
 
-        <pre><code>class Hinoko.FwIsoRxMultiple : GObject.Object {
+        <pre><code>class Hinoko.FwIsoIrMultiple : GObject.Object {
   parent_instance: GObject
 }</pre></code>
 
         <div class="docblock">
           <p>An object to receive isochronous packet for several channels.
-A <a href="class.FwIsoRxMultiple.html"><code>HinokoFwIsoRxMultiple</code></a> receives isochronous packets for several channels by <span class="caps">IR</span> context for
+A <a href="class.FwIsoIrMultiple.html"><code>HinokoFwIsoIrMultiple</code></a> receives isochronous packets for several channels by <span class="caps">IR</span> context for
 buffer-fill mode in 1394 <span class="caps">OHCI</span>.</p>
         </div>
 
@@ -230,10 +230,10 @@ buffer-fill mode in 1394 <span class="caps">OHCI</span>.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="ctor.FwIsoRxMultiple.new.html">hinoko_fw_iso_rx_multiple_new</a></h6>
+          <h6><a href="ctor.FwIsoIrMultiple.new.html">hinoko_fw_iso_ir_multiple_new</a></h6>
 
           <div class="docblock">
-            <p>Instantiate <code>HinokoFwIsoRxMultiple</code> object and return the&nbsp;instance.</p>
+            <p>Instantiate <code>HinokoFwIsoIrMultiple</code> object and return the&nbsp;instance.</p>
           </div>
 
           
@@ -255,7 +255,7 @@ buffer-fill mode in 1394 <span class="caps">OHCI</span>.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.FwIsoRxMultiple.allocate.html">hinoko_fw_iso_rx_multiple_allocate</a></h6>
+          <h6><a href="method.FwIsoIrMultiple.allocate.html">hinoko_fw_iso_ir_multiple_allocate</a></h6>
           <div class="docblock">
             <p>Allocate an <span class="caps">IR</span> context to 1394 <span class="caps">OHCI</span> controller for buffer-fill mode. A local node of the node
 corresponding to the given path is used as the controller, thus any path is accepted as long as
@@ -265,7 +265,7 @@ process has enough permission for the&nbsp;path.</p>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxMultiple.get_payload.html">hinoko_fw_iso_rx_multiple_get_payload</a></h6>
+          <h6><a href="method.FwIsoIrMultiple.get_payload.html">hinoko_fw_iso_ir_multiple_get_payload</a></h6>
           <div class="docblock">
             <p>Retrieve data for packet indicated by the index parameter. The data has isochronous packet header
 in its first quadlet, timestamp in its last quadlet. The rest is data of isochronous&nbsp;packet.</p>
@@ -274,7 +274,7 @@ in its first quadlet, timestamp in its last quadlet. The rest is data of isochro
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxMultiple.map_buffer.html">hinoko_fw_iso_rx_multiple_map_buffer</a></h6>
+          <h6><a href="method.FwIsoIrMultiple.map_buffer.html">hinoko_fw_iso_ir_multiple_map_buffer</a></h6>
           <div class="docblock">
             <p>Map an intermediate buffer to share payload of <span class="caps">IR</span> context with 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
           </div>
@@ -282,7 +282,7 @@ in its first quadlet, timestamp in its last quadlet. The rest is data of isochro
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoRxMultiple.start.html">hinoko_fw_iso_rx_multiple_start</a></h6>
+          <h6><a href="method.FwIsoIrMultiple.start.html">hinoko_fw_iso_ir_multiple_start</a></h6>
           <div class="docblock">
             <p>Start <span class="caps">IR</span>&nbsp;context.</p>
           </div>
@@ -361,7 +361,7 @@ once any isochronous context is&nbsp;created.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="property.FwIsoRxMultiple.channels.html">Hinoko.FwIsoRxMultiple:channels</a></h6>
+          <h6><a href="property.FwIsoIrMultiple.channels.html">Hinoko.FwIsoIrMultiple:channels</a></h6>
 
           <div class="docblock">
             <p>The array with elements to express isochronous channels to be listened&nbsp;to.</p>
@@ -411,7 +411,7 @@ once any isochronous context is&nbsp;created.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="signal.FwIsoRxMultiple.interrupted.html">Hinoko.FwIsoRxMultiple::interrupted</a></h6>
+          <h6><a href="signal.FwIsoIrMultiple.interrupted.html">Hinoko.FwIsoIrMultiple::interrupted</a></h6>
           <div class="docblock">
             <p>Emitted when Linux FireWire subsystem generates interrupt event. There are two cases
 for Linux FireWire subsystem to generate the&nbsp;event:</p>
@@ -464,10 +464,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       </h4>
 
       <div class="docblock">
-        <pre><code>struct HinokoFwIsoRxMultipleClass {
+        <pre><code>struct HinokoFwIsoIrMultipleClass {
   GObjectClass parent_class;
   void (* interrupted) (
-    HinokoFwIsoRxMultiple* self,
+    HinokoFwIsoIrMultiple* self,
     guint count
   );
   
@@ -492,7 +492,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         <tr>
           <td style="vertical-align:top"><code>interrupted</code></td>
           <td style="vertical-align:top"><pre><code>void (* interrupted) (
-    HinokoFwIsoRxMultiple* self,
+    HinokoFwIsoIrMultiple* self,
     guint count
   )</code></pre></td>
         </tr>
@@ -517,10 +517,10 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
       <div class="docblock">
       
       <div class="">
-        <h6 id="vfunc-interrupted"><a href="vfunc.FwIsoRxMultiple.interrupted.html">Hinoko.FwIsoRxMultipleClass.interrupted</a></h6>
+        <h6 id="vfunc-interrupted"><a href="vfunc.FwIsoIrMultiple.interrupted.html">Hinoko.FwIsoIrMultipleClass.interrupted</a></h6>
 
         <div class="docblock">
-          <p>Class closure for the <code>HinokoFwIsoRxMultiple::interrupted</code>.</p>
+          <p>Class closure for the <code>HinokoFwIsoIrMultiple::interrupted</code>.</p>
         </div>
 
           

@@ -13,7 +13,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoRxSingle.register_packet</title>
+  <title>Hinoko.FwIsoIt.start</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -24,10 +24,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoRxSingle.register_packet"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoRxSingle.register_packet"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoRxSingle.register_packet"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoRxSingle.register_packet"/>
+  <meta priority="og:title" content="Hinoko.FwIsoIt.start"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoIt.start"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoIt.start"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIt.start"/>
 
 
   
@@ -57,29 +57,27 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <h3><a href="index.html">Hinoko</a></h3>
         <p>API Version: 0.0</p>
         
-        <p>Library Version: 0.7.3</p>
+        <p>Library Version: 0.8.0</p>
         
       </div>
       
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a>
+    <a href="class.FwIsoIt.html">FwIsoIt</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoRxSingle.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoIt.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoRxSingle.get_payload.html">get_payload</a>
+    <a class="method" href="method.FwIsoIt.map_buffer.html">map_buffer</a>
   
-    <a class="method" href="method.FwIsoRxSingle.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoIt.register_packet.html">register_packet</a>
   
-    <a class="method current" href="method.FwIsoRxSingle.register_packet.html">register_packet</a>
-  
-    <a class="method" href="method.FwIsoRxSingle.start.html">start</a>
+    <a class="method current" href="method.FwIsoIt.start.html">start</a>
   
   </div>
 </div>
@@ -92,7 +90,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoRxSingle.html">FwIsoRxSingle</a><span class="sep"></span>register_packet</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIt.html">FwIsoIt</a><span class="sep"></span>start</h1>
   </header>
 
   <section>
@@ -101,15 +99,15 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.h#L44">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.h#L41">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span><span class="w"></span>
-<span class="n">hinoko_fw_iso_rx_single_register_packet</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">HinokoFwIsoRxSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">gboolean</span><span class="w"> </span><span class="n">schedule_interrupt</span><span class="p">,</span><span class="w"></span>
+<span class="n">hinoko_fw_iso_it_start</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HinokoFwIsoIt</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint16</span><span class="o">*</span><span class="w"> </span><span class="n">cycle_match</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
 </pre></div>
@@ -122,14 +120,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_rx_single.c#L310">[src]</a>
+        <a class="srclink" title="go to source location" href="https://github.com/takaswie/libhinoko/blob/main/src/fw_iso_it.c#L280">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Register chunk of buffer to process packet for future isochronous cycle. The caller can schedule
-hardware interrupt to generate interrupt event. In detail, please refer to documentation about
-<a href="signal.FwIsoRxSingle.interrupted.html"><code>HinokoFwIsoRxSingle::interrupted</code></a>&nbsp;signal.</p>
+        <p>Start <span class="caps">IT</span>&nbsp;context.</p>
       </div>
 
       <div class="docblock">
@@ -159,21 +155,24 @@ hardware interrupt to generate interrupt event. In detail, please refer to docum
         <table class="arguments">
           
           <tr class="arg-name">
-            <td><code>schedule_interrupt</code></td>
-            <td><code>gboolean</code></td>
+            <td><code>cycle_match</code></td>
+            <td>An array of&nbsp;<code>guint16</code></td>
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p>Whether to schedule hardware interrupt at isochronous cycle for the&nbsp;packet.</p></td>
+            <td><p>The isochronous cycle
+     to start packet processing. The first element should be the second part of
+     isochronous cycle, up to 3. The second element should be the cycle part of
+     isochronous cycle, up to&nbsp;7999.</p></td>
           </tr>
           
+          <tr><td>&nbsp;</td><td>The argument can be <code>NULL</code>.</td></tr>
           
           
           
+          <tr><td>&nbsp;</td><td>The array must have 2 elements.</td></tr>
           
-          
-          
-          
+          <tr><td>&nbsp;</td><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
           
           
           
@@ -206,7 +205,7 @@ hardware interrupt to generate interrupt event. In detail, please refer to docum
           </tr>
           <tr class="arg-description">
             <td>&nbsp;</td>
-            <td><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></td>
+            <td><p><span class="caps">TRUE</span> if the overall operation finishes successful, otherwise <span class="caps">FALSE</span>.</p></td>
           </tr>
           
           
