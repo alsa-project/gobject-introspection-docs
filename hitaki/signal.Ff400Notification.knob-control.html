@@ -1,0 +1,301 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hitaki.Ff400Notification::knob-control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hitaki.Ff400Notification::knob-control"/>
+  <meta property="og:description" content="Reference for signal Hitaki.Ff400Notification::knob-control"/>
+  <meta name="twitter:title" content="Hitaki.Ff400Notification::knob-control"/>
+  <meta name="twitter:description" content="Reference for signal Hitaki.Ff400Notification::knob-control"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Hitaki" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hitaki</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.2.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="iface.Ff400Notification.html">Ff400Notification</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal current" href="signal.Ff400Notification.knob-control.html">knob-control</a>
+  
+  </div>
+</div>
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Signal</h3>
+    <h1><a href="index.html">Hitaki</a><span class="sep"></span><a href="iface.Ff400Notification.html">Ff400Notification</a>::knob-control</h1>
+  </header>
+
+  <section>
+    <div class="declaration toggle-wrapper">
+      <h4 id="declaration">
+        Declaration
+        <a href="#declaration" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"></span>
+<span class="n">knob_control</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">HitakiFf400Notification</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">HitakiFf400KnobTarget</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gboolean</span><span class="w"> </span><span class="n">paired</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">tstamp</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 id="description" style="display:flex;">
+        Description
+        <a href="#description" class="anchor"></a>
+        
+        <a class="srclink" title="go to source location" href="https://github.com/alsa-project/libhitaki/blob/master/src/ff400_notification.c#L18">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Emitted when the notification includes knob control. The range of value is different depending
+on&nbsp;target.</p>
+<p>For signal level of microphone&nbsp;input:</p>
+<ul>
+<li>0:&nbsp;zero</li>
+<li>10: +10.0&nbsp;dB</li>
+<li>11: +11.0&nbsp;dB</li>
+<li>12: +12.0&nbsp;dB</li>
+<li>&#8230;</li>
+<li>63: +63.0&nbsp;dB:</li>
+<li>64: +64.0&nbsp;dB:</li>
+<li>65: +65.0&nbsp;dB:</li>
+</ul>
+<p>For signal level of line&nbsp;input:</p>
+<ul>
+<li>0:&nbsp;zero</li>
+<li>1: +0.5&nbsp;dB</li>
+<li>2: +1.0&nbsp;dB</li>
+<li>3: +1.5&nbsp;dB</li>
+<li>&#8230;</li>
+<li>34: +17.0&nbsp;dB:</li>
+<li>35: +17.5&nbsp;dB:</li>
+<li>36: +18.0&nbsp;dB:</li>
+</ul>
+<p>For signal level of any type of&nbsp;output:</p>
+<ul>
+<li>63:&nbsp;-infinite</li>
+<li>62: -58.0&nbsp;dB</li>
+<li>61: -56.0&nbsp;dB</li>
+<li>60: -54.0&nbsp;dB</li>
+<li>59: -53.0&nbsp;dB</li>
+<li>58: -52.0&nbsp;dB</li>
+<li>&#8230;</li>
+<li>7: -1.0&nbsp;dB</li>
+<li>6: 0.0&nbsp;dB</li>
+<li>5: 1.0&nbsp;dB</li>
+<li>&#8230;</li>
+<li>2: +4.0&nbsp;dB</li>
+<li>1: +5.0&nbsp;dB</li>
+<li>0: +6.0&nbsp;dB.</li>
+</ul>
+      </div>
+
+      <div class="docblock">
+        <table>
+          <tr><td>Default handler:</td><td> <p>The default handler is called after the handlers added via <code>g_signal_connect()</code>.</p></td></tr>
+          
+          
+          <tr><td colspan="2">The signal can be emitted directly</td></tr>
+          
+          
+          
+          
+          
+          
+        </table>
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <table class="arguments">
+          
+          <tr class="arg-name">
+            <td><code>target</code></td>
+            <td><a href="enum.Ff400KnobTarget.html"><code>HitakiFf400KnobTarget</code></a></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>One of <a href="enum.Ff400KnobTarget.html"><code>HitakiFf400KnobTarget</code></a>.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>value</code></td>
+            <td><code>guint</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The value of signal&nbsp;level.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>paired</code></td>
+            <td><code>gboolean</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>Whether to be paired or&nbsp;not.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <tr class="arg-name">
+            <td><code>tstamp</code></td>
+            <td>An array of&nbsp;<code>guint16</code></td>
+          </tr>
+          <tr class="arg-description">
+            <td>&nbsp;</td>
+            <td><p>The isochronous cycle
+         at which the message was sent. The first element is for lower three bits of second
+         up to 7 and the second field is for cycle up to&nbsp;7999.</p></td>
+          </tr>
+          
+          
+          
+          
+          
+          <tr><td>&nbsp;</td><td>The array must have 2 elements.</td></tr>
+          
+          
+          
+          
+          
+        </table>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!--
+SPDX-FileCopyrightText: 2021 GNOME Foundation
+
+SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hitaki.Ff400Notification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+
+  
+  <meta property="og:title" content="Hitaki.Ff400Notification"/>
+  <meta property="og:description" content="Reference for Hitaki.Ff400Notification"/>
+  <meta name="twitter:title" content="Hitaki.Ff400Notification"/>
+  <meta name="twitter:description" content="Reference for Hitaki.Ff400Notification"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Hitaki" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Hitaki</a></h3>
+        <p>API Version: 0.0</p>
+        
+        <p>Library Version: 0.2.0</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.Ff400Notification.html#description">Ff400Notification</a>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Ff400Notification.parse_message.html">parse_message</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.Ff400Notification.knob-control.html">knob-control</a>
+  
+  </div>
+</div>
+
+
+
+
+
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.Ff400Notification.knob_control.html">knob_control</a>
+  
+  </div>
+</div>
+
+
+
+    </nav>
+    
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">Hitaki</a><span class="sep"></span>Ff400Notification</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://github.com/alsa-project/libhitaki/blob/master/src/ff400_notification.c#L4">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface Hitaki.Ff400Notification : GObject.Object</code></pre>
+
+        <div class="docblock">
+          <p>An interface for notification from Fireface 400.
+<span class="caps">RME</span> Fireface 400 transfers quadlet message to registered address when operating hardware knob.
+The message contains the values of signal level and target channel. The interface is to parse
+the message and to emit GObject&nbsp;signal.</p>
+        </div>
+
+        <div class="docblock">
+          <table class="attributes">
+            
+            
+            
+          </table>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement Ff400Notification, your type must inherit from
+        <a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
+      </div>
+    </div>
+
+    
+
+    
+
+    
+    <div class="methods toggle-wrapper">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="method.Ff400Notification.parse_message.html">hitaki_ff400_notification_parse_message</a></h6>
+
+        <div class="docblock">
+          <p>Parse messages transmitted by Fireface 400, then emit <code>HitakiFf400Notification::knob-control</code> if
+the message contains knob&nbsp;control.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="signal.Ff400Notification.knob-control.html">Hitaki.Ff400Notification::knob-control</a></h6>
+
+        <div class="docblock">
+          <p>Emitted when the notification includes knob control. The range of value is different depending
+on&nbsp;target.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct HitakiFf400NotificationInterface {
+  GTypeInterface iface;
+  void (* knob_control) (
+    HitakiFf400Notification* self,
+    HitakiFf400KnobTarget target,
+    guint value,
+    gboolean paired,
+    const guint16* tstamp
+  );
+  
+}</code></pre>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>iface</code></td>
+          <td style="vertical-align:top"><pre><code>GTypeInterface</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>knob_control</code></td>
+          <td style="vertical-align:top"><pre><code>void (* knob_control) (
+    HitakiFf400Notification* self,
+    HitakiFf400KnobTarget target,
+    guint value,
+    gboolean paired,
+    const guint16* tstamp
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top">No description available.</td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-knob_control"><a href="vfunc.Ff400Notification.knob_control.html">Hitaki.Ff400Notification.knob_control</a></h6>
+
+        <div class="docblock">
+          <p>Emitted when the notification includes knob control. The range of value is different depending
+on&nbsp;target.</p>
+        </div>
+
+        
+      </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>
