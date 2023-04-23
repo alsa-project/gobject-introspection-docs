@@ -144,11 +144,11 @@ The list of FFI/API crates maintained by ALSA GObject Introspection team.
 * API and FFI crates for hinawa library.
 * crates.io: [hinawa](https://crates.io/crates/hinawa), [hinawa-sys](https://crates.io/crates/hinawa-sys)
 * documentation: [hinawa](https://docs.rs/hinawa/), [hinawa-sys](https://docs.rs/hinawa-sys/)
-* repository: [hinawa-rs](https://github.com/alsa-project/hinawa-rs)
+* repository: [hinawa-rs](https://git.kernel.org/pub/scm/libs/ieee1394/hinawa-rs.git/)
 
 ### hinoko/hinoko-sys crates
 
 * API and FFI crates for hinoko library.
 * crates.io: [hinoko](https://crates.io/crates/hinoko), [hinoko-sys](https://crates.io/crates/hinoko-sys)
 * documentation: [hinoko](https://docs.rs/hinoko/), [hinoko-sys](https://docs.rs/hinoko-sys/)
-* repository: [hinoko-rs](https://github.com/takaswie/hinoko-rs)
+* repository: [hinoko-rs](https://git.kernel.org/pub/scm/libs/ieee1394/hinoko-rs.git/)

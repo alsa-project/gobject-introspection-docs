@@ -51,11 +51,11 @@ The list of libraries maintained by ALSA GObject Introspection team.
   IEEE 1394 bus.
 * Provide `Hinawa-3.0` namespace for GObject Introspection.
 * documentation: [Hinawa - 0.0](https://alsa-project.github.io/gobject-introspection-docs/hinawa/)
-* repository: [libhinawa](https://github.com/alsa-project/libhinawa)
+* repository: [libhinawa](https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/)
 
 ### hinoko library
 
 * Operate Linux FireWire character device for isochronous packet and resources in IEEE 1394 bus.
 * Provide `Hinoko-0.0` namespace for GObject Introspection.
 * documentation: [Hinoko - 0.0](https://alsa-project.github.io/gobject-introspection-docs/hinoko/)
-* repository: [libhinoko](https://github.com/takaswie/libhinoko)
+* repository: [libhinoko](https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/)

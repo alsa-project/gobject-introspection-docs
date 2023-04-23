@@ -35,6 +35,10 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
   
   
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Hinoko" href="opensearch.xml">
+  
+  
 
   <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -44,6 +48,9 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
   <script src="urlmap.js"></script>
   
   
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
   <script src="main.js"></script>
 </head>
 
@@ -52,6 +59,12 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
 
     <nav class="sidebar devhelp-hidden">
       
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+        </form>
+      </div>
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
@@ -116,7 +129,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
     <h1>Hinoko &ndash; 0.0</h1>
 
     <div class="description">
-      <p>libhinoko</p>
+      <p>The library to operate Linux firewire character device for IEEE 1394 isochronous communication</p>
     </div>
 
     <div class="meta info">
@@ -125,7 +138,7 @@ SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-or-later
         <tr><td><em>Authors</em></td><td>Takashi Sakamoto</td></tr>
         <tr><td><em>License</em></td><td>LGPL-2.1-or-later</td></tr>
         <tr><td><em>Website</em></td><td><a href="https://alsa-project.github.io/gobject-introspection-docs/hinoko/" class="external">https://alsa-project.github.io/gobject-introspection-docs/hinoko/</a></td></tr>
-        <tr><td><em>Source</em></td><td><a href="https://github.com/takaswie/libhinoko" class="external">https://github.com/takaswie/libhinoko</a></td></tr>
+        <tr><td><em>Source</em></td><td><a href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/" class="external">https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/</a></td></tr>
       </table>
     </div>
 
