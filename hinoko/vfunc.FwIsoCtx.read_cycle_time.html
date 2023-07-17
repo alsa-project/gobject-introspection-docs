@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoResource.open</title>
+  <title>Hinoko.FwIsoCtx.read_cycle_time</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -18,10 +18,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="Hinoko.FwIsoResource.open"/>
-  <meta property="og:description" content="Reference for Hinoko.FwIsoResource.open"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoResource.open"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoResource.open"/>
+  <meta property="og:title" content="Hinoko.FwIsoCtx.read_cycle_time"/>
+  <meta property="og:description" content="Reference for Hinoko.FwIsoCtx.read_cycle_time"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoCtx.read_cycle_time"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoCtx.read_cycle_time"/>
 
 
   
@@ -71,22 +71,26 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="iface.FwIsoResource.html">FwIsoResource</a>
+    <a href="iface.FwIsoCtx.html">FwIsoCtx</a>
   </div>
 </div>
 <div class="section">
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.FwIsoResource.allocate_async.html">allocate_async</a>
+    <a class="method" href="vfunc.FwIsoCtx.create_source.html">create_source</a>
   
-    <a class="method" href="vfunc.FwIsoResource.allocated.html">allocated</a>
+    <a class="method" href="vfunc.FwIsoCtx.flush_completions.html">flush_completions</a>
   
-    <a class="method" href="vfunc.FwIsoResource.create_source.html">create_source</a>
+    <a class="method current" href="vfunc.FwIsoCtx.read_cycle_time.html">read_cycle_time</a>
   
-    <a class="method" href="vfunc.FwIsoResource.deallocated.html">deallocated</a>
+    <a class="method" href="vfunc.FwIsoCtx.release.html">release</a>
   
-    <a class="method current" href="vfunc.FwIsoResource.open.html">open</a>
+    <a class="method" href="vfunc.FwIsoCtx.stop.html">stop</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.stopped.html">stopped</a>
+  
+    <a class="method" href="vfunc.FwIsoCtx.unmap_buffer.html">unmap_buffer</a>
   
   </div>
 </div>
@@ -102,12 +106,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Virtual Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="iface.FwIsoResource.html">FwIsoResource</a><span class="sep"></span>open</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="iface.FwIsoCtx.html">FwIsoCtx</a><span class="sep"></span>read_cycle_time</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 0.7.</span></p>
+      <p><span class="emblem available">since: 0.9.</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,16 +119,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource.h?h=v0.9.0#n35">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ctx.h?h=v0.9.0#n66">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
-<span class="n">open</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">HinokoFwIsoResource</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="o">*</span><span class="w"> </span><span class="n">path</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gint</span><span class="w"> </span><span class="n">open_flag</span><span class="p">,</span>
+<span class="n">read_cycle_time</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">HinokoFwIsoCtx</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gint</span><span class="w"> </span><span class="n">clock_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">HinawaCycleTime</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">cycle_time</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -137,18 +141,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource.c?h=v0.9.0#n121">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ctx.c?h=v0.9.0#n112">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Open Linux FireWire character device to delegate any request for isochronous
-resource management to Linux FireWire&nbsp;subsystem.</p>
+        <p>Retrieve the value of cycle time register. This method call is available once any isochronous
+context is&nbsp;created.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 0.7.</p>
+        <p>Available since: 0.9.</p>
         
       </div>
 
@@ -165,10 +169,11 @@ resource management to Linux FireWire&nbsp;subsystem.</p>
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>path</code></dt>
+          <dt class="arg-name"><code>clock_id</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>const gchar*</code></p>
-            <p><p>A path of any Linux FireWire character&nbsp;device.</p></p>
+            <p><em>Type:</em>&nbsp;<code>gint</code></p>
+            <p><p>The numeric <span class="caps">ID</span> of clock source for the reference timestamp. One CLOCK_REALTIME(0),
+      CLOCK_MONOTONIC(1), and CLOCK_MONOTONIC_RAW(4) is available in <span class="caps">UAPI</span> of Linux&nbsp;kernel.</p></p>
             <table>
             
             
@@ -177,24 +182,24 @@ resource management to Linux FireWire&nbsp;subsystem.</p>
             
             
             
-            <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
-            <tr><td>The value is a NUL terminated UTF-8 string.</td></tr>
+            
+            
             </table>
           </dd>
           
-          <dt class="arg-name"><code>open_flag</code></dt>
+          <dt class="arg-name"><code>cycle_time</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>gint</code></p>
-            <p><p>The flag of open(2) system call. O_RDONLY is forced to fulfil&nbsp;internally.</p></p>
+            <p><em>Type:</em>&nbsp;<a href="javascript:void(0)" data-link="struct.CycleTime.html" data-namespace="Hinawa" class="external"><code>HinawaCycleTime</code></a></p>
+            <p><p>A <a href="javascript:void(0)" data-namespace="Hinawa" data-link="struct.CycleTime.html" class="external"><code>HinawaCycleTime</code></a> to store data of cycle&nbsp;time.</p></p>
             <table>
+            <tr><td title="direction: inout">The argument will be modified by the function.</td></tr>
             
             
             
             
             
             
-            
-            
+            <tr><td title="transfer: full">The called function takes ownership of the data, and is responsible for freeing it.</td></tr>
             
             </table>
           </dd>
@@ -229,7 +234,7 @@ resource management to Linux FireWire&nbsp;subsystem.</p>
         <div class="returns">
           <div>
             <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
-            <p><p><span class="caps">TRUE</span> if the overall operation finished successfully, otherwise <span class="caps">FALSE</span>.</p></p>
+            <p><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></p>
           </div>
           <div>
             <table>
