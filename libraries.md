@@ -49,8 +49,8 @@ The list of libraries maintained by ALSA GObject Introspection team.
 
 * Operate Linux FireWire character device for asynchronous packet and topology generation in
   IEEE 1394 bus.
-* Provide `Hinawa-3.0` namespace for GObject Introspection.
-* documentation: [Hinawa - 3.0](https://alsa-project.github.io/gobject-introspection-docs/hinawa/)
+* Provide `Hinawa-4.0` namespace for GObject Introspection.
+* documentation: [Hinawa - 4.0](https://alsa-project.github.io/gobject-introspection-docs/hinawa/)
 * repository: [libhinawa](https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/)
 
 ### hinoko library

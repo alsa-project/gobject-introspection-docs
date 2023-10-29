@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -111,6 +111,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="property" href="property.FwNode.bus-manager-node-id.html">bus-manager-node-id</a>
+  
+    <a class="property" href="property.FwNode.card-id.html">card-id</a>
   
     <a class="property" href="property.FwNode.generation.html">generation</a>
   
@@ -172,7 +174,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <section>
     <summary>
       <div class="docblock">
-        <p><span class="emblem available">since: 1.4.</span></p>
+        <p><span class="emblem available">since: 1.4</span></p>
       </div>
 
       <div class="toggle-wrapper">
@@ -180,7 +182,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_node.c?h=2.6.1#n11">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_node.c?h=4.0.0#n11">[src]</a>
           
         </h4>
 
@@ -189,16 +191,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>An event listener for FireWire node
-A <a href="class.FwNode.html"><code>HinawaFwNode</code></a> is an event listener for a specified node on <span class="caps">IEEE</span> 1394 bus. This class is an
-application of Linux FireWire subsystem. All of operations utilize ioctl(2) with subsystem
-specific request&nbsp;commands.</p>
+          <p>An event listener for node in <span class="caps">IEEE</span> 1394 bus.
+<a href="class.FwNode.html"><code>HinawaFwNode</code></a> listens to any events for an associated node in <span class="caps">IEEE</span> 1394 bus. Additionally,
+it provides some methods to retrieve fundamental information about the&nbsp;bus.</p>
         </div>
 
         <div class="docblock">
           
           
-          <p>Available since: 1.4.</p>
+          <p>Available since: 1.4</p>
           
           
         </div>
@@ -247,7 +248,7 @@ specific request&nbsp;commands.</p>
             <p>Instantiate <code>HinawaFwNode</code> object and return the&nbsp;instance.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 1.4</span></p>
           </div>
         </div>
       
@@ -273,7 +274,7 @@ specific request&nbsp;commands.</p>
 <span class="caps">IEEE</span> 1394&nbsp;bus.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -283,27 +284,28 @@ specific request&nbsp;commands.</p>
             <p>Get cached content of configuration <span class="caps">ROM</span> aligned to&nbsp;big-endian.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwNode.open.html">hinawa_fw_node_open</a></h6>
           <div class="docblock">
-            <p>Open Linux FireWire character device to operate node on <span class="caps">IEEE</span> 1394&nbsp;bus.</p>
+            <p>Open Linux FireWire character device to operate node in <span class="caps">IEEE</span> 1394&nbsp;bus.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwNode.read_cycle_time.html">hinawa_fw_node_read_cycle_time</a></h6>
           <div class="docblock">
-            <p>Read current value of CYCLE_TIME register in 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+            <p>Read current value of CYCLE_TIME register in 1394 <span class="caps">OHCI</span> hardware dedicated to communicate with
+the associated node in <span class="caps">IEEE</span> 1394&nbsp;bus.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.6.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -348,6 +350,17 @@ specific request&nbsp;commands.</p>
         </div>
       
         <div class="">
+          <h6><a href="property.FwNode.card-id.html">Hinawa.FwNode:card-id</a></h6>
+          <div class="docblock">
+            <p>The numeric index for 1394 <span class="caps">OHCI</span> hardware used for the communication with the node. The
+value is stable against bus&nbsp;generation.</p>
+          </div>
+          <div class="docblock">
+            <p><span class="emblem available">since: 4.0</span></p>
+          </div>
+        </div>
+      
+        <div class="">
           <h6><a href="property.FwNode.generation.html">Hinawa.FwNode:generation</a></h6>
           <div class="docblock">
             <p>Current generation of bus&nbsp;topology.</p>
@@ -372,7 +385,7 @@ of bus&nbsp;topology.</p>
           <h6><a href="property.FwNode.local-node-id.html">Hinawa.FwNode:local-node-id</a></h6>
           <div class="docblock">
             <p>Node <span class="caps">ID</span> of node which application uses to communicate to node associated to instance of
-object at current generation of bus topology. In general, it is for 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+object at current generation of bus topology. In general, it is for 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4</span></p>
@@ -393,7 +406,7 @@ This parameter is effective after the&nbsp;association.</p>
         <div class="">
           <h6><a href="property.FwNode.root-node-id.html">Hinawa.FwNode:root-node-id</a></h6>
           <div class="docblock">
-            <p>Node <span class="caps">ID</span> of root node in bus topology at current generation of the bus&nbsp;topology.</p>
+            <p>Node <span class="caps">ID</span> of root node in bus topology at current generation of bus&nbsp;topology.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4</span></p>
@@ -436,8 +449,8 @@ via <code>HinawaFwNode:generation</code> property.</p>
         <div class="">
           <h6><a href="signal.FwNode.disconnected.html">Hinawa.FwNode::disconnected</a></h6>
           <div class="docblock">
-            <p>Emitted when the node is not available anymore due to removal from <span class="caps">IEEE</span> 1394 bus. It&#8217;s
-preferable to call <code>g_object_unref()</code> immediately to release file&nbsp;descriptor.</p>
+            <p>Emitted when the node is not available anymore in Linux system. It&#8217;s preferable to call
+<code>g_object_unref()</code> immediately to release file&nbsp;descriptor.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 1.4</span></p>
@@ -534,7 +547,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <p>Class closure for the <code>HinawaFwNode::bus-update</code>.</p>
         </div>
         <div class="docblock">
-          <p><span class="emblem available">since: 1.4.</span></p>
+          <p><span class="emblem available">since: 1.4</span></p>
         </div>
       </div>
       
@@ -544,7 +557,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <p>Class closure for the <code>HinawaFwNode::disconnected</code>.</p>
         </div>
         <div class="docblock">
-          <p><span class="emblem available">since: 1.4.</span></p>
+          <p><span class="emblem available">since: 1.4</span></p>
         </div>
       </div>
       

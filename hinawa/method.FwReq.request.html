@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -81,10 +81,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method current" href="method.FwReq.request.html">request</a>
   
     <a class="method" href="method.FwReq.transaction.html">transaction</a>
-  
-    <a class="method" href="method.FwReq.transaction_async.html">transaction_async</a>
-  
-    <a class="method" href="method.FwReq.transaction_sync.html">transaction_sync</a>
   
     <a class="method" href="method.FwReq.transaction_with_tstamp.html">transaction_with_tstamp</a>
   
@@ -107,7 +103,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 2.6.</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,7 +111,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.h?h=2.6.1#n56">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.h?h=4.0.0#n42">[src]</a>
         
       </h4>
 
@@ -127,7 +123,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="w">  </span><span class="n">HinawaFwTcode</span><span class="w"> </span><span class="n">tcode</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint64</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">length</span><span class="p">,</span>
-<span class="w">  </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint8</span><span class="o">**</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gsize</span><span class="o">*</span><span class="w"> </span><span class="n">frame_size</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
@@ -141,19 +137,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.c?h=2.6.1#n276">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.c?h=4.0.0#n115">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Execute request subaction of transactions to the given node according to given code. When the
+        <p>Execute request subaction of transaction to the given node according to given code. When the
 response subaction arrives and running event dispatcher reads the contents,
-<a href="signal.FwReq.responded2.html"><code>HinawaFwReq::responded2</code></a> signal handler is&nbsp;called.</p>
+<a href="signal.FwReq.responded.html"><code>HinawaFwReq::responded</code></a> signal handler is&nbsp;called.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 2.6.</p>
+        <p>Available since: 4.0</p>
         
         
         
@@ -265,7 +261,7 @@ response subaction arrives and running event dispatcher reads the contents,
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gsize*</code></p>
             <p><p>The size of array in byte unit. The value of this argument should point to the
-    numerical number and mutable for read and lock&nbsp;transaction.</p></p>
+    numeric number and mutable for read and lock&nbsp;transaction.</p></p>
             <table>
             <tr><td title="direction: inout">The argument will be modified by the function.</td></tr>
             

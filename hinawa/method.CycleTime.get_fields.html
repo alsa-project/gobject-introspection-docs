@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -107,7 +107,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 2.6.</span></p>
+      <p><span class="emblem available">since: 2.6</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,7 +115,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/cycle_time.h?h=2.6.1#n22">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/cycle_time.h?h=4.0.0#n22">[src]</a>
         
       </h4>
 
@@ -135,19 +135,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/cycle_time.c?h=2.6.1#n94">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/cycle_time.c?h=4.0.0#n94">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Get the value of cycle time in 1394 <span class="caps">OHCI</span> controller. The first element of array expresses the
+        <p>Get the value of cycle time in 1394 <span class="caps">OHCI</span> hardware. The first element of array expresses the
 value of sec field, up to 127. The second element of array expresses the value of cycle field,
 up to 7999. The third element of array expresses the value of offset field, up to&nbsp;3071.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 2.6.</p>
+        <p>Available since: 2.6</p>
         
         
         
@@ -171,7 +171,7 @@ up to 7999. The third element of array expresses the value of offset field, up t
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;An array of&nbsp;<code>guint16</code></p>
             <p><p>The value of cycle time register of 1394
-    <span class="caps">OHCI</span>, including three elements; second, cycle, and offset in its&nbsp;order.</p></p>
+    <span class="caps">OHCI</span> hardware, including three elements; second, cycle, and offset in its&nbsp;order.</p></p>
             <table>
             <tr><td title="direction: out">The argument will be set by the function.</td></tr>
             

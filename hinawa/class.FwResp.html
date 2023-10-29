@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -92,8 +92,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Instance methods</h5>
   <div class="links">
-  
-    <a class="method" href="method.FwResp.get_req_frame.html">get_req_frame</a>
   
     <a class="method" href="method.FwResp.release.html">release</a>
   
@@ -129,10 +127,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="signal" href="signal.FwResp.requested.html">requested</a>
   
-    <a class="signal" href="signal.FwResp.requested2.html">requested2</a>
-  
-    <a class="signal" href="signal.FwResp.requested3.html">requested3</a>
-  
   </div>
 </div>
 
@@ -145,10 +139,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method" href="vfunc.FwResp.requested.html">requested</a>
-  
-    <a class="method" href="vfunc.FwResp.requested2.html">requested2</a>
-  
-    <a class="method" href="vfunc.FwResp.requested3.html">requested3</a>
   
   </div>
 </div>
@@ -180,7 +170,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=2.6.1#n8">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=4.0.0#n8">[src]</a>
           
         </h4>
 
@@ -189,10 +179,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A transaction responder for request initiated by node in <span class="caps">IEEE</span> 1394 bus.
-The <a href="class.FwResp.html"><code>HinawaFwResp</code></a> responds transaction initiated by node in <span class="caps">IEEE</span> 1394&nbsp;bus.</p>
-<p>This class is an application of Linux FireWire subsystem. All of operations utilize ioctl(2)
-with subsystem specific request&nbsp;commands.</p>
+          <p>A transaction responder for request subaction initiated by node in <span class="caps">IEEE</span> 1394 bus.
+<a href="class.FwResp.html"><code>HinawaFwResp</code></a> responds to request subaction initiated by node in <span class="caps">IEEE</span> 1394&nbsp;bus.</p>
         </div>
 
         <div class="docblock">
@@ -254,7 +242,7 @@ with subsystem specific request&nbsp;commands.</p>
             <p>Instantiate <code>HinawaFwResp</code> object and return the&nbsp;instance.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.3.</span></p>
+            <p><span class="emblem available">since: 1.3</span></p>
           </div>
         </div>
       
@@ -273,54 +261,44 @@ with subsystem specific request&nbsp;commands.</p>
 
       <div class="docblock">
       
-        <div class="deprecated">
-          <h6><a href="method.FwResp.get_req_frame.html">hinawa_fw_resp_get_req_frame</a></h6>
-          <div class="docblock">
-            <p>Retrieve byte frame to be&nbsp;requested.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;<span class="emblem available">since: 2.0</span></p>
-          </div>
-        </div>
-      
         <div class="">
           <h6><a href="method.FwResp.release.html">hinawa_fw_resp_release</a></h6>
           <div class="docblock">
-            <p>Stop to listen to a range of address in local node (e.g. <span class="caps">OHCI</span> 1394&nbsp;controller).</p>
+            <p>Stop listening to the address range in Linux system for local&nbsp;nodes.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 1.4</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwResp.reserve.html">hinawa_fw_resp_reserve</a></h6>
           <div class="docblock">
-            <p>Start to listen to a range of address in host controller which connects to the node. The function
-is a variant of <code>hinawa_fw_resp_reserve_within_region()</code> so that the exact range of address should
-be reserved as&nbsp;given.</p>
+            <p>Allocate an address range within Linux system for local nodes, each of which expresses 1394
+<span class="caps">OHCI</span> hardware. Once successful, <code>HinawaFwResp::requested</code> signal will be emitted whenever any
+request subactions arrive at the 1394 <span class="caps">OHCI</span> hardware within the dedicated&nbsp;range.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwResp.reserve_within_region.html">hinawa_fw_resp_reserve_within_region</a></h6>
           <div class="docblock">
-            <p>Start to listen to range of address equals to #width in local node (e.g. 1394 <span class="caps">OHCI</span> host
-controller), which is used to communicate to the node given as parameter. The range of address
-is looked up in region between region_start and&nbsp;region_end.</p>
+            <p>Allocate an address range within Linux system for local nodes, each of which expresses 1394
+<span class="caps">OHCI</span> hardware. Once successful, <code>HinawaFwResp::requested</code> signal will be emitted whenever any
+request subactions arrive at the 1394 <span class="caps">OHCI</span> hardware within the dedicated&nbsp;range.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.3.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwResp.set_resp_frame.html">hinawa_fw_resp_set_resp_frame</a></h6>
           <div class="docblock">
-            <p>Register byte frame as&nbsp;response.</p>
+            <p>Register byte frame for the response subaction of&nbsp;transaction.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.0</span></p>
@@ -360,7 +338,7 @@ is looked up in region between region_start and&nbsp;region_end.</p>
         <div class="">
           <h6><a href="property.FwResp.is-reserved.html">Hinawa.FwResp:is-reserved</a></h6>
           <div class="docblock">
-            <p>Whether a range of address is reserved or not in host&nbsp;controller.</p>
+            <p>Whether a range of address is reserved or&nbsp;not.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.0</span></p>
@@ -409,39 +387,14 @@ is looked up in region between region_start and&nbsp;region_end.</p>
       
       <div class="docblock">
       
-        <div class="deprecated">
+        <div class="">
           <h6><a href="signal.FwResp.requested.html">Hinawa.FwResp::requested</a></h6>
           <div class="docblock">
-            <p>Emitted when any node transfers requests to the range of address in 1394 <span class="caps">OHCI</span> controller
-to which this object listening, except for the case that either
-<code>HinawaFwResp::requested2</code> signal handler or <code>HinawaFwResp::requested3</code> signal handler
-is already&nbsp;assigned.</p>
+            <p>Emitted when any node transfers request subaction to local nodes within the address
+range reserved in Linux&nbsp;system.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;<span class="emblem available">since: 0.3</span></p>
-          </div>
-        </div>
-      
-        <div class="deprecated">
-          <h6><a href="signal.FwResp.requested2.html">Hinawa.FwResp::requested2</a></h6>
-          <div class="docblock">
-            <p>Emitted when any node transfers request subaction to the range of address in 1394 <span class="caps">OHCI</span>
-controller to which this object listening, except for the case that
-<code>HinawaFwResp::requested3</code> signal handler is already&nbsp;assigned.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.2</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="signal.FwResp.requested3.html">Hinawa.FwResp::requested3</a></h6>
-          <div class="docblock">
-            <p>Emitted when any node transfers request subaction to the range of address in 1394 <span class="caps">OHCI</span>
-controller to which this object&nbsp;listening.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem available">since: 2.6</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -483,26 +436,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
   GObjectClass parent_class;
   HinawaFwRcode (* requested) (
     HinawaFwResp* self,
-    HinawaFwTcode tcode
-  );
-  HinawaFwRcode (* requested2) (
-    HinawaFwResp* self,
     HinawaFwTcode tcode,
     guint64 offset,
-    guint32 src,
-    guint32 dst,
-    guint32 card,
-    guint32 generation,
-    const guint8* frame,
-    guint length
-  );
-  HinawaFwRcode (* requested3) (
-    HinawaFwResp* self,
-    HinawaFwTcode tcode,
-    guint64 offset,
-    guint src,
-    guint dst,
-    guint card,
+    guint src_node_id,
+    guint dst_node_id,
+    guint card_id,
     guint generation,
     guint tstamp,
     const guint8* frame,
@@ -527,30 +465,11 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         
           <dt><code>requested: HinawaFwRcode (* requested) (
     HinawaFwResp* self,
-    HinawaFwTcode tcode
-  )</code></dt>
-          <dd>No description available.</dd>
-        
-          <dt><code>requested2: HinawaFwRcode (* requested2) (
-    HinawaFwResp* self,
     HinawaFwTcode tcode,
     guint64 offset,
-    guint32 src,
-    guint32 dst,
-    guint32 card,
-    guint32 generation,
-    const guint8* frame,
-    guint length
-  )</code></dt>
-          <dd>No description available.</dd>
-        
-          <dt><code>requested3: HinawaFwRcode (* requested3) (
-    HinawaFwResp* self,
-    HinawaFwTcode tcode,
-    guint64 offset,
-    guint src,
-    guint dst,
-    guint card,
+    guint src_node_id,
+    guint dst_node_id,
+    guint card_id,
     guint generation,
     guint tstamp,
     const guint8* frame,
@@ -573,33 +492,13 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
 
       <div class="docblock">
       
-      <div class="deprecated">
+      <div class="">
         <h6 id="vfunc-requested"><a href="vfunc.FwResp.requested.html">Hinawa.FwRespClass.requested</a></h6>
         <div class="docblock">
           <p>Class closure for the <code>HinawaFwResp::requested</code> signal.</p>
         </div>
         <div class="docblock">
-          <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;</p>
-        </div>
-      </div>
-      
-      <div class="deprecated">
-        <h6 id="vfunc-requested2"><a href="vfunc.FwResp.requested2.html">Hinawa.FwRespClass.requested2</a></h6>
-        <div class="docblock">
-          <p>Class closure for the <code>HinawaFwResp::requested2</code> signal.</p>
-        </div>
-        <div class="docblock">
-          <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.2</span></p>
-        </div>
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-requested3"><a href="vfunc.FwResp.requested3.html">Hinawa.FwRespClass.requested3</a></h6>
-        <div class="docblock">
-          <p>Class closure for the <code>HinawaFwResp::requested3</code> signal.</p>
-        </div>
-        <div class="docblock">
-          <p><span class="emblem available">since: 2.6</span></p>
+          <p><span class="emblem available">since: 4.0</span></p>
         </div>
       </div>
       

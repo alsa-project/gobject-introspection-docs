@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -79,8 +79,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="signal current" href="signal.FwFcp.responded.html">responded</a>
-  
-    <a class="signal" href="signal.FwFcp.responded2.html">responded2</a>
   
   </div>
 </div>
@@ -101,7 +99,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration">
@@ -113,6 +111,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
 <span class="n">responded</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">HinawaFwFcp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">tstamp</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span>
 <span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">frame_size</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span>
@@ -127,14 +127,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.c?h=2.6.1#n177">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.c?h=4.0.0#n167">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Emitted when the node transfers asynchronous packet as response for <span class="caps">FCP</span> and the process
-successfully read the content of packet, except for the case that
-<a href="signal.FwFcp.responded2.html"><code>HinawaFwFcp::responded2</code></a> signal handler is already&nbsp;assigned.</p>
+successfully read the content of&nbsp;packet.</p>
+<p>The values of <code>tstamp</code> is unsigned 16 bit integer including higher 3 bits for three low
+order bits of second field and the rest 13 bits for cycle field in the format of <span class="caps">IEEE</span>
+1394 CYCLE_TIMER&nbsp;register.</p>
+<p>If the version of kernel <span class="caps">ABI</span> for Linux FireWire subsystem is less than 6, the value of
+<code>tstamp</code> argument has invalid value&nbsp;(=G_MAXUINT).</p>
       </div>
 
       <div class="docblock">
@@ -146,11 +150,8 @@ successfully read the content of packet, except for the case that
           
           
           
-          <tr><td>Available since: 2.1</td></tr>
+          <tr><td>Available since: 4.0</td></tr>
           
-          
-          <tr><td>Deprecated since: 2.6</td></tr>
-          <tr><td><p>Use <a href="signal.FwFcp.responded2.html"><code>HinawaFwFcp::responded2</code></a>,&nbsp;instead.</p></td></tr>
           
         </table>
       </div>
@@ -167,6 +168,40 @@ successfully read the content of packet, except for the case that
 
       <div class="docblock">
         <dl class="arguments">
+          
+          <dt class="arg-name"><code>generation</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The generation of bus&nbsp;topology.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>tstamp</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The time stamp at which the request arrived for the response of <span class="caps">FCP</span>&nbsp;transaction.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
           
           <dt class="arg-name"><code>frame</code></dt>
           <dd class="arg-description">

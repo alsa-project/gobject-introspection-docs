@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -77,8 +77,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
-  
-    <a class="method" href="method.FwResp.get_req_frame.html">get_req_frame</a>
   
     <a class="method" href="method.FwResp.release.html">release</a>
   
@@ -107,7 +105,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 2.3.</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,12 +113,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=2.6.1#n87">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=4.0.0#n50">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
 <span class="n">hinawa_fw_resp_reserve_within_region</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">HinawaFwResp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
 <span class="w">  </span><span class="n">HinawaFwNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
@@ -139,19 +137,21 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=2.6.1#n288">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=4.0.0#n215">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Start to listen to range of address equals to #width in local node (e.g. 1394 <span class="caps">OHCI</span> host
-controller), which is used to communicate to the node given as parameter. The range of address
-is looked up in region between region_start and&nbsp;region_end.</p>
+        <p>Allocate an address range within Linux system for local nodes, each of which expresses 1394
+<span class="caps">OHCI</span> hardware. Once successful, <a href="signal.FwResp.requested.html"><code>HinawaFwResp::requested</code></a> signal will be emitted whenever any
+request subactions arrive at the 1394 <span class="caps">OHCI</span> hardware within the dedicated&nbsp;range.</p>
+<p>The range is reserved between the values specified by <code>region_start</code> and <code>region_end</code> with the size
+indicated by <code>width</code>. The starting offset may vary every&nbsp;time.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 2.3.</p>
+        <p>Available since: 4.0</p>
         
         
         
@@ -258,6 +258,32 @@ is looked up in region between region_start and&nbsp;region_end.</p>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <div class="returns">
+          <div class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
+            <p><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></p>
+          </div>
+          <div>
+            <table>
+            
+            
+            
+            
+            
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
   </section>

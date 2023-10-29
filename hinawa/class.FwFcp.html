@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -103,8 +103,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.FwFcp.command_with_tstamp.html">command_with_tstamp</a>
   
-    <a class="method" href="method.FwFcp.transaction.html">transaction</a>
-  
     <a class="method" href="method.FwFcp.unbind.html">unbind</a>
   
   </div>
@@ -118,8 +116,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="property" href="property.FwFcp.is-bound.html">is-bound</a>
   
-    <a class="property" href="property.FwFcp.timeout.html">timeout</a>
-  
   </div>
 </div>
 
@@ -130,8 +126,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="signal" href="signal.FwFcp.responded.html">responded</a>
-  
-    <a class="signal" href="signal.FwFcp.responded2.html">responded2</a>
   
   </div>
 </div>
@@ -145,8 +139,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method" href="vfunc.FwFcp.responded.html">responded</a>
-  
-    <a class="method" href="vfunc.FwFcp.responded2.html">responded2</a>
   
   </div>
 </div>
@@ -178,7 +170,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.c?h=2.6.1#n7">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.c?h=4.0.0#n9">[src]</a>
           
         </h4>
 
@@ -188,11 +180,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
         <div class="docblock">
           <p>A <span class="caps">FCP</span> transaction executor to node in <span class="caps">IEEE</span> 1394 bus.
-A HinawaFwFcp supports Function Control Protocol (<span class="caps">FCP</span>) in <span class="caps">IEC</span> 61883-1, in which no way is defined
-to match response against command by the contents of frames. In &#8216;<span class="caps">AV</span>/C Digital Interface Command
-Set General Specification Version 4.2&#8217; (Sep 1 2004, <span class="caps">1394TA</span>), a pair of command and response is
-loosely matched by the contents of&nbsp;frames.</p>
-<p>Any of transaction frames should be aligned to 8bit (byte). This class is an application of
+<a href="class.FwFcp.html"><code>HinawaFwFcp</code></a> supports Function Control Protocol (<span class="caps">FCP</span>) in <span class="caps">IEC</span> 61883-1. <span class="caps">FCP</span> transaction consists
+of a pair of asynchronous transactions for command and response, while the protocol has no
+mechanism to match them. In <span class="caps">AV</span>/C Digital Interface Command Set General Specification Version 4.2
+(Sep 1 2004, <span class="caps">1394TA</span>), they are loosely matched by the content of their frames, and this class
+employs the&nbsp;way.</p>
+<p>Any of transaction frames should be aligned to 8 bit (1 byte). This class is an application of
 <a href="class.FwReq.html"><code>HinawaFwReq</code></a> / <a href="class.FwResp.html"><code>HinawaFwResp</code></a>.</p>
         </div>
 
@@ -250,7 +243,7 @@ loosely matched by the contents of&nbsp;frames.</p>
             <p>Instantiate <code>HinawaFwFcp</code> object and return the&nbsp;instance.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.3.</span></p>
+            <p><span class="emblem available">since: 1.3</span></p>
           </div>
         </div>
       
@@ -269,31 +262,29 @@ loosely matched by the contents of&nbsp;frames.</p>
 
       <div class="docblock">
       
-        <div class="deprecated">
+        <div class="">
           <h6><a href="method.FwFcp.avc_transaction.html">hinawa_fw_fcp_avc_transaction</a></h6>
           <div class="docblock">
-            <p>Finish the pair of asynchronous transaction for <span class="caps">AV</span>/C command and response transactions. The
-timeout_ms parameter is used to wait for response transaction since the command transaction is
-initiated, ignoring <code>HinawaFwFcp:timeout</code> property of instance. The timeout is not expanded in
-the case that <span class="caps">AV</span>/C <span class="caps">INTERIM</span> status is arrived, thus the caller should expand the timeout in
-advance for the&nbsp;case.</p>
+            <p>Finish the pair of asynchronous transaction for <span class="caps">AV</span>/C command and response. The <code>timeout_ms</code>
+parameter is used to wait for response transaction since the command transaction is initiated.
+The timeout is not expanded in the case that <span class="caps">AV</span>/C <span class="caps">INTERIM</span> status arrived, thus the caller should
+expand the timeout in advance for the&nbsp;case.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwFcp.avc_transaction_with_tstamp.html">hinawa_fw_fcp_avc_transaction_with_tstamp</a></h6>
           <div class="docblock">
-            <p>Finish the pair of asynchronous transaction for <span class="caps">AV</span>/C command and response transactions. The
-timeout_ms parameter is used to wait for response transaction since the command transaction is
-initiated, ignoring <code>HinawaFwFcp:timeout</code> property of instance. The timeout is not expanded in
-the case that <span class="caps">AV</span>/C <span class="caps">INTERIM</span> status is arrived, thus the caller should expand the timeout in
-advance for the&nbsp;case.</p>
+            <p>Finish the pair of asynchronous transaction for <span class="caps">AV</span>/C command and response. The <code>timeout_ms</code>
+parameter is used to wait for response transaction since the command transaction is initiated.
+The timeout is not expanded in the case that <span class="caps">AV</span>/C <span class="caps">INTERIM</span> status arrived, thus the caller should
+expand the timeout in advance for the&nbsp;case.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.6.</span></p>
+            <p><span class="emblem available">since: 2.6</span></p>
           </div>
         </div>
       
@@ -303,18 +294,18 @@ advance for the&nbsp;case.</p>
             <p>Start to listen to <span class="caps">FCP</span>&nbsp;responses.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
-        <div class="deprecated">
+        <div class="">
           <h6><a href="method.FwFcp.command.html">hinawa_fw_fcp_command</a></h6>
           <div class="docblock">
             <p>Transfer command frame for <span class="caps">FCP</span>. When receiving response frame for <span class="caps">FCP</span>, <code>HinawaFwFcp::responded</code>
 signal is&nbsp;emitted.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -325,29 +316,17 @@ signal is&nbsp;emitted.</p>
 signal is&nbsp;emitted.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.6.</span></p>
-          </div>
-        </div>
-      
-        <div class="deprecated">
-          <h6><a href="method.FwFcp.transaction.html">hinawa_fw_fcp_transaction</a></h6>
-          <div class="docblock">
-            <p>Finish the pair of command and response transactions for <span class="caps">FCP</span>. The value of
-<code>HinawaFwFcp:timeout</code> property is used to wait for response transaction since the command
-transaction is&nbsp;initiated.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.1</span>&nbsp;<span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 2.6</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwFcp.unbind.html">hinawa_fw_fcp_unbind</a></h6>
           <div class="docblock">
-            <p>Stop to listen to <span class="caps">FCP</span>&nbsp;responses.</p>
+            <p>Stop to listen to <span class="caps">FCP</span> responses. Any pending transactions are forced to be&nbsp;aborted.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.4.</span></p>
+            <p><span class="emblem available">since: 1.4</span></p>
           </div>
         </div>
       
@@ -356,42 +335,35 @@ transaction is&nbsp;initiated.</p>
       
         
         <div class="toggle-wrapper default-hide ancestor-methods">
-          <h5 style="display:block;">Methods inherited from <a href="class.FwResp.html">HinawaFwResp</a> (5)</h5><div class="docblock">
-          
-            <h6><a href="method.FwResp.get_req_frame.html">hinawa_fw_resp_get_req_frame</a></h6><div class="docblock">
-              <p>Retrieve byte frame to be&nbsp;requested.</p>
-            </div>
-            <div class="docblock">
-              <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;<span class="emblem available">since: 2.0</span></p>
-            </div>
+          <h5 style="display:block;">Methods inherited from <a href="class.FwResp.html">HinawaFwResp</a> (4)</h5><div class="docblock">
           
             <h6><a href="method.FwResp.release.html">hinawa_fw_resp_release</a></h6><div class="docblock">
-              <p>Stop to listen to a range of address in local node (e.g. <span class="caps">OHCI</span> 1394&nbsp;controller).</p>
+              <p>Stop listening to the address range in Linux system for local&nbsp;nodes.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem available">since: 1.4.</span></p>
+              <p><span class="emblem available">since: 1.4</span></p>
             </div>
           
             <h6><a href="method.FwResp.reserve.html">hinawa_fw_resp_reserve</a></h6><div class="docblock">
-              <p>Start to listen to a range of address in host controller which connects to the node. The function
-is a variant of <code>hinawa_fw_resp_reserve_within_region()</code> so that the exact range of address should
-be reserved as&nbsp;given.</p>
+              <p>Allocate an address range within Linux system for local nodes, each of which expresses 1394
+<span class="caps">OHCI</span> hardware. Once successful, <code>HinawaFwResp::requested</code> signal will be emitted whenever any
+request subactions arrive at the 1394 <span class="caps">OHCI</span> hardware within the dedicated&nbsp;range.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem available">since: 1.4.</span></p>
+              <p><span class="emblem available">since: 4.0</span></p>
             </div>
           
             <h6><a href="method.FwResp.reserve_within_region.html">hinawa_fw_resp_reserve_within_region</a></h6><div class="docblock">
-              <p>Start to listen to range of address equals to #width in local node (e.g. 1394 <span class="caps">OHCI</span> host
-controller), which is used to communicate to the node given as parameter. The range of address
-is looked up in region between region_start and&nbsp;region_end.</p>
+              <p>Allocate an address range within Linux system for local nodes, each of which expresses 1394
+<span class="caps">OHCI</span> hardware. Once successful, <code>HinawaFwResp::requested</code> signal will be emitted whenever any
+request subactions arrive at the 1394 <span class="caps">OHCI</span> hardware within the dedicated&nbsp;range.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem available">since: 2.3.</span></p>
+              <p><span class="emblem available">since: 4.0</span></p>
             </div>
           
             <h6><a href="method.FwResp.set_resp_frame.html">hinawa_fw_resp_set_resp_frame</a></h6><div class="docblock">
-              <p>Register byte frame as&nbsp;response.</p>
+              <p>Register byte frame for the response subaction of&nbsp;transaction.</p>
             </div>
             <div class="docblock">
               <p><span class="emblem available">since: 2.0</span></p>
@@ -438,16 +410,6 @@ is looked up in region between region_start and&nbsp;region_end.</p>
           </div>
         </div>
       
-        <div class="deprecated">
-          <h6><a href="property.FwFcp.timeout.html">Hinawa.FwFcp:timeout</a></h6>
-          <div class="docblock">
-            <p>Since&nbsp;1.4</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.1</span>&nbsp;</p>
-          </div>
-        </div>
-      
       </div>
       
 
@@ -457,7 +419,7 @@ is looked up in region between region_start and&nbsp;region_end.</p>
           <h5 style="display:block;">Properties inherited from <a href="class.FwResp.html">HinawaFwResp</a> (3)</h5><div class="docblock">
           
             <h6><a href="property.FwResp.is-reserved.html">Hinawa.FwResp:is-reserved</a></h6><div class="docblock">
-              <p>Whether a range of address is reserved or not in host&nbsp;controller.</p>
+              <p>Whether a range of address is reserved or&nbsp;not.</p>
             </div>
             <div class="docblock">
               <p><span class="emblem available">since: 2.0</span></p>
@@ -499,26 +461,14 @@ is looked up in region between region_start and&nbsp;region_end.</p>
       
       <div class="docblock">
       
-        <div class="deprecated">
-          <h6><a href="signal.FwFcp.responded.html">Hinawa.FwFcp::responded</a></h6>
-          <div class="docblock">
-            <p>Emitted when the node transfers asynchronous packet as response for <span class="caps">FCP</span> and the process
-successfully read the content of packet, except for the case that
-<code>HinawaFwFcp::responded2</code> signal handler is already&nbsp;assigned.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1</span></p>
-          </div>
-        </div>
-      
         <div class="">
-          <h6><a href="signal.FwFcp.responded2.html">Hinawa.FwFcp::responded2</a></h6>
+          <h6><a href="signal.FwFcp.responded.html">Hinawa.FwFcp::responded</a></h6>
           <div class="docblock">
             <p>Emitted when the node transfers asynchronous packet as response for <span class="caps">FCP</span> and the process
 successfully read the content of&nbsp;packet.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.6.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -528,33 +478,14 @@ successfully read the content of&nbsp;packet.</p>
       
         
         <div class="toggle-wrapper default-hide ancestor-signals">
-          <h5 style="display:block;">Signals inherited from <a href="class.FwResp.html">HinawaFwResp</a> (3)</h5><div class="docblock">
+          <h5 style="display:block;">Signals inherited from <a href="class.FwResp.html">HinawaFwResp</a> (1)</h5><div class="docblock">
           
             <h6><a href="signal.FwResp.requested.html">HinawaFwResp::requested</a></h6><div class="docblock">
-              <p>Emitted when any node transfers requests to the range of address in 1394 <span class="caps">OHCI</span> controller
-to which this object listening, except for the case that either
-<code>HinawaFwResp::requested2</code> signal handler or <code>HinawaFwResp::requested3</code> signal handler
-is already&nbsp;assigned.</p>
+              <p>Emitted when any node transfers request subaction to local nodes within the address
+range reserved in Linux&nbsp;system.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;<span class="emblem available">since: 0.3</span></p>
-            </div>
-          
-            <h6><a href="signal.FwResp.requested2.html">HinawaFwResp::requested2</a></h6><div class="docblock">
-              <p>Emitted when any node transfers request subaction to the range of address in 1394 <span class="caps">OHCI</span>
-controller to which this object listening, except for the case that
-<code>HinawaFwResp::requested3</code> signal handler is already&nbsp;assigned.</p>
-            </div>
-            <div class="docblock">
-              <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.2</span></p>
-            </div>
-          
-            <h6><a href="signal.FwResp.requested3.html">HinawaFwResp::requested3</a></h6><div class="docblock">
-              <p>Emitted when any node transfers request subaction to the range of address in 1394 <span class="caps">OHCI</span>
-controller to which this object&nbsp;listening.</p>
-            </div>
-            <div class="docblock">
-              <p><span class="emblem available">since: 2.6</span></p>
+              <p><span class="emblem available">since: 4.0</span></p>
             </div>
           
           </div>
@@ -595,11 +526,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
   HinawaFwRespClass parent_class;
   void (* responded) (
     HinawaFwFcp* self,
-    const guint8* frame,
-    guint frame_size
-  );
-  void (* responded2) (
-    HinawaFwFcp* self,
+    guint generation,
     guint tstamp,
     const guint8* frame,
     guint frame_size
@@ -623,13 +550,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
         
           <dt><code>responded: void (* responded) (
     HinawaFwFcp* self,
-    const guint8* frame,
-    guint frame_size
-  )</code></dt>
-          <dd>No description available.</dd>
-        
-          <dt><code>responded2: void (* responded2) (
-    HinawaFwFcp* self,
+    guint generation,
     guint tstamp,
     const guint8* frame,
     guint frame_size
@@ -657,17 +578,7 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <p>Class closure for the <code>HinawaFwFcp::responded</code> signal.</p>
         </div>
         <div class="docblock">
-          <p><span class="emblem available">since: 2.1</span></p>
-        </div>
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-responded2"><a href="vfunc.FwFcp.responded2.html">Hinawa.FwFcpClass.responded2</a></h6>
-        <div class="docblock">
-          <p>Class closure for the <code>HinawaFwFcp::responded2</code> signal.</p>
-        </div>
-        <div class="docblock">
-          <p><span class="emblem available">since: 2.6</span></p>
+          <p><span class="emblem available">since: 4.0</span></p>
         </div>
       </div>
       

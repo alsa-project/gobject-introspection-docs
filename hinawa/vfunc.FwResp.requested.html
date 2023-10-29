@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -79,10 +79,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method current" href="vfunc.FwResp.requested.html">requested</a>
-  
-    <a class="method" href="vfunc.FwResp.requested2.html">requested2</a>
-  
-    <a class="method" href="vfunc.FwResp.requested3.html">requested3</a>
   
   </div>
 </div>
@@ -103,7 +99,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;</p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -111,7 +107,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a href="#declaration" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=2.6.1#n32">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=4.0.0#n42">[src]</a>
         
       </h4>
 
@@ -119,7 +115,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <pre><code><div class="highlight"><pre><span></span><span class="n">HinawaFwRcode</span>
 <span class="n">requested</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">HinawaFwResp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="n">HinawaFwTcode</span><span class="w"> </span><span class="n">tcode</span>
+<span class="w">  </span><span class="n">HinawaFwTcode</span><span class="w"> </span><span class="n">tcode</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint64</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">src_node_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">dst_node_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">card_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">tstamp</span><span class="p">,</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">length</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -131,7 +135,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=2.6.1#n20">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=4.0.0#n20">[src]</a>
         
       </h4>
 
@@ -141,9 +145,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
         
+        <p>Available since: 4.0</p>
         
-        <div><p>Deprecated since: 2.2</p>
-          <p>Use <a href="vfunc.FwResp.requested3.html"><code>Hinawa.FwRespClass.requested3</code></a>,&nbsp;instead.</p></div>
       </div>
 
       
@@ -176,6 +179,143 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             </table>
           </dd>
           
+          <dt class="arg-name"><code>offset</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint64</code></p>
+            <p><p>The address offset at which the transaction&nbsp;arrives.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>src_node_id</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The node <span class="caps">ID</span> of source for the&nbsp;transaction.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>dst_node_id</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The node <span class="caps">ID</span> of destination for the&nbsp;transaction.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>card_id</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The index of card specific to 1394 <span class="caps">OHCI</span> hardware at which the request
+     subaction&nbsp;arrived.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>generation</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The generation of bus when the transaction is&nbsp;transferred.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>tstamp</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The time stamp at which the request&nbsp;arrived.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>frame</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;An array of&nbsp;<code>guint8</code></p>
+            <p><p>The array with elements for byte&nbsp;data.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            <tr><td>The length of the array is specified in the <code>length</code> argument.</td></tr>
+            <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>length</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The length of bytes for the&nbsp;frame.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
 
           
         </dl>
@@ -194,7 +334,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <div class="returns">
           <div>
             <p><em>Type:</em>&nbsp;<a href="enum.FwRcode.html"><code>HinawaFwRcode</code></a></p>
-            <p><p>One of <a href="enum.FwRcode.html"><code>HinawaFwRcode</code></a> enumerations corresponding to rcodes defined in <span class="caps">IEEE</span> 1394&nbsp;specification.</p></p>
+            <p><p>One of [enum@FwRcode enumerations corresponding to rcodes defined in <span class="caps">IEEE</span> 1394&nbsp;specification.</p></p>
           </div>
           <div>
             <table>

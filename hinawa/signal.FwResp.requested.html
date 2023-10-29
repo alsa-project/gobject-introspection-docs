@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -79,10 +79,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="signal current" href="signal.FwResp.requested.html">requested</a>
-  
-    <a class="signal" href="signal.FwResp.requested2.html">requested2</a>
-  
-    <a class="signal" href="signal.FwResp.requested3.html">requested3</a>
   
   </div>
 </div>
@@ -103,7 +99,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem deprecated">deprecated: 2.2</span>&nbsp;<span class="emblem available">since: 0.3</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration">
@@ -116,6 +112,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <span class="n">requested</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">HinawaFwResp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
 <span class="w">  </span><span class="n">HinawaFwTcode</span><span class="w"> </span><span class="n">tcode</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint64</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">src_node_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">dst_node_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">card_id</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">tstamp</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">length</span><span class="p">,</span>
 <span class="w">  </span><span class="n">gpointer</span><span class="w"> </span><span class="n">user_data</span>
 <span class="p">)</span>
 </pre></div>
@@ -128,18 +132,21 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=2.6.1#n158">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=4.0.0#n152">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Emitted when any node transfers requests to the range of address in 1394 <span class="caps">OHCI</span> controller
-to which this object listening, except for the case that either
-<a href="signal.FwResp.requested2.html"><code>HinawaFwResp::requested2</code></a> signal handler or <a href="signal.FwResp.requested3.html"><code>HinawaFwResp::requested3</code></a> signal handler
-is already&nbsp;assigned.</p>
-<p>The handler can get data frame by a call of <a href="method.FwResp.get_req_frame.html"><code>hinawa_fw_resp_get_req_frame()</code></a> and set data
-frame by a call of <a href="method.FwResp.set_resp_frame.html"><code>hinawa_fw_resp_set_resp_frame()</code></a>, then returns <a href="enum.FwRcode.html"><code>HinawaFwRcode</code></a> for
-response&nbsp;subaction.</p>
+        <p>Emitted when any node transfers request subaction to local nodes within the address
+range reserved in Linux&nbsp;system.</p>
+<p>The handler is expected to call <a href="method.FwResp.set_resp_frame.html"><code>hinawa_fw_resp_set_resp_frame()</code></a> with frame and return
+<a href="enum.FwRcode.html"><code>HinawaFwRcode</code></a> for response&nbsp;subaction.</p>
+<p>The value of <code>tstamp</code> is unsigned 16 bit integer including higher 3 bits for three low
+order bits of second field and the rest 13 bits for cycle field in the format of <span class="caps">IEEE</span>
+1394 CYCLE_TIMER&nbsp;register.</p>
+<p>If the version of kernel <span class="caps">ABI</span> for Linux FireWire subsystem is less than 6, the value of
+tstamp argument has invalid value (=G_MAXUINT). Furthermore, if the version is less than
+4, the src, dst, card, generation arguments have invalid value&nbsp;(=G_MAXUINT).</p>
       </div>
 
       <div class="docblock">
@@ -151,11 +158,8 @@ response&nbsp;subaction.</p>
           
           
           
-          <tr><td>Available since: 0.3</td></tr>
+          <tr><td>Available since: 4.0</td></tr>
           
-          
-          <tr><td>Deprecated since: 2.2</td></tr>
-          <tr><td><p>Use <a href="signal.FwResp.requested3.html"><code>HinawaFwResp::requested3</code></a>,&nbsp;instead.</p></td></tr>
           
         </table>
       </div>
@@ -177,6 +181,143 @@ response&nbsp;subaction.</p>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<a href="enum.FwTcode.html"><code>HinawaFwTcode</code></a></p>
             <p><p>One of <a href="enum.FwTcode.html"><code>HinawaFwTcode</code></a>&nbsp;enumerations.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>offset</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint64</code></p>
+            <p><p>The address offset at which the transaction&nbsp;arrives.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>src_node_id</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The node <span class="caps">ID</span> of source for the&nbsp;transaction.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>dst_node_id</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The node <span class="caps">ID</span> of destination for the&nbsp;transaction.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>card_id</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The index of card specific to the 1394 <span class="caps">OHCI</span> hardware at which the request
+     subaction&nbsp;arrived.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>generation</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The generation of bus when the transaction is&nbsp;transferred.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>tstamp</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The isochronous cycle at which the request&nbsp;arrived.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>frame</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;An array of&nbsp;<code>guint8</code></p>
+            <p><p>The array with elements for byte&nbsp;data.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            <tr><td>The length of the array is specified in the <code>length</code> argument.</td></tr>
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>length</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The length of bytes for the&nbsp;frame.</p></p>
             <table>
             
             

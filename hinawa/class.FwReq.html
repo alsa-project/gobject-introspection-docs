@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -97,25 +97,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.FwReq.transaction.html">transaction</a>
   
-    <a class="method" href="method.FwReq.transaction_async.html">transaction_async</a>
-  
-    <a class="method" href="method.FwReq.transaction_sync.html">transaction_sync</a>
-  
     <a class="method" href="method.FwReq.transaction_with_tstamp.html">transaction_with_tstamp</a>
   
   </div>
 </div>
 
 
-
-<div class="section">
-  <h5>Properties</h5>
-  <div class="links">
-  
-    <a class="property" href="property.FwReq.timeout.html">timeout</a>
-  
-  </div>
-</div>
 
 
 
@@ -124,8 +111,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="signal" href="signal.FwReq.responded.html">responded</a>
-  
-    <a class="signal" href="signal.FwReq.responded2.html">responded2</a>
   
   </div>
 </div>
@@ -139,8 +124,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <div class="links">
   
     <a class="method" href="vfunc.FwReq.responded.html">responded</a>
-  
-    <a class="method" href="vfunc.FwReq.responded2.html">responded2</a>
   
   </div>
 </div>
@@ -172,7 +155,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.c?h=2.6.1#n8">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.c?h=4.0.0#n8">[src]</a>
           
         </h4>
 
@@ -181,10 +164,8 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 }</pre></code>
 
         <div class="docblock">
-          <p>A transaction executor to a FireWire unit.
-A HinawaFwReq supports some types of transactions in <span class="caps">IEEE</span> 1212. Mainly for read, write and lock&nbsp;operations.</p>
-<p>This class is an application of Linux FireWire subsystem. All of operations utilize ioctl(2)
-with subsystem specific request&nbsp;commands.</p>
+          <p>A transaction executor to a node in <span class="caps">IEEE</span> 1394 bus.
+<a href="class.FwReq.html"><code>HinawaFwReq</code></a> supports all types of transactions defiend in <span class="caps">IEEE</span>&nbsp;1212.</p>
         </div>
 
         <div class="docblock">
@@ -237,7 +218,7 @@ with subsystem specific request&nbsp;commands.</p>
             <p>Instantiate <code>HinawaFwReq</code> object and return the&nbsp;instance.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 1.3.</span></p>
+            <p><span class="emblem available">since: 1.3</span></p>
           </div>
         </div>
       
@@ -259,47 +240,24 @@ with subsystem specific request&nbsp;commands.</p>
         <div class="">
           <h6><a href="method.FwReq.request.html">hinawa_fw_req_request</a></h6>
           <div class="docblock">
-            <p>Execute request subaction of transactions to the given node according to given code. When the
+            <p>Execute request subaction of transaction to the given node according to given code. When the
 response subaction arrives and running event dispatcher reads the contents,
-<code>HinawaFwReq::responded2</code> signal handler is&nbsp;called.</p>
+<code>HinawaFwReq::responded</code> signal handler is&nbsp;called.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.6.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
-        <div class="deprecated">
+        <div class="">
           <h6><a href="method.FwReq.transaction.html">hinawa_fw_req_transaction</a></h6>
           <div class="docblock">
             <p>Execute request subaction of transaction to the given node according to given code, then wait
-for response subaction within the value of timeout&nbsp;argument.</p>
+for response subaction within the value of timeout argument. The function is a thin wrapper to
+<code>hinawa_fw_req_transaction_with_tstamp()</code>.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.1</span>&nbsp;<span class="emblem available">since: 1.4</span></p>
-          </div>
-        </div>
-      
-        <div class="deprecated">
-          <h6><a href="method.FwReq.transaction_async.html">hinawa_fw_req_transaction_async</a></h6>
-          <div class="docblock">
-            <p>Execute request subaction of transactions to the given node according to given code. When the
-response subaction arrives and read the contents, <code>HinawaFwReq::responded2</code> signal handler is called
-as long as event dispatcher&nbsp;runs.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1.</span></p>
-          </div>
-        </div>
-      
-        <div class="deprecated">
-          <h6><a href="method.FwReq.transaction_sync.html">hinawa_fw_req_transaction_sync</a></h6>
-          <div class="docblock">
-            <p>Execute request subaction of transaction to the given node according to given code, then wait
-for response subaction within the given timeout. The <code>HinawaFwReq:timeout</code> property of
-instance is&nbsp;ignored.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6.</span>&nbsp;<span class="emblem available">since: 2.1.</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -307,8 +265,7 @@ instance is&nbsp;ignored.</p>
           <h6><a href="method.FwReq.transaction_with_tstamp.html">hinawa_fw_req_transaction_with_tstamp</a></h6>
           <div class="docblock">
             <p>Execute request subaction of transaction to the given node according to given code, then wait
-for response subaction within the given timeout. The <code>HinawaFwReq:timeout</code> property of
-instance is&nbsp;ignored.</p>
+for response subaction within the given&nbsp;timeout.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 2.6</span></p>
@@ -336,36 +293,6 @@ instance is&nbsp;ignored.</p>
     
 
     
-    <div class="toggle-wrapper properties">
-      <h4 id="properties">
-        Properties
-        <a href="#properties" class="anchor"></a>
-      </h4>
-
-      
-      <div class="docblock">
-      
-        <div class="deprecated">
-          <h6><a href="property.FwReq.timeout.html">Hinawa.FwReq:timeout</a></h6>
-          <div class="docblock">
-            No description available.
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.1</span>&nbsp;<span class="emblem available">since: 1.4</span></p>
-          </div>
-        </div>
-      
-      </div>
-      
-
-      
-        
-      
-
-      
-
-    </div>
-    
 
     
     <div class="signals toggle-wrapper">
@@ -377,26 +304,14 @@ instance is&nbsp;ignored.</p>
       
       <div class="docblock">
       
-        <div class="deprecated">
+        <div class="">
           <h6><a href="signal.FwReq.responded.html">Hinawa.FwReq::responded</a></h6>
           <div class="docblock">
-            <p>Emitted when the unit transfers asynchronous packet as response subaction for the
-transaction and the process successfully reads the content of packet from Linux firewire
-subsystem, except for the case that <code>HinawaFwReq::responded2</code> signal handler is already&nbsp;assigned.</p>
-          </div>
-          <div class="docblock">
-            <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1</span></p>
-          </div>
-        </div>
-      
-        <div class="">
-          <h6><a href="signal.FwReq.responded2.html">Hinawa.FwReq::responded2</a></h6>
-          <div class="docblock">
-            <p>Emitted when the unit transfers asynchronous packet as response subaction for the
+            <p>Emitted when the node transfers asynchronous packet as response subaction for the
 transaction and the process successfully reads the content of packet from Linux firewire&nbsp;subsystem.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 2.6</span></p>
+            <p><span class="emblem available">since: 4.0</span></p>
           </div>
         </div>
       
@@ -439,12 +354,6 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
   void (* responded) (
     HinawaFwReq* self,
     HinawaFwRcode rcode,
-    const guint8* frame,
-    guint frame_size
-  );
-  void (* responded2) (
-    HinawaFwReq* self,
-    HinawaFwRcode rcode,
     guint request_tstamp,
     guint response_tstamp,
     const guint8* frame,
@@ -470,14 +379,6 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
           <dt><code>responded: void (* responded) (
     HinawaFwReq* self,
     HinawaFwRcode rcode,
-    const guint8* frame,
-    guint frame_size
-  )</code></dt>
-          <dd>No description available.</dd>
-        
-          <dt><code>responded2: void (* responded2) (
-    HinawaFwReq* self,
-    HinawaFwRcode rcode,
     guint request_tstamp,
     guint response_tstamp,
     const guint8* frame,
@@ -500,23 +401,13 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
 
       <div class="docblock">
       
-      <div class="deprecated">
+      <div class="">
         <h6 id="vfunc-responded"><a href="vfunc.FwReq.responded.html">Hinawa.FwReqClass.responded</a></h6>
         <div class="docblock">
           <p>Class closure for the <code>HinawaFwReq::responded</code> signal.</p>
         </div>
         <div class="docblock">
-          <p><span class="emblem deprecated">deprecated: 2.6</span>&nbsp;<span class="emblem available">since: 2.1</span></p>
-        </div>
-      </div>
-      
-      <div class="">
-        <h6 id="vfunc-responded2"><a href="vfunc.FwReq.responded2.html">Hinawa.FwReqClass.responded2</a></h6>
-        <div class="docblock">
-          <p>Class closure for the <code>HinawaFwReq::responded2</code> signal.</p>
-        </div>
-        <div class="docblock">
-          <p><span class="emblem available">since: 2.6</span></p>
+          <p><span class="emblem available">since: 4.0</span></p>
         </div>
       </div>
       
@@ -553,8 +444,6 @@ its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
 
 
       
-<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
-
 
       
 <li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>

@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -88,8 +88,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
     <a class="method" href="method.FwFcp.command_with_tstamp.html">command_with_tstamp</a>
   
-    <a class="method" href="method.FwFcp.transaction.html">transaction</a>
-  
     <a class="method" href="method.FwFcp.unbind.html">unbind</a>
   
   </div>
@@ -111,7 +109,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.4</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -119,12 +117,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.h?h=2.6.1#n56">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.h?h=4.0.0#n40">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
 <span class="n">hinawa_fw_fcp_bind</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">HinawaFwFcp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
 <span class="w">  </span><span class="n">HinawaFwNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
@@ -140,7 +138,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.c?h=2.6.1#n581">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_fcp.c?h=4.0.0#n638">[src]</a>
         
       </h4>
 
@@ -150,7 +148,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
       <div class="docblock">
         
-        <p>Available since: 1.4</p>
+        <p>Available since: 4.0</p>
         
         
         
@@ -206,6 +204,32 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <div class="returns">
+          <div class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
+            <p><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></p>
+          </div>
+          <div>
+            <table>
+            
+            
+            
+            
+            
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
   </section>

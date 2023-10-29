@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinawa.FwResp:width</title>
+  <title>Hinawa.FwNode:card-id</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -18,10 +18,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta property="og:title" content="Hinawa.FwResp:width"/>
-  <meta property="og:description" content="Reference for property Hinawa.FwResp:width"/>
-  <meta name="twitter:title" content="Hinawa.FwResp:width"/>
-  <meta name="twitter:description" content="Reference for property Hinawa.FwResp:width"/>
+  <meta property="og:title" content="Hinawa.FwNode:card-id"/>
+  <meta property="og:description" content="Reference for property Hinawa.FwNode:card-id"/>
+  <meta name="twitter:title" content="Hinawa.FwNode:card-id"/>
+  <meta name="twitter:description" content="Reference for property Hinawa.FwNode:card-id"/>
 
 
   
@@ -71,18 +71,26 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwResp.html">FwResp</a>
+    <a href="class.FwNode.html">FwNode</a>
   </div>
 </div>
 <div class="section">
   <h5>Properties</h5>
   <div class="links">
   
-    <a class="property"href="property.FwResp.is-reserved.html">is-reserved</a>
+    <a class="property"href="property.FwNode.bus-manager-node-id.html">bus-manager-node-id</a>
   
-    <a class="property"href="property.FwResp.offset.html">offset</a>
+    <a class="property current"href="property.FwNode.card-id.html">card-id</a>
   
-    <a class="property current"href="property.FwResp.width.html">width</a>
+    <a class="property"href="property.FwNode.generation.html">generation</a>
+  
+    <a class="property"href="property.FwNode.ir-manager-node-id.html">ir-manager-node-id</a>
+  
+    <a class="property"href="property.FwNode.local-node-id.html">local-node-id</a>
+  
+    <a class="property"href="property.FwNode.node-id.html">node-id</a>
+  
+    <a class="property"href="property.FwNode.root-node-id.html">root-node-id</a>
   
   </div>
 </div>
@@ -98,12 +106,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Property</h3>
-    <h1><a href="index.html">Hinawa</a><span class="sep"></span><a href="class.FwResp.html">FwResp</a>:width</h1>
+    <h1><a href="index.html">Hinawa</a><span class="sep"></span><a href="class.FwNode.html">FwNode</a>:card-id</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 2.3</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
     <div class="declaration toggle-wrapper">
       <h4 id="declaration">
@@ -112,7 +120,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       </h4>
 
       <div class="docblock">
-        <pre><code>property width: guint [ read ]</code></pre>
+        <pre><code>property card-id: guint [ read ]</code></pre>
       </div>
     </div>
 
@@ -121,12 +129,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=4.0.0#n134">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_node.c?h=4.0.0#n242">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>The width of reserved address&nbsp;range.</p>
+        <p>The numeric index for 1394 <span class="caps">OHCI</span> hardware used for the communication with the node. The
+value is stable against bus&nbsp;generation.</p>
       </div>
 
       <div class="docblock">
@@ -136,7 +145,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           </tr>
           
           
-          <tr><td>Available since:</td><td>2.3</td></tr>
+          <tr><td>Available since:</td><td>4.0</td></tr>
           
           
         </table>

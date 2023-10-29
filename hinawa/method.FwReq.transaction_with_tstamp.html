@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -81,10 +81,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <a class="method" href="method.FwReq.request.html">request</a>
   
     <a class="method" href="method.FwReq.transaction.html">transaction</a>
-  
-    <a class="method" href="method.FwReq.transaction_async.html">transaction_async</a>
-  
-    <a class="method" href="method.FwReq.transaction_sync.html">transaction_sync</a>
   
     <a class="method current" href="method.FwReq.transaction_with_tstamp.html">transaction_with_tstamp</a>
   
@@ -115,7 +111,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.h?h=2.6.1#n70">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.h?h=4.0.0#n46">[src]</a>
         
       </h4>
 
@@ -143,14 +139,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.c?h=2.6.1#n480">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_req.c?h=4.0.0#n238">[src]</a>
         
       </h4>
 
       <div class="docblock">
         <p>Execute request subaction of transaction to the given node according to given code, then wait
-for response subaction within the given timeout. The <a href="property.FwReq.timeout.html"><code>HinawaFwReq:timeout</code></a> property of
-instance is&nbsp;ignored.</p>
+for response subaction within the given&nbsp;timeout.</p>
 <p>Each value of <code>tstamp</code> is unsigned 16 bit integer including higher 3 bits for three low order bits
 of second field and the rest 13 bits for cycle field in the format of <span class="caps">IEEE</span> 1394 CYCLE_TIMER&nbsp;register.</p>
 <p>If the version of kernel <span class="caps">ABI</span> for Linux FireWire subsystem is less than 6, each element of <code>tstamp</code>
@@ -289,8 +284,8 @@ has invalid value&nbsp;(=G_MAXUINT).</p>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;An array of&nbsp;<code>guint</code></p>
             <p><p>The array with two elements for time stamps.
-    The first element is for the isochronous cycle at which the request was sent. The second
-    element is for the isochronous cycle at which the response&nbsp;arrived.</p></p>
+    The first element is for the isochronous cycle at which the request subaction was sent.
+    The second element is for the isochronous cycle at which the response subaction&nbsp;arrived.</p></p>
             <table>
             <tr><td title="direction: out">The argument will be set by the function.</td></tr>
             
@@ -307,7 +302,7 @@ has invalid value&nbsp;(=G_MAXUINT).</p>
           <dt class="arg-name"><code>timeout_ms</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>guint</code></p>
-            <p><p>The timeout to wait for response subaction of the transaction since request
+            <p><p>The timeout to wait for the response subaction of transaction since the request
     subaction is initiated, in&nbsp;milliseconds.</p></p>
             <table>
             

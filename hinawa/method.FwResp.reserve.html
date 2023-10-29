@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinawa</a></h3>
-        <p>API Version: 3.0</p>
+        <p>API Version: 4.0</p>
         
-        <p>Library Version: 2.6.1</p>
+        <p>Library Version: 4.0.0</p>
         
       </div>
       
@@ -77,8 +77,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
-  
-    <a class="method" href="method.FwResp.get_req_frame.html">get_req_frame</a>
   
     <a class="method" href="method.FwResp.release.html">release</a>
   
@@ -107,7 +105,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 1.4.</span></p>
+      <p><span class="emblem available">since: 4.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,12 +113,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=2.6.1#n90">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.h?h=4.0.0#n53">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
-        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+        <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
 <span class="n">hinawa_fw_resp_reserve</span><span class="w"> </span><span class="p">(</span>
 <span class="w">  </span><span class="n">HinawaFwResp</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
 <span class="w">  </span><span class="n">HinawaFwNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
@@ -138,19 +136,22 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=2.6.1#n349">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinawa.git/tree/src/fw_resp.c?h=4.0.0#n283">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Start to listen to a range of address in host controller which connects to the node. The function
-is a variant of <a href="method.FwResp.reserve_within_region.html"><code>hinawa_fw_resp_reserve_within_region()</code></a> so that the exact range of address should
-be reserved as&nbsp;given.</p>
+        <p>Allocate an address range within Linux system for local nodes, each of which expresses 1394
+<span class="caps">OHCI</span> hardware. Once successful, <a href="signal.FwResp.requested.html"><code>HinawaFwResp::requested</code></a> signal will be emitted whenever any
+request subactions arrive at the 1394 <span class="caps">OHCI</span> hardware within the dedicated&nbsp;range.</p>
+<p>The range is precisely reserved at the address specified by <code>addr</code> with the size indicated by
+<code>width</code>. In essence, this function is a variant of <a href="method.FwResp.reserve_within_region.html"><code>hinawa_fw_resp_reserve_within_region()</code></a> in
+which the specified address range is reserved as&nbsp;provided.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 1.4.</p>
+        <p>Available since: 4.0</p>
         
         
         
@@ -190,7 +191,7 @@ be reserved as&nbsp;given.</p>
           <dt class="arg-name"><code>addr</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>guint64</code></p>
-            <p><p>A start address to listen to in host&nbsp;controller.</p></p>
+            <p><p>A start address to listen to in 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p></p>
             <table>
             
             
@@ -207,7 +208,7 @@ be reserved as&nbsp;given.</p>
           <dt class="arg-name"><code>width</code></dt>
           <dd class="arg-description">
             <p><em>Type:</em>&nbsp;<code>guint</code></p>
-            <p><p>The byte width of address to listen to host&nbsp;controller.</p></p>
+            <p><p>The byte width of address to listen to 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p></p>
             <table>
             
             
@@ -240,6 +241,32 @@ be reserved as&nbsp;given.</p>
     </div>
     
 
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <div class="returns">
+          <div class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
+            <p><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></p>
+          </div>
+          <div>
+            <table>
+            
+            
+            
+            
+            
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     
 
   </section>
