@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
-        <p>API Version: 0.0</p>
+        <p>API Version: 1.0</p>
         
-        <p>Library Version: 0.9.1</p>
+        <p>Library Version: 1.0.0</p>
         
       </div>
       
@@ -157,7 +157,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_it.c?h=v0.9.1#n4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_it.c?h=v1.0.0#n4">[src]</a>
           
         </h4>
 
@@ -167,7 +167,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 
         <div class="docblock">
           <p>An object to transmit isochronous packet for single channel.
-A <a href="class.FwIsoIt.html"><code>HinokoFwIsoIt</code></a> transmits isochronous packets for single channel by <span class="caps">IT</span> context in 1394 <span class="caps">OHCI</span>.
+<a href="class.FwIsoIt.html"><code>HinokoFwIsoIt</code></a> transmits isochronous packets for single channel by <span class="caps">IT</span> context in 1394 <span class="caps">OHCI</span>.
 The content of packet is split to two parts; context header and context payload in a manner of
 Linux FireWire&nbsp;subsystem.</p>
         </div>
@@ -261,8 +261,8 @@ Linux FireWire&nbsp;subsystem.</p>
         <div class="">
           <h6><a href="method.FwIsoIt.allocate.html">hinoko_fw_iso_it_allocate</a></h6>
           <div class="docblock">
-            <p>Allocate an <span class="caps">IT</span> context to 1394 <span class="caps">OHCI</span> controller. A local node of the node corresponding to the
-given path is used as the controller, thus any path is accepted as long as process has enough
+            <p>Allocate an <span class="caps">IT</span> context to 1394 <span class="caps">OHCI</span> hardware. A local node of the node corresponding to the
+given path is used as the hardware, thus any path is accepted as long as process has enough
 permission for the&nbsp;path.</p>
           </div>
           <div class="docblock">
@@ -273,7 +273,7 @@ permission for the&nbsp;path.</p>
         <div class="">
           <h6><a href="method.FwIsoIt.map_buffer.html">hinoko_fw_iso_it_map_buffer</a></h6>
           <div class="docblock">
-            <p>Map intermediate buffer to share payload of <span class="caps">IT</span> context with 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+            <p>Map intermediate buffer to share payload of <span class="caps">IT</span> context with 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.7</span></p>
@@ -345,11 +345,11 @@ process the content of isochronous packet without waiting for actual hardware&nb
 context is&nbsp;created.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem available">since: 0.9</span></p>
+              <p><span class="emblem available">since: 1.0.</span></p>
             </div>
           
             <h6><a href="method.FwIsoCtx.release.html">hinoko_fw_iso_ctx_release</a></h6><div class="docblock">
-              <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+              <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p>
             </div>
             <div class="docblock">
               <p><span class="emblem available">since: 0.7</span></p>
@@ -363,7 +363,7 @@ context is&nbsp;created.</p>
             </div>
           
             <h6><a href="method.FwIsoCtx.unmap_buffer.html">hinoko_fw_iso_ctx_unmap_buffer</a></h6><div class="docblock">
-              <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> controller for the&nbsp;context.</p>
+              <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> hardware for the&nbsp;context.</p>
             </div>
             <div class="docblock">
               <p><span class="emblem available">since: 0.7</span></p>

@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
-        <p>API Version: 0.0</p>
+        <p>API Version: 1.0</p>
         
-        <p>Library Version: 0.9.1</p>
+        <p>Library Version: 1.0.0</p>
         
       </div>
       
@@ -124,7 +124,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a href="#description" class="anchor"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_multiple.c?h=v0.9.1#n91">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_multiple.c?h=v1.0.0#n91">[src]</a>
         
       </h4>
 
@@ -132,7 +132,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <p>Emitted when Linux FireWire subsystem generates interrupt event. There are two cases
 for Linux FireWire subsystem to generate the&nbsp;event:</p>
 <ul>
-<li>When <span class="caps">OHCI</span> 1394 controller generates hardware interrupt as a result to process the
+<li>When 1394 <span class="caps">OHCI</span> hardware generates hardware interrupt as a result to process the
   isochronous packet for the buffer chunk marked to generate hardware&nbsp;interrupt.</li>
 <li>When application calls <a href="method.FwIsoCtx.flush_completions.html"><code>hinoko_fw_iso_ctx_flush_completions()</code></a>&nbsp;explicitly.</li>
 </ul>

@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoCtx.flush_completions</title>
+  <title>Hinoko.FwIsoResourceAuto.deallocate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -18,10 +18,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoCtx.flush_completions"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoCtx.flush_completions"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoCtx.flush_completions"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoCtx.flush_completions"/>
+  <meta priority="og:title" content="Hinoko.FwIsoResourceAuto.deallocate"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoResourceAuto.deallocate"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoResourceAuto.deallocate"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoResourceAuto.deallocate"/>
 
 
   
@@ -71,24 +71,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="iface.FwIsoCtx.html">FwIsoCtx</a>
+    <a href="class.FwIsoResourceAuto.html">FwIsoResourceAuto</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoCtx.create_source.html">create_source</a>
+    <a class="method current" href="method.FwIsoResourceAuto.deallocate.html">deallocate</a>
   
-    <a class="method current" href="method.FwIsoCtx.flush_completions.html">flush_completions</a>
-  
-    <a class="method" href="method.FwIsoCtx.read_cycle_time.html">read_cycle_time</a>
-  
-    <a class="method" href="method.FwIsoCtx.release.html">release</a>
-  
-    <a class="method" href="method.FwIsoCtx.stop.html">stop</a>
-  
-    <a class="method" href="method.FwIsoCtx.unmap_buffer.html">unmap_buffer</a>
+    <a class="method" href="method.FwIsoResourceAuto.deallocate_wait.html">deallocate_wait</a>
   
   </div>
 </div>
@@ -104,12 +96,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="iface.FwIsoCtx.html">FwIsoCtx</a><span class="sep"></span>flush_completions</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoResourceAuto.html">FwIsoResourceAuto</a><span class="sep"></span>deallocate</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 0.7</span></p>
+      <p><span class="emblem available">since: 1.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -117,14 +109,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ctx.h?h=v1.0.0#n121">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource_auto.h?h=v1.0.0#n24">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
-<span class="n">hinoko_fw_iso_ctx_flush_completions</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">HinokoFwIsoCtx</span><span class="o">*</span><span class="w"> </span><span class="n">self</span>
+<span class="n">hinoko_fw_iso_resource_auto_deallocate</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">HinokoFwIsoResourceAuto</span><span class="o">*</span><span class="w"> </span><span class="n">self</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -137,19 +129,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ctx.c?h=v1.0.0#n205">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource_auto.c?h=v1.0.0#n361">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Flush isochronous context until recent isochronous cycle. The call of function forces the
-context to queue any type of interrupt event for the recent isochronous cycle. Application can
-process the content of isochronous packet without waiting for actual hardware&nbsp;interrupt.</p>
+        <p>Initiate deallocation of isochronous resource. When the deallocation is done,
+<a href="signal.FwIsoResource.deallocated.html"><code>HinokoFwIsoResource::deallocated</code></a> signal is emit to notify the result, channel, and&nbsp;bandwidth.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 0.7</p>
+        <p>Available since: 1.0</p>
         
         
         
@@ -172,7 +163,7 @@ process the content of isochronous packet without waiting for actual hardware&nb
         <div class="returns">
           <div class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
-            <p><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></p>
+            <p><p><span class="caps">TRUE</span> if the overall operation finished successfully, otherwise <span class="caps">FALSE</span>.</p></p>
           </div>
           <div>
             <table>

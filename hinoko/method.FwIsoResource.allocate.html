@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoIrSingle.register_packet</title>
+  <title>Hinoko.FwIsoResource.allocate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -18,10 +18,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoIrSingle.register_packet"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoIrSingle.register_packet"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoIrSingle.register_packet"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIrSingle.register_packet"/>
+  <meta priority="og:title" content="Hinoko.FwIsoResource.allocate"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoResource.allocate"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoResource.allocate"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoResource.allocate"/>
 
 
   
@@ -71,22 +71,20 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a>
+    <a href="iface.FwIsoResource.html">FwIsoResource</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoIrSingle.allocate.html">allocate</a>
+    <a class="method current" href="method.FwIsoResource.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoIrSingle.get_payload.html">get_payload</a>
+    <a class="method" href="method.FwIsoResource.allocate_wait.html">allocate_wait</a>
   
-    <a class="method" href="method.FwIsoIrSingle.map_buffer.html">map_buffer</a>
+    <a class="method" href="method.FwIsoResource.create_source.html">create_source</a>
   
-    <a class="method current" href="method.FwIsoIrSingle.register_packet.html">register_packet</a>
-  
-    <a class="method" href="method.FwIsoIrSingle.start.html">start</a>
+    <a class="method" href="method.FwIsoResource.open.html">open</a>
   
   </div>
 </div>
@@ -102,12 +100,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a><span class="sep"></span>register_packet</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="iface.FwIsoResource.html">FwIsoResource</a><span class="sep"></span>allocate</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 0.7</span></p>
+      <p><span class="emblem available">since: 1.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,15 +113,17 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.h?h=v1.0.0#n44">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource.h?h=v1.0.0#n109">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
-<span class="n">hinoko_fw_iso_ir_single_register_packet</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">HinokoFwIsoIrSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gboolean</span><span class="w"> </span><span class="n">schedule_interrupt</span><span class="p">,</span>
+<span class="n">hinoko_fw_iso_resource_allocate</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">HinokoFwIsoResource</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">guint8</span><span class="o">*</span><span class="w"> </span><span class="n">channel_candidates</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gsize</span><span class="w"> </span><span class="n">channel_candidates_count</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">bandwidth</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -136,19 +136,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.c?h=v1.0.0#n309">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource.c?h=v1.0.0#n170">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Register chunk of buffer to process packet for future isochronous cycle. The caller can schedule
-hardware interrupt to generate interrupt event. In detail, please refer to documentation about
-<a href="signal.FwIsoIrSingle.interrupted.html"><code>HinokoFwIsoIrSingle::interrupted</code></a>&nbsp;signal.</p>
+        <p>Initiate allocation of isochronous resource without any wait. One of the candidates is actually
+allocated for channel. When the allocation finishes, <a href="signal.FwIsoResource.allocated.html"><code>HinokoFwIsoResource::allocated</code></a> signal is
+emitted to notify the result, channel, and&nbsp;bandwidth.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 0.7</p>
+        <p>Available since: 1.0</p>
         
         
         
@@ -168,10 +168,45 @@ hardware interrupt to generate interrupt event. In detail, please refer to docum
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>schedule_interrupt</code></dt>
+          <dt class="arg-name"><code>channel_candidates</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
-            <p><p>Whether to schedule hardware interrupt at isochronous cycle for the&nbsp;packet.</p></p>
+            <p><em>Type:</em>&nbsp;An array of&nbsp;<code>guint8</code></p>
+            <p><p>The array with elements for
+        numeric number of isochronous channel to be&nbsp;allocated.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            <tr><td>The length of the array is specified in the <code>channel_candidates_count</code> argument.</td></tr>
+            <tr><td title="transfer: none">The data is owned by the caller of the function.</td></tr>
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>channel_candidates_count</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gsize</code></p>
+            <p><p>The number of channel&nbsp;candidates.</p></p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>bandwidth</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The amount of bandwidth to be&nbsp;allocated.</p></p>
             <table>
             
             

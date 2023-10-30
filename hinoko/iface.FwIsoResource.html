@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
-        <p>API Version: 0.0</p>
+        <p>API Version: 1.0</p>
         
-        <p>Library Version: 0.9.1</p>
+        <p>Library Version: 1.0.0</p>
         
       </div>
       
@@ -91,9 +91,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoResource.allocate_async.html">allocate_async</a>
+    <a class="method" href="method.FwIsoResource.allocate.html">allocate</a>
   
-    <a class="method" href="method.FwIsoResource.allocate_sync.html">allocate_sync</a>
+    <a class="method" href="method.FwIsoResource.allocate_wait.html">allocate_wait</a>
   
     <a class="method" href="method.FwIsoResource.create_source.html">create_source</a>
   
@@ -134,7 +134,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Virtual methods</h5>
   <div class="links">
   
-    <a class="method" href="vfunc.FwIsoResource.allocate_async.html">allocate_async</a>
+    <a class="method" href="vfunc.FwIsoResource.allocate.html">allocate</a>
   
     <a class="method" href="vfunc.FwIsoResource.allocated.html">allocated</a>
   
@@ -173,16 +173,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource.c?h=v0.9.1#n4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource.c?h=v1.0.0#n4">[src]</a>
           
         </h4>
 
         <pre><code>interface Hinoko.FwIsoResource : GObject.Object</code></pre>
 
         <div class="docblock">
-          <p>An interface object to listen events of isochronous resource allocation and deallocation.
-The <a href="iface.FwIsoResource.html"><code>HinokoFwIsoResource</code></a> should be implemented in GObject-derived object to listen events of
-isochronous resource allocation and&nbsp;deallocation.</p>
+          <p>A set of basic interfaces to listen to events about isochronous resource.
+<a href="iface.FwIsoResource.html"><code>HinokoFwIsoResource</code></a> includes interfaces to listen to events about allocation and
+deallocation of isochronous&nbsp;resource.</p>
         </div>
 
         <div class="docblock">
@@ -255,25 +255,25 @@ by given&nbsp;parameters.</p>
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.FwIsoResource.allocate_async.html">hinoko_fw_iso_resource_allocate_async</a></h6>
+          <h6><a href="method.FwIsoResource.allocate.html">hinoko_fw_iso_resource_allocate</a></h6>
           <div class="docblock">
             <p>Initiate allocation of isochronous resource without any wait. One of the candidates is actually
 allocated for channel. When the allocation finishes, <code>HinokoFwIsoResource::allocated</code> signal is
 emitted to notify the result, channel, and&nbsp;bandwidth.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7</span></p>
+            <p><span class="emblem available">since: 1.0</span></p>
           </div>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoResource.allocate_sync.html">hinoko_fw_iso_resource_allocate_sync</a></h6>
+          <h6><a href="method.FwIsoResource.allocate_wait.html">hinoko_fw_iso_resource_allocate_wait</a></h6>
           <div class="docblock">
             <p>Initiate allocation of isochronous resource and wait for <code>HinokoFwIsoResource::allocated</code>
 signal. One of the candidates is actually allocated for&nbsp;channel.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7</span></p>
+            <p><span class="emblem available">since: 1.0</span></p>
           </div>
         </div>
       
@@ -377,7 +377,7 @@ resource management to Linux FireWire&nbsp;subsystem.</p>
     gint open_flag,
     GError** error
   );
-  gboolean (* allocate_async) (
+  gboolean (* allocate) (
     HinokoFwIsoResource* self,
     const guint8* channel_candidates,
     gsize channel_candidates_count,
@@ -437,8 +437,8 @@ resource management to Linux FireWire&nbsp;subsystem.</p>
         </tr>
         
         <tr>
-          <td style="vertical-align:top"><code>allocate_async</code></td>
-          <td style="vertical-align:top"><pre><code>gboolean (* allocate_async) (
+          <td style="vertical-align:top"><code>allocate</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* allocate) (
     HinokoFwIsoResource* self,
     const guint8* channel_candidates,
     gsize channel_candidates_count,
@@ -506,14 +506,14 @@ resource management to Linux FireWire&nbsp;subsystem.</p>
       <div class="docblock">
       
         <div class="">
-          <h6 id="vfunc-allocate_async"><a href="vfunc.FwIsoResource.allocate_async.html">Hinoko.FwIsoResource.allocate_async</a></h6>
+          <h6 id="vfunc-allocate"><a href="vfunc.FwIsoResource.allocate.html">Hinoko.FwIsoResource.allocate</a></h6>
           <div class="docblock">
             <p>Initiate allocation of isochronous resource without any wait. One of the candidates is actually
 allocated for channel. When the allocation finishes, <code>HinokoFwIsoResource::allocated</code> signal is
 emitted to notify the result, channel, and&nbsp;bandwidth.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7</span></p>
+            <p><span class="emblem available">since: 1.0</span></p>
           </div>
         </div>
       

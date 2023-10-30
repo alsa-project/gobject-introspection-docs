@@ -56,6 +56,6 @@ The list of libraries maintained by ALSA GObject Introspection team.
 ### hinoko library
 
 * Operate Linux FireWire character device for isochronous packet and resources in IEEE 1394 bus.
-* Provide `Hinoko-0.0` namespace for GObject Introspection.
-* documentation: [Hinoko - 0.0](https://alsa-project.github.io/gobject-introspection-docs/hinoko/)
+* Provide `Hinoko-1.0` namespace for GObject Introspection.
+* documentation: [Hinoko - 1.0](https://alsa-project.github.io/gobject-introspection-docs/hinoko/)
 * repository: [libhinoko](https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/)

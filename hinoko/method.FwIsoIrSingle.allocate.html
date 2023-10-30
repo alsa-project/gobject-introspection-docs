@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
-        <p>API Version: 0.0</p>
+        <p>API Version: 1.0</p>
         
-        <p>Library Version: 0.9.1</p>
+        <p>Library Version: 1.0.0</p>
         
       </div>
       
@@ -115,7 +115,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.h?h=v0.9.1#n37">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.h?h=v1.0.0#n37">[src]</a>
         
       </h4>
 
@@ -138,13 +138,13 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.c?h=v0.9.1#n239">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.c?h=v1.0.0#n238">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Allocate an <span class="caps">IR</span> context to 1394 <span class="caps">OHCI</span> controller for packet-per-buffer mode. A local node of the
-node corresponding to the given path is used as the controller, thus any path is accepted as
+        <p>Allocate an <span class="caps">IR</span> context to 1394 <span class="caps">OHCI</span> hardware for packet-per-buffer mode. A local node of the
+node corresponding to the given path is used as the hardware, thus any path is accepted as
 long as process has enough permission for the&nbsp;path.</p>
 <p>The header_size parameter has an effect for the content of header parameter in
 <a href="signal.FwIsoIrSingle.interrupted.html"><code>HinokoFwIsoIrSingle::interrupted</code></a>. When it&#8217;s greater than 8, header includes the series of two

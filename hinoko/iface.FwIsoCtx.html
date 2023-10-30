@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
-        <p>API Version: 0.0</p>
+        <p>API Version: 1.0</p>
         
-        <p>Library Version: 0.9.1</p>
+        <p>Library Version: 1.0.0</p>
         
       </div>
       
@@ -172,16 +172,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ctx.c?h=v0.9.1#n6">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ctx.c?h=v1.0.0#n6">[src]</a>
           
         </h4>
 
         <pre><code>interface Hinoko.FwIsoCtx : GObject.Object</code></pre>
 
         <div class="docblock">
-          <p>An basic interface to operate isochronous context on 1394 <span class="caps">OHCI</span> controller.
-A <a href="iface.FwIsoCtx.html"><code>HinokoFwIsoCtx</code></a> is an basic interface to use <span class="caps">UAPI</span> of Linux FireWire subsystem to operate
-1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+          <p>A set of basic interfaces to operate isochronous context on 1394 <span class="caps">OHCI</span> hardware.
+<a href="iface.FwIsoCtx.html"><code>HinokoFwIsoCtx</code></a> includes interfaces to operate 1394 <span class="caps">OHCI</span> hardware for isochronous communication
+by any kind of&nbsp;contexts.</p>
         </div>
 
         <div class="docblock">
@@ -260,14 +260,14 @@ process the content of isochronous packet without waiting for actual hardware&nb
 context is&nbsp;created.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.9</span></p>
+            <p><span class="emblem available">since: 1.0.</span></p>
           </div>
         </div>
       
         <div class="">
           <h6><a href="method.FwIsoCtx.release.html">hinoko_fw_iso_ctx_release</a></h6>
           <div class="docblock">
-            <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+            <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.7</span></p>
@@ -287,7 +287,7 @@ context is&nbsp;created.</p>
         <div class="">
           <h6><a href="method.FwIsoCtx.unmap_buffer.html">hinoko_fw_iso_ctx_unmap_buffer</a></h6>
           <div class="docblock">
-            <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> controller for the&nbsp;context.</p>
+            <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> hardware for the&nbsp;context.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.7</span></p>
@@ -379,7 +379,7 @@ context is&nbsp;created.</p>
   gboolean (* read_cycle_time) (
     HinokoFwIsoCtx* self,
     gint clock_id,
-    HinawaCycleTime* const* cycle_time,
+    HinawaCycleTime** cycle_time,
     GError** error
   );
   gboolean (* flush_completions) (
@@ -452,7 +452,7 @@ context is&nbsp;created.</p>
           <td style="vertical-align:top"><pre><code>gboolean (* read_cycle_time) (
     HinokoFwIsoCtx* self,
     gint clock_id,
-    HinawaCycleTime* const* cycle_time,
+    HinawaCycleTime** cycle_time,
     GError** error
   )</code></pre></td>
         </tr>
@@ -540,14 +540,14 @@ process the content of isochronous packet without waiting for actual hardware&nb
 context is&nbsp;created.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.9</span></p>
+            <p><span class="emblem available">since: 1.0.</span></p>
           </div>
         </div>
       
         <div class="">
           <h6 id="vfunc-release"><a href="vfunc.FwIsoCtx.release.html">Hinoko.FwIsoCtx.release</a></h6>
           <div class="docblock">
-            <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;controller.</p>
+            <p>Release the contest from 1394 <span class="caps">OHCI</span>&nbsp;hardware.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.7</span></p>
@@ -577,7 +577,7 @@ context is&nbsp;created.</p>
         <div class="">
           <h6 id="vfunc-unmap_buffer"><a href="vfunc.FwIsoCtx.unmap_buffer.html">Hinoko.FwIsoCtx.unmap_buffer</a></h6>
           <div class="docblock">
-            <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> controller for the&nbsp;context.</p>
+            <p>Unmap intermediate buffer shared with 1394 <span class="caps">OHCI</span> hardware for the&nbsp;context.</p>
           </div>
           <div class="docblock">
             <p><span class="emblem available">since: 0.7</span></p>

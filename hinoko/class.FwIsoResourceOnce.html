@@ -62,9 +62,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       
       <div class="section namespace">
         <h3><a href="index.html">Hinoko</a></h3>
-        <p>API Version: 0.0</p>
+        <p>API Version: 1.0</p>
         
-        <p>Library Version: 0.9.1</p>
+        <p>Library Version: 1.0.0</p>
         
       </div>
       
@@ -93,9 +93,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   <h5>Instance methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoResourceOnce.deallocate_async.html">deallocate_async</a>
+    <a class="method" href="method.FwIsoResourceOnce.deallocate.html">deallocate</a>
   
-    <a class="method" href="method.FwIsoResourceOnce.deallocate_sync.html">deallocate_sync</a>
+    <a class="method" href="method.FwIsoResourceOnce.deallocate_wait.html">deallocate_wait</a>
   
   </div>
 </div>
@@ -135,7 +135,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
           Description
           <a href="#description" class="anchor"></a>
           
-          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource_once.c?h=v0.9.1#n4">[src]</a>
+          <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource_once.c?h=v1.0.0#n4">[src]</a>
           
         </h4>
 
@@ -238,25 +238,25 @@ is left even if this object is destroyed, thus application is responsible for&nb
       <div class="docblock">
       
         <div class="">
-          <h6><a href="method.FwIsoResourceOnce.deallocate_async.html">hinoko_fw_iso_resource_once_deallocate_async</a></h6>
+          <h6><a href="method.FwIsoResourceOnce.deallocate.html">hinoko_fw_iso_resource_once_deallocate</a></h6>
           <div class="docblock">
             <p>Initiate deallocation of isochronous resource without any wait. When the
 deallocation finishes, <code>HinokoFwIsoResource::deallocated</code> signal is emit to notify the result,
 channel, and&nbsp;bandwidth.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7</span></p>
+            <p><span class="emblem available">since: 1.0</span></p>
           </div>
         </div>
       
         <div class="">
-          <h6><a href="method.FwIsoResourceOnce.deallocate_sync.html">hinoko_fw_iso_resource_once_deallocate_sync</a></h6>
+          <h6><a href="method.FwIsoResourceOnce.deallocate_wait.html">hinoko_fw_iso_resource_once_deallocate_wait</a></h6>
           <div class="docblock">
             <p>Initiate deallocation of isochronous resource and wait for <code>HinokoFwIsoResource::deallocated</code>
 signal.</p>
           </div>
           <div class="docblock">
-            <p><span class="emblem available">since: 0.7</span></p>
+            <p><span class="emblem available">since: 1.0</span></p>
           </div>
         </div>
       
@@ -281,21 +281,21 @@ signal.</p>
         <div class="toggle-wrapper default-hide ancestor-methods">
           <h5 style="display:block;">Methods inherited from <a href="iface.FwIsoResource.html">HinokoFwIsoResource</a> (4)</h5><div class="docblock">
           
-            <h6><a href="method.FwIsoResource.allocate_async.html">hinoko_fw_iso_resource_allocate_async</a></h6><div class="docblock">
+            <h6><a href="method.FwIsoResource.allocate.html">hinoko_fw_iso_resource_allocate</a></h6><div class="docblock">
               <p>Initiate allocation of isochronous resource without any wait. One of the candidates is actually
 allocated for channel. When the allocation finishes, <code>HinokoFwIsoResource::allocated</code> signal is
 emitted to notify the result, channel, and&nbsp;bandwidth.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem available">since: 0.7</span></p>
+              <p><span class="emblem available">since: 1.0</span></p>
             </div>
           
-            <h6><a href="method.FwIsoResource.allocate_sync.html">hinoko_fw_iso_resource_allocate_sync</a></h6><div class="docblock">
+            <h6><a href="method.FwIsoResource.allocate_wait.html">hinoko_fw_iso_resource_allocate_wait</a></h6><div class="docblock">
               <p>Initiate allocation of isochronous resource and wait for <code>HinokoFwIsoResource::allocated</code>
 signal. One of the candidates is actually allocated for&nbsp;channel.</p>
             </div>
             <div class="docblock">
-              <p><span class="emblem available">since: 0.7</span></p>
+              <p><span class="emblem available">since: 1.0</span></p>
             </div>
           
             <h6><a href="method.FwIsoResource.create_source.html">hinoko_fw_iso_resource_create_source</a></h6><div class="docblock">

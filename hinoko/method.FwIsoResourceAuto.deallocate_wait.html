@@ -7,7 +7,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hinoko.FwIsoIrSingle.register_packet</title>
+  <title>Hinoko.FwIsoResourceAuto.deallocate_wait</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta charset="utf-8" />
@@ -18,10 +18,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
   
 
   
-  <meta priority="og:title" content="Hinoko.FwIsoIrSingle.register_packet"/>
-  <meta priority="og:description" content="Reference for Hinoko.FwIsoIrSingle.register_packet"/>
-  <meta name="twitter:title" content="Hinoko.FwIsoIrSingle.register_packet"/>
-  <meta name="twitter:description" content="Reference for Hinoko.FwIsoIrSingle.register_packet"/>
+  <meta priority="og:title" content="Hinoko.FwIsoResourceAuto.deallocate_wait"/>
+  <meta priority="og:description" content="Reference for Hinoko.FwIsoResourceAuto.deallocate_wait"/>
+  <meta name="twitter:title" content="Hinoko.FwIsoResourceAuto.deallocate_wait"/>
+  <meta name="twitter:description" content="Reference for Hinoko.FwIsoResourceAuto.deallocate_wait"/>
 
 
   
@@ -71,22 +71,16 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <div class="section">
   <h5>Type</h5>
   <div class="links">
-    <a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a>
+    <a href="class.FwIsoResourceAuto.html">FwIsoResourceAuto</a>
   </div>
 </div>
 <div class="section">
   <h5>Methods</h5>
   <div class="links">
   
-    <a class="method" href="method.FwIsoIrSingle.allocate.html">allocate</a>
+    <a class="method" href="method.FwIsoResourceAuto.deallocate.html">deallocate</a>
   
-    <a class="method" href="method.FwIsoIrSingle.get_payload.html">get_payload</a>
-  
-    <a class="method" href="method.FwIsoIrSingle.map_buffer.html">map_buffer</a>
-  
-    <a class="method current" href="method.FwIsoIrSingle.register_packet.html">register_packet</a>
-  
-    <a class="method" href="method.FwIsoIrSingle.start.html">start</a>
+    <a class="method current" href="method.FwIsoResourceAuto.deallocate_wait.html">deallocate_wait</a>
   
   </div>
 </div>
@@ -102,12 +96,12 @@ SPDX-License-Identifier: LGPL-2.1-or-later
 <section id="main" class="content">
   <header>
     <h3>Method</h3>
-    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoIrSingle.html">FwIsoIrSingle</a><span class="sep"></span>register_packet</h1>
+    <h1><a href="index.html">Hinoko</a><span class="sep"></span><a href="class.FwIsoResourceAuto.html">FwIsoResourceAuto</a><span class="sep"></span>deallocate_wait</h1>
   </header>
 
   <section>
     <div class="docblock">
-      <p><span class="emblem available">since: 0.7</span></p>
+      <p><span class="emblem available">since: 1.0</span></p>
     </div>
 
     <div class="declaration toggle-wrapper">
@@ -115,15 +109,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Declaration
         <a class="anchor" href="#declaration"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.h?h=v1.0.0#n44">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource_auto.h?h=v1.0.0#n25">[src]</a>
         
       </h4>
 
       <div class="docblock c-decl">
         <pre><code><div class="highlight"><pre><span></span><span class="n">gboolean</span>
-<span class="n">hinoko_fw_iso_ir_single_register_packet</span><span class="w"> </span><span class="p">(</span>
-<span class="w">  </span><span class="n">HinokoFwIsoIrSingle</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
-<span class="w">  </span><span class="n">gboolean</span><span class="w"> </span><span class="n">schedule_interrupt</span><span class="p">,</span>
+<span class="n">hinoko_fw_iso_resource_auto_deallocate_wait</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">HinokoFwIsoResourceAuto</span><span class="o">*</span><span class="w"> </span><span class="n">self</span><span class="p">,</span>
+<span class="w">  </span><span class="n">guint</span><span class="w"> </span><span class="n">timeout_ms</span><span class="p">,</span>
 <span class="w">  </span><span class="n">GError</span><span class="o">**</span><span class="w"> </span><span class="n">error</span>
 <span class="p">)</span>
 </pre></div>
@@ -136,19 +130,18 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         Description
         <a class="anchor" href="#description"></a>
         
-        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_ir_single.c?h=v1.0.0#n309">[src]</a>
+        <a class="srclink" title="go to source location" href="https://git.kernel.org/pub/scm/libs/ieee1394/libhinoko.git/tree/src/fw_iso_resource_auto.c?h=v1.0.0#n412">[src]</a>
         
       </h4>
 
       <div class="docblock">
-        <p>Register chunk of buffer to process packet for future isochronous cycle. The caller can schedule
-hardware interrupt to generate interrupt event. In detail, please refer to documentation about
-<a href="signal.FwIsoIrSingle.interrupted.html"><code>HinokoFwIsoIrSingle::interrupted</code></a>&nbsp;signal.</p>
+        <p>Initiate deallocation of isochronous resource. When the deallocation is done,
+<a href="signal.FwIsoResource.deallocated.html"><code>HinokoFwIsoResource::deallocated</code></a> signal is emit to notify the result, channel, and&nbsp;bandwidth.</p>
       </div>
 
       <div class="docblock">
         
-        <p>Available since: 0.7</p>
+        <p>Available since: 1.0</p>
         
         
         
@@ -168,10 +161,10 @@ hardware interrupt to generate interrupt event. In detail, please refer to docum
       <div class="docblock">
         <dl class="arguments">
           
-          <dt class="arg-name"><code>schedule_interrupt</code></dt>
+          <dt class="arg-name"><code>timeout_ms</code></dt>
           <dd class="arg-description">
-            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
-            <p><p>Whether to schedule hardware interrupt at isochronous cycle for the&nbsp;packet.</p></p>
+            <p><em>Type:</em>&nbsp;<code>guint</code></p>
+            <p><p>The timeout to wait for allocated event by milli second&nbsp;unit.</p></p>
             <table>
             
             
@@ -215,7 +208,7 @@ hardware interrupt to generate interrupt event. In detail, please refer to docum
         <div class="returns">
           <div class="arg-description">
             <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
-            <p><p><span class="caps">TRUE</span> if the overall operation finishes successfully, otherwise <span class="caps">FALSE</span>.</p></p>
+            <p><p><span class="caps">TRUE</span> if the overall operation finished successfully, otherwise <span class="caps">FALSE</span>.</p></p>
           </div>
           <div>
             <table>
